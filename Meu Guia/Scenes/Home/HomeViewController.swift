@@ -1,7 +1,7 @@
 import UIKit
 
 // MARK: - HomeViewController
-class HomeViewController: BaseViewController<HomeView>{
+class HomeViewController: BaseViewController<HomeView> {
   // MARK: - Properties
   let viewModel: HomeViewModelProtocol
 
@@ -11,14 +11,8 @@ class HomeViewController: BaseViewController<HomeView>{
 
     super.init(nibName: nil, bundle: nil)
   }
-  
+
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  
-  // MARK: - Override Methods
-  override func viewDidLoad() {
-    super.viewDidLoad()
-  }
 }
-

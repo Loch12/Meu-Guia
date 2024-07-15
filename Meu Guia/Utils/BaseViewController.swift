@@ -16,4 +16,3 @@ class BaseViewController<T: BaseView>: UIViewController {
     view = baseView
   }
 }
-

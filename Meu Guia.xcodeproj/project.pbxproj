@@ -11,9 +11,6 @@
 		CE6EE1312C45698D00ED8D38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE1302C45698D00ED8D38 /* SceneDelegate.swift */; };
 		CE6EE1332C45698D00ED8D38 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE1322C45698D00ED8D38 /* HomeViewController.swift */; };
 		CE6EE1382C45698E00ED8D38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6EE1372C45698E00ED8D38 /* Assets.xcassets */; };
-		CE6EE1462C45698E00ED8D38 /* Meu_GuiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE1452C45698E00ED8D38 /* Meu_GuiaTests.swift */; };
-		CE6EE1502C45698E00ED8D38 /* Meu_GuiaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE14F2C45698E00ED8D38 /* Meu_GuiaUITests.swift */; };
-		CE6EE1522C45698E00ED8D38 /* Meu_GuiaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE1512C45698E00ED8D38 /* Meu_GuiaUITestsLaunchTests.swift */; };
 		CE6EE1602C456CC400ED8D38 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE15F2C456CC400ED8D38 /* BaseViewController.swift */; };
 		CE6EE1622C456CDF00ED8D38 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE1612C456CDF00ED8D38 /* BaseView.swift */; };
 		CE6EE1662C456D4900ED8D38 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE1652C456D4900ED8D38 /* HomeView.swift */; };
@@ -47,10 +44,7 @@
 		CE6EE1372C45698E00ED8D38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE6EE13C2C45698E00ED8D38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE6EE1412C45698E00ED8D38 /* Meu GuiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meu GuiaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE6EE1452C45698E00ED8D38 /* Meu_GuiaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meu_GuiaTests.swift; sourceTree = "<group>"; };
 		CE6EE14B2C45698E00ED8D38 /* Meu GuiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meu GuiaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE6EE14F2C45698E00ED8D38 /* Meu_GuiaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meu_GuiaUITests.swift; sourceTree = "<group>"; };
-		CE6EE1512C45698E00ED8D38 /* Meu_GuiaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meu_GuiaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CE6EE15F2C456CC400ED8D38 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CE6EE1612C456CDF00ED8D38 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		CE6EE1652C456D4900ED8D38 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -88,8 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				CE6EE12D2C45698D00ED8D38 /* Meu Guia */,
-				CE6EE1442C45698E00ED8D38 /* Meu GuiaTests */,
-				CE6EE14E2C45698E00ED8D38 /* Meu GuiaUITests */,
 				CE6EE12C2C45698D00ED8D38 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -115,23 +107,6 @@
 				CE6EE13C2C45698E00ED8D38 /* Info.plist */,
 			);
 			path = "Meu Guia";
-			sourceTree = "<group>";
-		};
-		CE6EE1442C45698E00ED8D38 /* Meu GuiaTests */ = {
-			isa = PBXGroup;
-			children = (
-				CE6EE1452C45698E00ED8D38 /* Meu_GuiaTests.swift */,
-			);
-			path = "Meu GuiaTests";
-			sourceTree = "<group>";
-		};
-		CE6EE14E2C45698E00ED8D38 /* Meu GuiaUITests */ = {
-			isa = PBXGroup;
-			children = (
-				CE6EE14F2C45698E00ED8D38 /* Meu_GuiaUITests.swift */,
-				CE6EE1512C45698E00ED8D38 /* Meu_GuiaUITestsLaunchTests.swift */,
-			);
-			path = "Meu GuiaUITests";
 			sourceTree = "<group>";
 		};
 		CE6EE15E2C456CB000ED8D38 /* Utils */ = {
@@ -173,6 +148,7 @@
 				CE6EE1272C45698D00ED8D38 /* Sources */,
 				CE6EE1282C45698D00ED8D38 /* Frameworks */,
 				CE6EE1292C45698D00ED8D38 /* Resources */,
+				CE37737B2C457BE80050167C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -287,6 +263,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CE37737B2C457BE80050167C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE6EE1272C45698D00ED8D38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -308,7 +304,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE6EE1462C45698E00ED8D38 /* Meu_GuiaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,8 +311,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE6EE1522C45698E00ED8D38 /* Meu_GuiaUITestsLaunchTests.swift in Sources */,
-				CE6EE1502C45698E00ED8D38 /* Meu_GuiaUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +457,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FFB3YFS8K2;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Meu Guia/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -491,6 +485,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FFB3YFS8K2;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Meu Guia/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
