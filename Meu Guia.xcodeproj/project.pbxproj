@@ -9,11 +9,17 @@
 /* Begin PBXBuildFile section */
 		CE6EE12F2C45698D00ED8D38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE12E2C45698D00ED8D38 /* AppDelegate.swift */; };
 		CE6EE1312C45698D00ED8D38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE1302C45698D00ED8D38 /* SceneDelegate.swift */; };
-		CE6EE1332C45698D00ED8D38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE1322C45698D00ED8D38 /* ViewController.swift */; };
+		CE6EE1332C45698D00ED8D38 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE1322C45698D00ED8D38 /* HomeViewController.swift */; };
 		CE6EE1382C45698E00ED8D38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6EE1372C45698E00ED8D38 /* Assets.xcassets */; };
 		CE6EE1462C45698E00ED8D38 /* Meu_GuiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE1452C45698E00ED8D38 /* Meu_GuiaTests.swift */; };
 		CE6EE1502C45698E00ED8D38 /* Meu_GuiaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE14F2C45698E00ED8D38 /* Meu_GuiaUITests.swift */; };
 		CE6EE1522C45698E00ED8D38 /* Meu_GuiaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE1512C45698E00ED8D38 /* Meu_GuiaUITestsLaunchTests.swift */; };
+		CE6EE1602C456CC400ED8D38 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE15F2C456CC400ED8D38 /* BaseViewController.swift */; };
+		CE6EE1622C456CDF00ED8D38 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE1612C456CDF00ED8D38 /* BaseView.swift */; };
+		CE6EE1662C456D4900ED8D38 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE1652C456D4900ED8D38 /* HomeView.swift */; };
+		CE6EE1682C45717100ED8D38 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE1672C45717100ED8D38 /* HomeCoordinator.swift */; };
+		CE6EE16A2C4572A800ED8D38 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE1692C4572A700ED8D38 /* HomeViewModel.swift */; };
+		CE6EE16C2C4575AD00ED8D38 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE16B2C4575AD00ED8D38 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +43,7 @@
 		CE6EE12B2C45698D00ED8D38 /* Meu Guia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meu Guia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6EE12E2C45698D00ED8D38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE6EE1302C45698D00ED8D38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE6EE1322C45698D00ED8D38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE6EE1322C45698D00ED8D38 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE6EE1372C45698E00ED8D38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE6EE13C2C45698E00ED8D38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE6EE1412C45698E00ED8D38 /* Meu GuiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meu GuiaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +51,12 @@
 		CE6EE14B2C45698E00ED8D38 /* Meu GuiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meu GuiaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6EE14F2C45698E00ED8D38 /* Meu_GuiaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meu_GuiaUITests.swift; sourceTree = "<group>"; };
 		CE6EE1512C45698E00ED8D38 /* Meu_GuiaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meu_GuiaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CE6EE15F2C456CC400ED8D38 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		CE6EE1612C456CDF00ED8D38 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		CE6EE1652C456D4900ED8D38 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CE6EE1672C45717100ED8D38 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		CE6EE1692C4572A700ED8D38 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		CE6EE16B2C4575AD00ED8D38 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +107,10 @@
 		CE6EE12D2C45698D00ED8D38 /* Meu Guia */ = {
 			isa = PBXGroup;
 			children = (
+				CE6EE1632C456D2F00ED8D38 /* Scenes */,
+				CE6EE15E2C456CB000ED8D38 /* Utils */,
 				CE6EE12E2C45698D00ED8D38 /* AppDelegate.swift */,
 				CE6EE1302C45698D00ED8D38 /* SceneDelegate.swift */,
-				CE6EE1322C45698D00ED8D38 /* ViewController.swift */,
 				CE6EE1372C45698E00ED8D38 /* Assets.xcassets */,
 				CE6EE13C2C45698E00ED8D38 /* Info.plist */,
 			);
@@ -119,6 +132,35 @@
 				CE6EE1512C45698E00ED8D38 /* Meu_GuiaUITestsLaunchTests.swift */,
 			);
 			path = "Meu GuiaUITests";
+			sourceTree = "<group>";
+		};
+		CE6EE15E2C456CB000ED8D38 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CE6EE15F2C456CC400ED8D38 /* BaseViewController.swift */,
+				CE6EE1612C456CDF00ED8D38 /* BaseView.swift */,
+				CE6EE16B2C4575AD00ED8D38 /* Coordinator.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CE6EE1632C456D2F00ED8D38 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CE6EE1642C456D3700ED8D38 /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		CE6EE1642C456D3700ED8D38 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CE6EE1672C45717100ED8D38 /* HomeCoordinator.swift */,
+				CE6EE1322C45698D00ED8D38 /* HomeViewController.swift */,
+				CE6EE1652C456D4900ED8D38 /* HomeView.swift */,
+				CE6EE1692C4572A700ED8D38 /* HomeViewModel.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,9 +292,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE6EE1332C45698D00ED8D38 /* ViewController.swift in Sources */,
+				CE6EE1332C45698D00ED8D38 /* HomeViewController.swift in Sources */,
+				CE6EE1602C456CC400ED8D38 /* BaseViewController.swift in Sources */,
+				CE6EE1622C456CDF00ED8D38 /* BaseView.swift in Sources */,
+				CE6EE16A2C4572A800ED8D38 /* HomeViewModel.swift in Sources */,
+				CE6EE1662C456D4900ED8D38 /* HomeView.swift in Sources */,
 				CE6EE12F2C45698D00ED8D38 /* AppDelegate.swift in Sources */,
+				CE6EE1682C45717100ED8D38 /* HomeCoordinator.swift in Sources */,
 				CE6EE1312C45698D00ED8D38 /* SceneDelegate.swift in Sources */,
+				CE6EE16C2C4575AD00ED8D38 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
