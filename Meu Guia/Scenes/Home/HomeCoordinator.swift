@@ -2,7 +2,8 @@ import UIKit
 
 // MARK: - HomeCoordinatorProtocol
 protocol HomeCoordinatorProtocol {
-
+  func redirectToPlaces()
+  func redirectToMap()
 }
 
 // MARK: - HomeCoordinator
@@ -20,6 +21,14 @@ final class HomeCoordinator: Coordinator {
   }
 }
 
+// MARK: - HomeCoordinatorProtocol
 extension HomeCoordinator: HomeCoordinatorProtocol {
+  func redirectToPlaces() {
+    let coordinator = PlacesCoordinator(navigationController: navigationController)
+    coordinator.start()
+  }
 
+  func redirectToMap() {
+
+  }
 }
