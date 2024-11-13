@@ -3,6 +3,7 @@ import UIKit
 extension UIColor {
   static var primaryColor = UIColor(hex: TargetUtils.getPrimaryColor())
   static var buttonBaseColor = UIColor(hex: TargetUtils.getButtonColor())
+  static var lightColor = UIColor(hex: TargetUtils.getLightColor())
   static var warmGray = UIColor(hex: "979797")
 }
 
