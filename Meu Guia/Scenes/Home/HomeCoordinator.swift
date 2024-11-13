@@ -1,13 +1,13 @@
 import UIKit
 
 // MARK: - HomeCoordinatorProtocol
-protocol HomeCoordinatorProtocol {
-  func redirectToPlaces()
-  func redirectToMap()
+protocol HomeCoordinatorProtocol: Coordinator {
+  func redirectToPlaces(places: [PlaceModel])
+  func redirectToMap(places: [PlaceModel])
 }
 
 // MARK: - HomeCoordinator
-final class HomeCoordinator: Coordinator {
+final class HomeCoordinator: HomeCoordinatorProtocol {
   var navigationController: UINavigationController
 
   init(navigationController: UINavigationController) {
@@ -19,16 +19,20 @@ final class HomeCoordinator: Coordinator {
     let viewController = HomeViewController(viewModel: viewModel)
     navigationController.pushViewController(viewController, animated: false)
   }
+
+  func showError(_ error: ErrorResponse) {
+
+  }
 }
 
 // MARK: - HomeCoordinatorProtocol
-extension HomeCoordinator: HomeCoordinatorProtocol {
-  func redirectToPlaces() {
-    let coordinator = PlacesCoordinator(navigationController: navigationController)
+extension HomeCoordinator {
+  func redirectToPlaces(places: [PlaceModel]) {
+    let coordinator = PlacesCoordinator(navigationController: navigationController, places: places)
     coordinator.start()
   }
 
-  func redirectToMap() {
+  func redirectToMap(places: [PlaceModel]) {
 
   }
 }

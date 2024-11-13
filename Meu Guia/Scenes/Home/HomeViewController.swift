@@ -1,5 +1,10 @@
 import UIKit
 
+protocol HomeViewControllerProtocol: AnyObject {
+  func startLoading()
+  func stopLoading()
+}
+
 // MARK: - HomeViewController
 class HomeViewController: BaseViewController<HomeView> {
   // MARK: - Properties
@@ -16,6 +21,12 @@ class HomeViewController: BaseViewController<HomeView> {
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    viewModel.setupDelegate(delegate: self)
+  }
 }
 
 // MARK: - HomeViewProtocol
@@ -26,5 +37,16 @@ extension HomeViewController: HomeViewProtocol {
 
   func redirectToMap() {
     viewModel.redirectToMap()
+  }
+}
+
+// MARK: - HomeViewControllerProtocol
+extension HomeViewController: HomeViewControllerProtocol {
+  func startLoading() {
+    baseView.startLoading()
+  }
+
+  func stopLoading() {
+    baseView.stopLoading()
   }
 }
