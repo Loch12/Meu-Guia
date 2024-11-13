@@ -39,6 +39,13 @@
 		CE7737572CE3C32D00868CEF /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE7737512CE3C32D00868CEF /* Nunito-Bold.ttf */; };
 		CE7737582CE3C32D00868CEF /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE7737532CE3C32D00868CEF /* Nunito-Regular.ttf */; };
 		CE77375A2CE3C43E00868CEF /* UIFont+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7737592CE3C43D00868CEF /* UIFont+extension.swift */; };
+		CEAEF9462CE5129E00CF227B /* UITableView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF9452CE5129D00CF227B /* UITableView+extension.swift */; };
+		CEAEF9492CE5151900CF227B /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF9482CE5151800CF227B /* PlaceTableViewCell.swift */; };
+		CEAEF94E2CE5237600CF227B /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF94D2CE5237500CF227B /* PlaceModel.swift */; };
+		CEAEF9502CE524B100CF227B /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF94F2CE524B000CF227B /* HomeWorker.swift */; };
+		CEAEF9542CE5259F00CF227B /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF9532CE5259B00CF227B /* ErrorResponse.swift */; };
+		CEAEF9562CE525CE00CF227B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF9552CE525CE00CF227B /* NetworkError.swift */; };
+		CEAEF95A2CE533C400CF227B /* CustomActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF9592CE533C300CF227B /* CustomActivityIndicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +101,13 @@
 		CE7737532CE3C32D00868CEF /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		CE7737542CE3C32D00868CEF /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		CE7737592CE3C43D00868CEF /* UIFont+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+extension.swift"; sourceTree = "<group>"; };
+		CEAEF9452CE5129D00CF227B /* UITableView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+extension.swift"; sourceTree = "<group>"; };
+		CEAEF9482CE5151800CF227B /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
+		CEAEF94D2CE5237500CF227B /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		CEAEF94F2CE524B000CF227B /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
+		CEAEF9532CE5259B00CF227B /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		CEAEF9552CE525CE00CF227B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		CEAEF9592CE533C300CF227B /* CustomActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivityIndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +138,7 @@
 		CE56D5C12C63D88800164678 /* PlacesListing */ = {
 			isa = PBXGroup;
 			children = (
+				CEAEF9472CE5151100CF227B /* Views */,
 				CE4A873A2CE3D4AC00EF8EFF /* PlacesCoordinator.swift */,
 				CE56D5C22C63D8C300164678 /* PlacesListingView.swift */,
 				CE56D5C62C63D91600164678 /* PlacesListingViewController.swift */,
@@ -164,7 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				CE7737192CE3B94F00868CEF /* Targets */,
-				CE7737162CE3B6E600868CEF /* Extensions */,
+				CEAEF9572CE533AC00CF227B /* Views */,
+				CEAEF9512CE5257900CF227B /* Network */,
 				CE6EE1632C456D2F00ED8D38 /* Scenes */,
 				CE6EE15E2C456CB000ED8D38 /* Utils */,
 				CE77374B2CE3C06800868CEF /* Support */,
@@ -175,6 +191,7 @@
 		CE6EE15E2C456CB000ED8D38 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				CE7737162CE3B6E600868CEF /* Extensions */,
 				CE77371F2CE3B9C000868CEF /* Target */,
 				CE6EE15F2C456CC400ED8D38 /* BaseViewController.swift */,
 				CE6EE1612C456CDF00ED8D38 /* BaseView.swift */,
@@ -196,6 +213,7 @@
 		CE6EE1642C456D3700ED8D38 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CEAEF94F2CE524B000CF227B /* HomeWorker.swift */,
 				CE6EE1672C45717100ED8D38 /* HomeCoordinator.swift */,
 				CE6EE1652C456D4900ED8D38 /* HomeView.swift */,
 				CE6EE1322C45698D00ED8D38 /* HomeViewController.swift */,
@@ -207,6 +225,7 @@
 		CE7737162CE3B6E600868CEF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CEAEF9452CE5129D00CF227B /* UITableView+extension.swift */,
 				CE4A873C2CE3D7C800EF8EFF /* UIViewController+extension.swift */,
 				CE7737592CE3C43D00868CEF /* UIFont+extension.swift */,
 				CE7737492CE3BF4700868CEF /* UIImage+extension.swift */,
@@ -280,6 +299,48 @@
 				CE7737542CE3C32D00868CEF /* Nunito-SemiBold.ttf */,
 			);
 			path = Nunito;
+			sourceTree = "<group>";
+		};
+		CEAEF9472CE5151100CF227B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEAEF9482CE5151800CF227B /* PlaceTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CEAEF9512CE5257900CF227B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CEAEF9522CE5258200CF227B /* Models */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CEAEF9522CE5258200CF227B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEAEF9552CE525CE00CF227B /* NetworkError.swift */,
+				CEAEF9532CE5259B00CF227B /* ErrorResponse.swift */,
+				CEAEF94D2CE5237500CF227B /* PlaceModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CEAEF9572CE533AC00CF227B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEAEF9582CE533BD00CF227B /* CustomViews */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CEAEF9582CE533BD00CF227B /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				CEAEF9592CE533C300CF227B /* CustomActivityIndicatorView.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,7 +502,10 @@
 			files = (
 				CE6EE1332C45698D00ED8D38 /* HomeViewController.swift in Sources */,
 				CE56D5C72C63D91600164678 /* PlacesListingViewController.swift in Sources */,
+				CEAEF94E2CE5237600CF227B /* PlaceModel.swift in Sources */,
 				CE6EE1602C456CC400ED8D38 /* BaseViewController.swift in Sources */,
+				CEAEF9502CE524B100CF227B /* HomeWorker.swift in Sources */,
+				CEAEF9492CE5151900CF227B /* PlaceTableViewCell.swift in Sources */,
 				CE77374A2CE3BF4C00868CEF /* UIImage+extension.swift in Sources */,
 				CE7737462CE3BC0C00868CEF /* TargetPlist.swift in Sources */,
 				CE6EE1622C456CDF00ED8D38 /* BaseView.swift in Sources */,
@@ -449,8 +513,12 @@
 				CE6EE16A2C4572A800ED8D38 /* HomeViewModel.swift in Sources */,
 				CE6EE1662C456D4900ED8D38 /* HomeView.swift in Sources */,
 				CE7737262CE3BA4A00868CEF /* TargetUtilsGeneralProtocol.swift in Sources */,
+				CEAEF9462CE5129E00CF227B /* UITableView+extension.swift in Sources */,
 				CE7737182CE3B6EF00868CEF /* UIView+extension.swift in Sources */,
+				CEAEF9562CE525CE00CF227B /* NetworkError.swift in Sources */,
+				CEAEF9542CE5259F00CF227B /* ErrorResponse.swift in Sources */,
 				CE7737482CE3BD8000868CEF /* UIColor+extension.swift in Sources */,
+				CEAEF95A2CE533C400CF227B /* CustomActivityIndicatorView.swift in Sources */,
 				CE7737242CE3BA0900868CEF /* TargetUtilsStringProtocol.swift in Sources */,
 				CE56D5C32C63D8C300164678 /* PlacesListingView.swift in Sources */,
 				CE77375A2CE3C43E00868CEF /* UIFont+extension.swift in Sources */,

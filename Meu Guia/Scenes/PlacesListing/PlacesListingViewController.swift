@@ -19,6 +19,22 @@ class PlacesListingViewController: BaseViewController<PlacesListingView> {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    title = "Locais"
     setupNavBarBackButton()
+    baseView.setupDelegate(delegate: self, dataSource: self)
+  }
+}
+
+extension PlacesListingViewController: UITableViewDelegate, UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return viewModel.getHowManyPlaces()
+  }
+
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let place = viewModel.getPlace(by: indexPath.row) else { return UITableViewCell() }
+
+    let cell = tableView.dequeueReusableCell(for: indexPath) as PlaceTableViewCell
+    cell.configure(text: place.name, image: .icHome)
+    return cell
   }
 }

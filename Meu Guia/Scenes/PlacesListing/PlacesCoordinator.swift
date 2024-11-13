@@ -8,15 +8,21 @@ protocol PlacesCoordinatorProtocol {
 // MARK: - PlacesCoordinator
 final class PlacesCoordinator: Coordinator {
   var navigationController: UINavigationController
+  let places: [PlaceModel]
 
-  init(navigationController: UINavigationController) {
+  init(navigationController: UINavigationController, places: [PlaceModel]) {
     self.navigationController = navigationController
+    self.places = places
   }
 
   func start() {
-    let viewModel = PlacesListingViewModel()
+    let viewModel = PlacesListingViewModel(places: places)
     let viewController = PlacesListingViewController(viewModel: viewModel)
     navigationController.pushViewController(viewController, animated: true)
+  }
+
+  func showError(_ error: ErrorResponse) {
+
   }
 }
 
