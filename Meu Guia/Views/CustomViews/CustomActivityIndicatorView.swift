@@ -1,6 +1,5 @@
 import UIKit
 
-
 class CustomActivityIndicatorView: UIView {
   private let activity: UIActivityIndicatorView = {
     let activity = UIActivityIndicatorView(style: .whiteLarge)
