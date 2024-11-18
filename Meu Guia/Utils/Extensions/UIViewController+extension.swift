@@ -16,4 +16,13 @@ extension UIViewController {
       navigationItem.leftBarButtonItem = leftButton
     }
   }
+
+  func hideKeyboardWhenTappedAround() {
+    let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboardAction))
+    view.addGestureRecognizer(tap)
+  }
+
+  @objc func dismissKeyboardAction() {
+    view.endEditing(true)
+  }
 }

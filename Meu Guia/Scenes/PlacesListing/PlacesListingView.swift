@@ -41,8 +41,13 @@ class PlacesListingView: BaseView {
 }
 
 extension PlacesListingView {
-  func setupDelegate(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
+  func setupDelegate(delegate: UITableViewDelegate & UITableViewDataSource & UISearchBarDelegate) {
     tableView.delegate = delegate
-    tableView.dataSource = dataSource
+    tableView.dataSource = delegate
+    searchBar.delegate = delegate
+  }
+
+  func reloadData() {
+    tableView.reloadData()
   }
 }

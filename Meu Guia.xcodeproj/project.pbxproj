@@ -39,6 +39,7 @@
 		CE7737572CE3C32D00868CEF /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE7737512CE3C32D00868CEF /* Nunito-Bold.ttf */; };
 		CE7737582CE3C32D00868CEF /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE7737532CE3C32D00868CEF /* Nunito-Regular.ttf */; };
 		CE77375A2CE3C43E00868CEF /* UIFont+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7737592CE3C43D00868CEF /* UIFont+extension.swift */; };
+		CEAE727B2CEBB453009DDE12 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE727A2CEBB452009DDE12 /* String+extension.swift */; };
 		CEAEF9462CE5129E00CF227B /* UITableView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF9452CE5129D00CF227B /* UITableView+extension.swift */; };
 		CEAEF9492CE5151900CF227B /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF9482CE5151800CF227B /* PlaceTableViewCell.swift */; };
 		CEAEF94E2CE5237600CF227B /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF94D2CE5237500CF227B /* PlaceModel.swift */; };
@@ -101,6 +102,7 @@
 		CE7737532CE3C32D00868CEF /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		CE7737542CE3C32D00868CEF /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		CE7737592CE3C43D00868CEF /* UIFont+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+extension.swift"; sourceTree = "<group>"; };
+		CEAE727A2CEBB452009DDE12 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		CEAEF9452CE5129D00CF227B /* UITableView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+extension.swift"; sourceTree = "<group>"; };
 		CEAEF9482CE5151800CF227B /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
 		CEAEF94D2CE5237500CF227B /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 		CE7737162CE3B6E600868CEF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CEAE727A2CEBB452009DDE12 /* String+extension.swift */,
 				CEAEF9452CE5129D00CF227B /* UITableView+extension.swift */,
 				CE4A873C2CE3D7C800EF8EFF /* UIViewController+extension.swift */,
 				CE7737592CE3C43D00868CEF /* UIFont+extension.swift */,
@@ -518,6 +521,7 @@
 				CEAEF9562CE525CE00CF227B /* NetworkError.swift in Sources */,
 				CEAEF9542CE5259F00CF227B /* ErrorResponse.swift in Sources */,
 				CE7737482CE3BD8000868CEF /* UIColor+extension.swift in Sources */,
+				CEAE727B2CEBB453009DDE12 /* String+extension.swift in Sources */,
 				CEAEF95A2CE533C400CF227B /* CustomActivityIndicatorView.swift in Sources */,
 				CE7737242CE3BA0900868CEF /* TargetUtilsStringProtocol.swift in Sources */,
 				CE56D5C32C63D8C300164678 /* PlacesListingView.swift in Sources */,

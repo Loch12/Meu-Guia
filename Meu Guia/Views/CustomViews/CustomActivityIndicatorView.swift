@@ -55,4 +55,3 @@ class CustomActivityIndicatorView: UIView {
     activity.stopAnimating()
   }
 }
-

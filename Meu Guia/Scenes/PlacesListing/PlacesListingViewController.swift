@@ -1,5 +1,10 @@
 import UIKit
 
+// MARK: - PlacesListingViewControllerProtocol
+protocol PlacesListingViewControllerProtocol: AnyObject {
+  func reloadInfo()
+}
+
 // MARK: - PlacesListingViewController
 class PlacesListingViewController: BaseViewController<PlacesListingView> {
   // MARK: - Properties
@@ -20,12 +25,27 @@ class PlacesListingViewController: BaseViewController<PlacesListingView> {
     super.viewDidLoad()
 
     title = "Locais"
+    setupActions()
+    setupDelegates()
+  }
+
+  func setupActions() {
     setupNavBarBackButton()
-    baseView.setupDelegate(delegate: self, dataSource: self)
+    hideKeyboardWhenTappedAround()
+  }
+
+  func setupDelegates() {
+    viewModel.setupDelegate(delegate: self)
+    baseView.setupDelegate(delegate: self)
   }
 }
 
+// MARK: - TableView
 extension PlacesListingViewController: UITableViewDelegate, UITableViewDataSource {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    viewModel.didSelect(at: indexPath)
+  }
+
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return viewModel.getHowManyPlaces()
   }
@@ -36,5 +56,23 @@ extension PlacesListingViewController: UITableViewDelegate, UITableViewDataSourc
     let cell = tableView.dequeueReusableCell(for: indexPath) as PlaceTableViewCell
     cell.configure(text: place.name, image: .icHome)
     return cell
+  }
+}
+
+// MARK: - SearchBar
+extension PlacesListingViewController: UISearchBarDelegate {
+  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    viewModel.filterPlaces(by: searchText)
+  }
+
+  func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    searchBar.resignFirstResponder()
+  }
+}
+
+// MARK: - PlacesListingViewControllerProtocol
+extension PlacesListingViewController: PlacesListingViewControllerProtocol {
+  func reloadInfo() {
+    baseView.reloadData()
   }
 }
