@@ -29,7 +29,7 @@ final class PlacesCoordinator: Coordinator {
 // MARK: - PlacesCoordinatorProtocol
 extension PlacesCoordinator: PlacesCoordinatorProtocol {
   func redirectTo(place: PlaceModel) {
-    let viewModel = PlaceDetailViewModel()
+    let viewModel = PlaceDetailViewModel(place: place)
     let viewController = PlaceDetailViewController(viewModel: viewModel)
     navigationController.pushViewController(viewController, animated: true)
   }

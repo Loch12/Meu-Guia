@@ -9,14 +9,9 @@ class HomeWorker: HomeWorkerProtocol {
     let result = true
     switch result {
     case true:
-      completion(.success([PlaceModel(name: "Lugar teste", image: "Teste", description: "Teste"),
-                           PlaceModel(name: "1", image: "Teste", description: "Teste"),
-                           PlaceModel(name: "2", image: "Teste", description: "Teste"),
-                           PlaceModel(name: "3", image: "Teste", description: "Teste"),
-                           PlaceModel(name: "perigo", image: "Teste", description: "Teste"),
-                           PlaceModel(name: "sem", image: "Teste", description: "Teste"),
-                           PlaceModel(name: "      ", image: "Teste", description: "Teste"),
-                           PlaceModel(name: "lugar", image: "Teste", description: "Teste")]))
+      completion(.success([PlaceModel(name: "Sugrad", image: "Teste", description: "Teste", site: "Teste", phone: "27995325877", schedule: "Teste"),
+                           PlaceModel(name: "Cantina", image: "Teste", description: "Teste", site: "Teste", phone: "Teste", schedule: "Teste"),
+                           PlaceModel(name: "RU", image: "Teste", description: "Teste", site: "Teste", phone: "Teste", schedule: "Teste")]))
     case false:
       completion(.failure(ErrorResponse(error: .unexpected)))
     }

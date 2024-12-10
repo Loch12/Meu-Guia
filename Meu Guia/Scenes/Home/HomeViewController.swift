@@ -25,6 +25,7 @@ class HomeViewController: BaseViewController<HomeView> {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    title = "Home"
     viewModel.setupDelegate(delegate: self)
   }
 }

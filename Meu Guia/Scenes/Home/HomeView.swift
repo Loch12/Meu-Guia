@@ -25,7 +25,7 @@ class HomeView: BaseView {
     label.text = TargetUtils.getHomeDescription()
     label.textAlignment = .center
     label.numberOfLines = 0
-    label.textColor = .white
+    label.textColor = .primaryColor
     label.font = .nunito(.bold, size: 24)
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
@@ -54,7 +54,7 @@ class HomeView: BaseView {
   }()
 
   override func setup() {
-    backgroundColor = .primaryColor
+    backgroundColor = .white
     addSubviews(homeIcon,
                 homeDescription,
                 placesButton,

@@ -24,6 +24,11 @@ class PlacesListingView: BaseView {
   override func setup() {
     backgroundColor = .white
     addSubviews(searchBar, tableView)
+    if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
+      textfield.attributedPlaceholder = NSAttributedString(string: textfield.placeholder ?? "",
+                                                           attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+      textfield.backgroundColor = .lightColor
+    }
   }
 
   override func setupConstraints() {

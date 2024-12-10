@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 extension String {
   static var empty: String {
@@ -27,5 +27,21 @@ extension String {
 
   func removeWhiteSpaces() -> String {
     return self.trimmingCharacters(in: .whitespacesAndNewlines)
+  }
+
+  func loadRemoteImage(completion: @escaping (UIImage?) -> Void) {
+    guard let url = URL(string: self) else {
+      completion(nil)
+      return
+    }
+    DispatchQueue.global().async {
+      do {
+        let imageData = try Data(contentsOf: url)
+        let image = UIImage(data: imageData)
+        completion(image)
+      } catch {
+        completion(nil)
+      }
+    }
   }
 }
