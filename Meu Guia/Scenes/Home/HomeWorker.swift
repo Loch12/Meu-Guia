@@ -9,11 +9,30 @@ class HomeWorker: HomeWorkerProtocol {
     let result = true
     switch result {
     case true:
-      completion(.success([PlaceModel(name: "Sugrad", image: "Teste", description: "Teste", site: "Teste", phone: "27995325877", schedule: "Teste"),
-                           PlaceModel(name: "Cantina", image: "Teste", description: "Teste", site: "Teste", phone: "Teste", schedule: "Teste"),
-                           PlaceModel(name: "RU", image: "Teste", description: "Teste", site: "Teste", phone: "Teste", schedule: "Teste")]))
+      if let mock = loadMockPlaces() {
+        completion(.success(mock))
+        return
+      }
+      completion(.failure(ErrorResponse(error: .unexpected)))
     case false:
       completion(.failure(ErrorResponse(error: .unexpected)))
+    }
+  }
+
+  func loadMockPlaces() -> [PlaceModel]? {
+    guard let url = Bundle.main.url(forResource: "mock", withExtension: "json") else {
+      print("JSON file not found")
+      return nil
+    }
+
+    do {
+      let data = try Data(contentsOf: url)
+      let decoder = JSONDecoder()
+      let places = try decoder.decode([PlaceModel].self, from: data)
+      return places
+    } catch {
+      print("Error decoding JSON: \(error)")
+      return nil
     }
   }
 }

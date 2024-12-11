@@ -26,7 +26,7 @@ class PlacesListingView: BaseView {
     addSubviews(searchBar, tableView)
     if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
       textfield.attributedPlaceholder = NSAttributedString(string: textfield.placeholder ?? "",
-                                                           attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+                                                           attributes: [.foregroundColor: UIColor.white])
       textfield.backgroundColor = .lightColor
     }
   }

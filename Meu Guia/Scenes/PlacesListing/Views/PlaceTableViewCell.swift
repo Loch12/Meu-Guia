@@ -25,6 +25,7 @@ class PlaceTableViewCell: UITableViewCell {
     image.layer.cornerRadius = 7
     image.translatesAutoresizingMaskIntoConstraints = false
     image.clipsToBounds = true
+    image.image = .icHome
     return image
   }()
 
@@ -71,8 +72,12 @@ class PlaceTableViewCell: UITableViewCell {
     ])
   }
 
-  func configure(text: String?, image: UIImage?) {
-    icon.image = image
+  func configure(text: String?, image: String?) {
     title.text = text
+    image?.loadRemoteImage { image in
+      DispatchQueue.main.async {
+        self.icon.image = image ?? .icHome
+      }
+    }
   }
 }

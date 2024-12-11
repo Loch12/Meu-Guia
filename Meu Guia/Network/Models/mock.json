@@ -1,0 +1,122 @@
+[
+  {
+    "name":"Guriri Beach",
+    "image":"https://example.com/images/guriri_beach.jpg",
+    "description":"Uma das praias mais populares de São Mateus, conhecida por suas águas calmas e infraestrutura turística.",
+    "site":"https://saomateus.es.gov.br",
+    "phone":"(27) 3763-1234",
+    "schedule":"Todos os dias, 06:00 - 20:00",
+    "coordinates":{
+      "latitude":-18.7294,
+      "longitude":-39.8542
+    }
+  },
+  {
+    "name":"Praia de Urussuquara",
+    "image":"https://example.com/images/urussuquara.jpg",
+    "description":"Uma praia tranquila e pouco explorada, ideal para quem busca sossego em meio à natureza.",
+    "site":"https://saomateus.es.gov.br",
+    "phone":"(27) 3763-5678",
+    "schedule":"Todos os dias, 06:00 - 18:00",
+    "coordinates":{
+      "latitude":-18.9402,
+      "longitude":-39.8693
+    }
+  },
+  {
+    "name":"Cais de São Mateus",
+    "image":"https://example.com/images/cais_sao_mateus.jpg",
+    "description":"Um local histórico e cultural às margens do Rio Cricaré, com vista privilegiada.",
+    "site":"https://saomateus.es.gov.br",
+    "phone":"(27) 3763-9100",
+    "schedule":"Todos os dias, 08:00 - 22:00",
+    "coordinates":{
+      "latitude":-18.7150,
+      "longitude":-39.8599
+    }
+  },
+  {
+    "name":"Praça da Matriz",
+    "image":"https://example.com/images/praca_matriz.jpg",
+    "description":"Uma praça charmosa no centro histórico da cidade, rodeada por casarões coloniais.",
+    "site":"https://saomateus.es.gov.br",
+    "phone":"(27) 3763-3456",
+    "schedule":"Todos os dias, 06:00 - 22:00",
+    "coordinates":{
+      "latitude":-18.7161,
+      "longitude":-39.8600
+    }
+  },
+  {
+    "name":"Igreja Velha",
+    "image":"https://example.com/images/igreja_velha.jpg",
+    "description":"Ruínas de uma antiga igreja, um marco histórico e turístico em São Mateus.",
+    "site":"https://saomateus.es.gov.br",
+    "phone":"(27) 3763-7890",
+    "schedule":"Todos os dias, 07:00 - 18:00",
+    "coordinates":{
+      "latitude":-18.7155,
+      "longitude":-39.8584
+    }
+  },
+  {
+    "name":"Rio Cricaré",
+    "image":"https://example.com/images/rio_cricare.jpg",
+    "description":"Um rio que corta a cidade, perfeito para passeios de barco e esportes aquáticos.",
+    "site":"https://saomateus.es.gov.br",
+    "phone":"(27) 3763-2222",
+    "schedule":"Todos os dias, 06:00 - 18:00",
+    "coordinates":{
+      "latitude":-18.7189,
+      "longitude":-39.8578
+    }
+  },
+  {
+    "name":"Casa da Cultura",
+    "image":"https://example.com/images/casa_cultura.jpg",
+    "description":"Um espaço dedicado à preservação da história e cultura de São Mateus.",
+    "site":"https://saomateus.es.gov.br",
+    "phone":"(27) 3763-3344",
+    "schedule":"Segunda a Sexta, 08:00 - 17:00",
+    "coordinates":{
+      "latitude":-18.7190,
+      "longitude":-39.8602
+    }
+  },
+  {
+    "name":"Manguezal de São Mateus",
+    "image":"https://example.com/images/manguezal.jpg",
+    "description":"Um ecossistema rico e preservado, ideal para trilhas ecológicas e observação de fauna.",
+    "site":"https://saomateus.es.gov.br",
+    "phone":"(27) 3763-4455",
+    "schedule":"Todos os dias, 06:00 - 18:00",
+    "coordinates":{
+      "latitude":-18.7205,
+      "longitude":-39.8563
+    }
+  },
+  {
+    "name":"Lagoa do Pau",
+    "image":"https://example.com/images/lagoa_pau.jpg",
+    "description":"Um refúgio natural, ideal para piqueniques e atividades ao ar livre.",
+    "site":"https://saomateus.es.gov.br",
+    "phone":"(27) 3763-5566",
+    "schedule":"Todos os dias, 07:00 - 18:00",
+    "coordinates":{
+      "latitude":-18.7245,
+      "longitude":-39.8537
+    }
+  },
+  {
+    "name":"Fazenda Itaúnas",
+    "image":"https://example.com/images/fazenda_itaunas.jpg",
+    "description":"Uma fazenda histórica com atrações culturais e gastronômicas.",
+    "site":"https://saomateus.es.gov.br",
+    "phone":"(27) 3763-6677",
+    "schedule":"Todos os dias, 08:00 - 18:00",
+    "coordinates":{
+      "latitude":-18.7390,
+      "longitude":-39.8594
+    }
+  }
+]

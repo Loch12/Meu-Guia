@@ -54,7 +54,7 @@ extension PlacesListingViewController: UITableViewDelegate, UITableViewDataSourc
     guard let place = viewModel.getPlace(by: indexPath.row) else { return UITableViewCell() }
 
     let cell = tableView.dequeueReusableCell(for: indexPath) as PlaceTableViewCell
-    cell.configure(text: place.name, image: .icHome)
+    cell.configure(text: place.name, image: place.image)
     return cell
   }
 }

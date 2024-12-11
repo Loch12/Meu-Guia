@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE398C442D09EE1000F1A58E /* PlacesMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE398C432D09EE0F00F1A58E /* PlacesMapView.swift */; };
+		CE398C462D09EE1F00F1A58E /* PlacesMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE398C452D09EE1A00F1A58E /* PlacesMapViewController.swift */; };
+		CE398C482D09EE2600F1A58E /* PlacesMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE398C472D09EE2100F1A58E /* PlacesMapViewModel.swift */; };
+		CE398C4A2D09EE3400F1A58E /* PlacesMapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE398C492D09EE3000F1A58E /* PlacesMapCoordinator.swift */; };
+		CE398C502D09F33B00F1A58E /* mock.json in Resources */ = {isa = PBXBuildFile; fileRef = CE398C4F2D09F33B00F1A58E /* mock.json */; };
+		CE398C522D09FED200F1A58E /* MKMapView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE398C512D09FED200F1A58E /* MKMapView+extension.swift */; };
 		CE4A873B2CE3D4AD00EF8EFF /* PlacesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A873A2CE3D4AC00EF8EFF /* PlacesCoordinator.swift */; };
 		CE4A873D2CE3D7C900EF8EFF /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A873C2CE3D7C800EF8EFF /* UIViewController+extension.swift */; };
 		CE56D5C32C63D8C300164678 /* PlacesListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56D5C22C63D8C300164678 /* PlacesListingView.swift */; };
@@ -68,6 +74,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE398C432D09EE0F00F1A58E /* PlacesMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesMapView.swift; sourceTree = "<group>"; };
+		CE398C452D09EE1A00F1A58E /* PlacesMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesMapViewController.swift; sourceTree = "<group>"; };
+		CE398C472D09EE2100F1A58E /* PlacesMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesMapViewModel.swift; sourceTree = "<group>"; };
+		CE398C492D09EE3000F1A58E /* PlacesMapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesMapCoordinator.swift; sourceTree = "<group>"; };
+		CE398C4F2D09F33B00F1A58E /* mock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mock.json; sourceTree = "<group>"; };
+		CE398C512D09FED200F1A58E /* MKMapView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+extension.swift"; sourceTree = "<group>"; };
 		CE4A873A2CE3D4AC00EF8EFF /* PlacesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesCoordinator.swift; sourceTree = "<group>"; };
 		CE4A873C2CE3D7C800EF8EFF /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		CE56D5C22C63D8C300164678 /* PlacesListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListingView.swift; sourceTree = "<group>"; };
@@ -139,6 +151,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE398C422D09EE0100F1A58E /* PlacesMap */ = {
+			isa = PBXGroup;
+			children = (
+				CE398C492D09EE3000F1A58E /* PlacesMapCoordinator.swift */,
+				CE398C472D09EE2100F1A58E /* PlacesMapViewModel.swift */,
+				CE398C452D09EE1A00F1A58E /* PlacesMapViewController.swift */,
+				CE398C432D09EE0F00F1A58E /* PlacesMapView.swift */,
+			);
+			path = PlacesMap;
+			sourceTree = "<group>";
+		};
 		CE56D5C12C63D88800164678 /* PlacesListing */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +230,7 @@
 		CE6EE1632C456D2F00ED8D38 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CE398C422D09EE0100F1A58E /* PlacesMap */,
 				CE56D5CA2C63D96B00164678 /* PlaceDetail */,
 				CE56D5C12C63D88800164678 /* PlacesListing */,
 				CE6EE1642C456D3700ED8D38 /* Home */,
@@ -229,6 +253,7 @@
 		CE7737162CE3B6E600868CEF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CE398C512D09FED200F1A58E /* MKMapView+extension.swift */,
 				CEAE727A2CEBB452009DDE12 /* String+extension.swift */,
 				CEAEF9452CE5129D00CF227B /* UITableView+extension.swift */,
 				CE4A873C2CE3D7C800EF8EFF /* UIViewController+extension.swift */,
@@ -328,6 +353,7 @@
 				CEAEF9552CE525CE00CF227B /* NetworkError.swift */,
 				CEAEF9532CE5259B00CF227B /* ErrorResponse.swift */,
 				CEAEF94D2CE5237500CF227B /* PlaceModel.swift */,
+				CE398C4F2D09F33B00F1A58E /* mock.json */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -457,6 +483,7 @@
 				CE6EE1382C45698E00ED8D38 /* Assets.xcassets in Resources */,
 				CE77374E2CE3C14500868CEF /* GeneralAssets.xcassets in Resources */,
 				CE77374C2CE3C0D500868CEF /* UFES-info.plist in Resources */,
+				CE398C502D09F33B00F1A58E /* mock.json in Resources */,
 				CE7737552CE3C32D00868CEF /* Nunito-SemiBold.ttf in Resources */,
 				CE7737562CE3C32D00868CEF /* Nunito-ExtraBold.ttf in Resources */,
 				CE7737572CE3C32D00868CEF /* Nunito-Bold.ttf in Resources */,
@@ -513,8 +540,10 @@
 				CEAEF9502CE524B100CF227B /* HomeWorker.swift in Sources */,
 				CEAEF9492CE5151900CF227B /* PlaceTableViewCell.swift in Sources */,
 				CE77374A2CE3BF4C00868CEF /* UIImage+extension.swift in Sources */,
+				CE398C4A2D09EE3400F1A58E /* PlacesMapCoordinator.swift in Sources */,
 				CE7737462CE3BC0C00868CEF /* TargetPlist.swift in Sources */,
 				CE6EE1622C456CDF00ED8D38 /* BaseView.swift in Sources */,
+				CE398C462D09EE1F00F1A58E /* PlacesMapViewController.swift in Sources */,
 				CE4A873D2CE3D7C900EF8EFF /* UIViewController+extension.swift in Sources */,
 				CE6EE16A2C4572A800ED8D38 /* HomeViewModel.swift in Sources */,
 				CE6EE1662C456D4900ED8D38 /* HomeView.swift in Sources */,
@@ -522,8 +551,10 @@
 				CEAEF9462CE5129E00CF227B /* UITableView+extension.swift in Sources */,
 				CE7737182CE3B6EF00868CEF /* UIView+extension.swift in Sources */,
 				CEAEF9562CE525CE00CF227B /* NetworkError.swift in Sources */,
+				CE398C442D09EE1000F1A58E /* PlacesMapView.swift in Sources */,
 				CEAEF9542CE5259F00CF227B /* ErrorResponse.swift in Sources */,
 				CE7737482CE3BD8000868CEF /* UIColor+extension.swift in Sources */,
+				CE398C482D09EE2600F1A58E /* PlacesMapViewModel.swift in Sources */,
 				CEAE727B2CEBB453009DDE12 /* String+extension.swift in Sources */,
 				CEAEF95A2CE533C400CF227B /* CustomActivityIndicatorView.swift in Sources */,
 				CE7737242CE3BA0900868CEF /* TargetUtilsStringProtocol.swift in Sources */,
@@ -538,6 +569,7 @@
 				CE7737212CE3B9C700868CEF /* TargetUtilsColorProtocol.swift in Sources */,
 				CE56D5D02C63D9F000164678 /* PlaceDetailViewModel.swift in Sources */,
 				CE56D5CE2C63D99700164678 /* PlaceDetailViewController.swift in Sources */,
+				CE398C522D09FED200F1A58E /* MKMapView+extension.swift in Sources */,
 				CE56D5C92C63D93B00164678 /* PlacesListingViewModel.swift in Sources */,
 				CE6EE16C2C4575AD00ED8D38 /* Coordinator.swift in Sources */,
 			);

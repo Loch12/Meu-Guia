@@ -19,13 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func setupNavBar() {
     if #available(iOS 15, *) {
-      let navigationBarAppearance = UINavigationBarAppearance()
-      navigationBarAppearance.configureWithOpaqueBackground()
-      navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
-      navigationBarAppearance.backgroundColor = UIColor.clear
-      UINavigationBar.appearance().standardAppearance = navigationBarAppearance
-      UINavigationBar.appearance().compactAppearance = navigationBarAppearance
-      UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+      let appearance = UINavigationBarAppearance()
+      appearance.backgroundColor = UIColor.clear
+      appearance.backgroundEffect = nil
+      appearance.shadowImage = UIImage()
+      appearance.shadowColor = .clear
+      appearance.backgroundImage = UIImage()
+      appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+
+      UINavigationBar.appearance().standardAppearance = appearance
+      UINavigationBar.appearance().compactAppearance = appearance
+      UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
   }
 }

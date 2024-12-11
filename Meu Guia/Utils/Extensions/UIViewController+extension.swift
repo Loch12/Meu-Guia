@@ -5,7 +5,7 @@ extension UIViewController {
     navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
     navigationController?.navigationBar.backIndicatorImage = .icArrowBack
     navigationController?.navigationBar.backIndicatorTransitionMaskImage = .icArrowBack
-    navigationController?.navigationBar.tintColor = .warmGray
+    navigationController?.navigationBar.tintColor = .black
 
     if let action = action {
       let leftButton = UIBarButtonItem(image: .icArrowBack?.withRenderingMode(.alwaysOriginal),

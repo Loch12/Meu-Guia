@@ -53,7 +53,6 @@ class PlaceDetailView: BaseView {
     label.numberOfLines = 0
     label.font = .nunito(.bold, size: 28)
     label.textColor = .black
-    label.textAlignment = .center
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()

@@ -33,6 +33,7 @@ extension HomeCoordinator {
   }
 
   func redirectToMap(places: [PlaceModel]) {
-
+    let coordinator = PlacesMapCoordinator(navigationController: navigationController, places: places)
+    coordinator.start()
   }
 }
