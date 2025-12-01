@@ -1,15 +1,15 @@
 import Foundation
 
 protocol HomeWorkerProtocol {
-  func fetchPlaces(completion: @escaping (Result<[PlaceModel], ErrorResponse>) -> Void)
+  func fetchTours(completion: @escaping (Result<[TourModel], ErrorResponse>) -> Void)
 }
 
 class HomeWorker: HomeWorkerProtocol {
-  func fetchPlaces(completion: @escaping (Result<[PlaceModel], ErrorResponse>) -> Void) {
+  func fetchTours(completion: @escaping (Result<[TourModel], ErrorResponse>) -> Void) {
     let result = true
     switch result {
     case true:
-      if let mock = loadMockPlaces() {
+      if let mock = loadMockTours() {
         completion(.success(mock))
         return
       }
@@ -34,5 +34,9 @@ class HomeWorker: HomeWorkerProtocol {
       print("Error decoding JSON: \(error)")
       return nil
     }
+  }
+
+  func loadMockTours() -> [TourModel]? {
+    return []
   }
 }

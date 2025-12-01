@@ -95,10 +95,10 @@ extension PlacesMapViewController: CLLocationManagerDelegate {
   }
 
   func showAlert(_ error: Error) {
-    let alert = UIAlertController(title: "Erro",
+    let alert = UIAlertController(title: .error,
                                   message: error.localizedDescription,
                                   preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: "OK",
+    alert.addAction(UIAlertAction(title: .okMessage,
                                   style: .default))
     present(alert, animated: true)
   }

@@ -33,7 +33,7 @@ class PlacesMapView: BaseView {
 
   private lazy var detailButtonLabel: UILabel = {
     let label = UILabel()
-    label.text = "Ver detalhes"
+    label.text = .seeDetailsText
     label.textColor = .primaryColor
     label.font = .nunito(.bold, size: 16)
     label.translatesAutoresizingMaskIntoConstraints = false
@@ -42,7 +42,6 @@ class PlacesMapView: BaseView {
 
   // MARK: - Override Method
   override func setup() {
-    backgroundColor = .white
     addSubviews(mapView,
                 detailButtonView)
   }

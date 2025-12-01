@@ -1,10 +1,5 @@
 import UIKit
 
-protocol HomeViewControllerProtocol: AnyObject {
-  func startLoading()
-  func stopLoading()
-}
-
 // MARK: - HomeViewController
 class HomeViewController: BaseViewController<HomeView> {
   // MARK: - Properties
@@ -25,29 +20,18 @@ class HomeViewController: BaseViewController<HomeView> {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    title = "Home"
+    title = .homeTitle
     viewModel.setupDelegate(delegate: self)
   }
 }
 
 // MARK: - HomeViewProtocol
 extension HomeViewController: HomeViewProtocol {
-  func redirectToPlaces() {
-    viewModel.redirectToPlaces()
+  func redirectToOnlineTours() {
+    viewModel.redirectToOnlineTours()
   }
 
-  func redirectToMap() {
-    viewModel.redirectToMap()
-  }
-}
-
-// MARK: - HomeViewControllerProtocol
-extension HomeViewController: HomeViewControllerProtocol {
-  func startLoading() {
-    baseView.startLoading()
-  }
-
-  func stopLoading() {
-    baseView.stopLoading()
+  func redirectToSavedTours() {
+    viewModel.redirectToSavedTours()
   }
 }

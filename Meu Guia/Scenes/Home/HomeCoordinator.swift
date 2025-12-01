@@ -2,8 +2,8 @@ import UIKit
 
 // MARK: - HomeCoordinatorProtocol
 protocol HomeCoordinatorProtocol: Coordinator {
-  func redirectToPlaces(places: [PlaceModel])
-  func redirectToMap(places: [PlaceModel])
+  func redirectToOnlineTours(tours: [TourModel])
+  func redirectToSavedTours(tours: [TourModel])
 }
 
 // MARK: - HomeCoordinator
@@ -27,13 +27,13 @@ final class HomeCoordinator: HomeCoordinatorProtocol {
 
 // MARK: - HomeCoordinatorProtocol
 extension HomeCoordinator {
-  func redirectToPlaces(places: [PlaceModel]) {
-    let coordinator = PlacesCoordinator(navigationController: navigationController, places: places)
+  func redirectToOnlineTours(tours: [TourModel]) {
+    let coordinator = ToursCoordinator(navigationController: navigationController, tours: tours)
     coordinator.start()
   }
 
-  func redirectToMap(places: [PlaceModel]) {
-    let coordinator = PlacesMapCoordinator(navigationController: navigationController, places: places)
+  func redirectToSavedTours(tours: [TourModel]) {
+    let coordinator = ToursCoordinator(navigationController: navigationController, tours: tours)
     coordinator.start()
   }
 }

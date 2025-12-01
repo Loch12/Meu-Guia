@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1600"
+   LastUpgradeVersion = "2600"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE6EE12A2C45698D00ED8D38"
-               BuildableName = "UFES.app"
-               BlueprintName = "UFES"
+               BuildableName = "Meu Guia.app"
+               BlueprintName = "Meu Guia"
                ReferencedContainer = "container:Meu Guia.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE6EE12A2C45698D00ED8D38"
-            BuildableName = "UFES.app"
-            BlueprintName = "UFES"
+            BuildableName = "Meu Guia.app"
+            BlueprintName = "Meu Guia"
             ReferencedContainer = "container:Meu Guia.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE6EE12A2C45698D00ED8D38"
-            BuildableName = "UFES.app"
-            BlueprintName = "UFES"
+            BuildableName = "Meu Guia.app"
+            BlueprintName = "Meu Guia"
             ReferencedContainer = "container:Meu Guia.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

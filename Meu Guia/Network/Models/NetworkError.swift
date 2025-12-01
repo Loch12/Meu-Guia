@@ -28,11 +28,11 @@ enum NetworkError: Error {
     case .unexpected,
          .forbidden,
          .notFound:
-      return "Algo inesperado aconteceu"
+      return .unexpectedErrorMessage
     case .userNotFound:
-      return "Usuário não encontrado"
+      return .userNotFoundErrorMessage
     case .unauthorized:
-      return "Não autorizado"
+      return .unauthorizedErrorMessage
     }
   }
 }

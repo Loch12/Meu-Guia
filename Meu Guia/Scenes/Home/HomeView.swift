@@ -2,8 +2,8 @@ import UIKit
 
 // MARK: - HomeViewProtocol
 protocol HomeViewProtocol: AnyObject {
-  func redirectToPlaces()
-  func redirectToMap()
+  func redirectToOnlineTours()
+  func redirectToSavedTours()
 }
 
 // MARK: - HomeView
@@ -22,7 +22,7 @@ class HomeView: BaseView {
 
   private lazy var homeDescription: UILabel = {
     let label = UILabel()
-    label.text = TargetUtils.getHomeDescription()
+    label.text = .homeDescriptionText
     label.textAlignment = .center
     label.numberOfLines = 0
     label.textColor = .primaryColor
@@ -31,34 +31,33 @@ class HomeView: BaseView {
     return label
   }()
 
-  private lazy var placesButton: UIButton = {
+  private lazy var seeToursButton: UIButton = {
     let button = UIButton()
-    button.setTitle("Acessar locais", for: .normal)
+    button.setTitle(.searchToursButtonText, for: .normal)
     button.titleLabel?.font = .nunito(.bold, size: 20)
     button.layer.cornerRadius = 7
     button.backgroundColor = .buttonBaseColor
-    button.addTarget(self, action: #selector(redirectToPlaces), for: .touchUpInside)
+    button.addTarget(self, action: #selector(redirectToOnlineTours), for: .touchUpInside)
     button.translatesAutoresizingMaskIntoConstraints = false
     return button
   }()
 
-  private lazy var mapButton: UIButton = {
+  private lazy var savedToursButton: UIButton = {
     let button = UIButton()
-    button.setTitle("Acessar mapa", for: .normal)
+    button.setTitle(.savedToursButtonText, for: .normal)
     button.titleLabel?.font = .nunito(.bold, size: 20)
     button.layer.cornerRadius = 7
     button.backgroundColor = .buttonBaseColor
-    button.addTarget(self, action: #selector(redirectToMap), for: .touchUpInside)
+    button.addTarget(self, action: #selector(redirectToSavedTours), for: .touchUpInside)
     button.translatesAutoresizingMaskIntoConstraints = false
     return button
   }()
 
   override func setup() {
-    backgroundColor = .white
     addSubviews(homeIcon,
                 homeDescription,
-                placesButton,
-                mapButton)
+                seeToursButton,
+                savedToursButton)
   }
 
   override func setupConstraints() {
@@ -71,25 +70,25 @@ class HomeView: BaseView {
       homeDescription.topAnchor.constraint(equalTo: homeIcon.bottomAnchor, constant: 48),
       homeDescription.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
       homeDescription.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-      homeDescription.bottomAnchor.constraint(equalTo: placesButton.topAnchor, constant: -10),
+      homeDescription.bottomAnchor.constraint(equalTo: seeToursButton.topAnchor, constant: -10),
 
-      mapButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -60),
-      mapButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-      mapButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-      mapButton.heightAnchor.constraint(equalToConstant: 60),
+      savedToursButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -60),
+      savedToursButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+      savedToursButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+      savedToursButton.heightAnchor.constraint(equalToConstant: 60),
 
-      placesButton.bottomAnchor.constraint(equalTo: mapButton.topAnchor, constant: -24),
-      placesButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-      placesButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-      placesButton.heightAnchor.constraint(equalToConstant: 60)
+      seeToursButton.bottomAnchor.constraint(equalTo: savedToursButton.topAnchor, constant: -24),
+      seeToursButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+      seeToursButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+      seeToursButton.heightAnchor.constraint(equalToConstant: 60)
     ])
   }
 
-  @objc func redirectToPlaces() {
-    delegate?.redirectToPlaces()
+  @objc func redirectToOnlineTours() {
+    delegate?.redirectToOnlineTours()
   }
 
-  @objc func redirectToMap() {
-    delegate?.redirectToMap()
+  @objc func redirectToSavedTours() {
+    delegate?.redirectToSavedTours()
   }
 }

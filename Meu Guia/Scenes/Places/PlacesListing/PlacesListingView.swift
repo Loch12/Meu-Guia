@@ -6,14 +6,14 @@ class PlacesListingView: BaseView {
     let view = UISearchBar()
     view.backgroundImage = UIImage()
     view.searchBarStyle = .minimal
-    view.placeholder = "Busque um local desejado"
+    view.placeholder = .searchPlaceText
     view.translatesAutoresizingMaskIntoConstraints = false
     return view
   }()
 
   private lazy var tableView: UITableView = {
     let view = UITableView()
-    view.backgroundColor = .white
+    view.backgroundColor = .clear
     view.separatorStyle = .none
     view.bounces = false
     view.registerReusableCell(PlaceTableViewCell.self)
@@ -22,7 +22,6 @@ class PlacesListingView: BaseView {
   }()
 
   override func setup() {
-    backgroundColor = .white
     addSubviews(searchBar, tableView)
     if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
       textfield.attributedPlaceholder = NSAttributedString(string: textfield.placeholder ?? "",

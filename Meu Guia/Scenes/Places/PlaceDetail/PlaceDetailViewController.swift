@@ -37,8 +37,8 @@ class PlaceDetailViewController: BaseViewController<PlaceDetailView> {
 
 extension PlaceDetailViewController: PlaceDetailViewDelegate {
   func showAlert(message: String?) {
-    let alert = UIAlertController(title: "Aviso", message: message, preferredStyle: UIAlertController.Style.alert)
-    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+    let alert = UIAlertController(title: .alert, message: message, preferredStyle: UIAlertController.Style.alert)
+    alert.addAction(UIAlertAction(title: .okMessage, style: UIAlertAction.Style.default, handler: nil))
     self.present(alert, animated: true, completion: nil)
   }
 }

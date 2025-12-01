@@ -14,6 +14,7 @@ open class BaseView: UIView {
   override public init(frame: CGRect) {
     super.init(frame: frame)
 
+    backgroundColor = .white
     setup()
     setupConstraints()
     setupActivityIndicator()
@@ -22,6 +23,7 @@ open class BaseView: UIView {
   public required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
 
+    backgroundColor = .white
     setup()
     setupConstraints()
     setupActivityIndicator()

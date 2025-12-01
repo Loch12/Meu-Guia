@@ -24,7 +24,7 @@ class PlacesListingViewController: BaseViewController<PlacesListingView> {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    title = "Locais"
+    title = .placeListingTitle
     setupActions()
     setupDelegates()
   }

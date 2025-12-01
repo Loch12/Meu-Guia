@@ -14,7 +14,7 @@ class CustomActivityIndicatorView: UIView {
     label.textAlignment = .center
     label.font = .nunito(.bold, size: 20)
     label.textColor = .white
-    label.text = "Carregando"
+    label.text = .loadingText
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()

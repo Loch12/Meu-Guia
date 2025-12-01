@@ -23,7 +23,6 @@
 		CE56D5D02C63D9F000164678 /* PlaceDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56D5CF2C63D9F000164678 /* PlaceDetailViewModel.swift */; };
 		CE6EE12F2C45698D00ED8D38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE12E2C45698D00ED8D38 /* AppDelegate.swift */; };
 		CE6EE1332C45698D00ED8D38 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE1322C45698D00ED8D38 /* HomeViewController.swift */; };
-		CE6EE1382C45698E00ED8D38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6EE1372C45698E00ED8D38 /* Assets.xcassets */; };
 		CE6EE1602C456CC400ED8D38 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE15F2C456CC400ED8D38 /* BaseViewController.swift */; };
 		CE6EE1622C456CDF00ED8D38 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE1612C456CDF00ED8D38 /* BaseView.swift */; };
 		CE6EE1662C456D4900ED8D38 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE1652C456D4900ED8D38 /* HomeView.swift */; };
@@ -31,20 +30,25 @@
 		CE6EE16A2C4572A800ED8D38 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE1692C4572A700ED8D38 /* HomeViewModel.swift */; };
 		CE6EE16C2C4575AD00ED8D38 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EE16B2C4575AD00ED8D38 /* Coordinator.swift */; };
 		CE7737182CE3B6EF00868CEF /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7737172CE3B6EC00868CEF /* UIView+extension.swift */; };
-		CE77371E2CE3B99600868CEF /* TargetUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77371D2CE3B99600868CEF /* TargetUtils.swift */; };
-		CE7737212CE3B9C700868CEF /* TargetUtilsColorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7737202CE3B9C600868CEF /* TargetUtilsColorProtocol.swift */; };
-		CE7737242CE3BA0900868CEF /* TargetUtilsStringProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7737232CE3BA0800868CEF /* TargetUtilsStringProtocol.swift */; };
-		CE7737262CE3BA4A00868CEF /* TargetUtilsGeneralProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7737252CE3BA4A00868CEF /* TargetUtilsGeneralProtocol.swift */; };
-		CE7737462CE3BC0C00868CEF /* TargetPlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77371B2CE3B95C00868CEF /* TargetPlist.swift */; };
+		CE77371E2CE3B99600868CEF /* GlobalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77371D2CE3B99600868CEF /* GlobalConfiguration.swift */; };
 		CE7737482CE3BD8000868CEF /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7737472CE3BD7B00868CEF /* UIColor+extension.swift */; };
 		CE77374A2CE3BF4C00868CEF /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7737492CE3BF4700868CEF /* UIImage+extension.swift */; };
-		CE77374C2CE3C0D500868CEF /* UFES-info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE6EE13C2C45698E00ED8D38 /* UFES-info.plist */; };
+		CE77374C2CE3C0D500868CEF /* MeuGuia-info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE6EE13C2C45698E00ED8D38 /* MeuGuia-info.plist */; };
 		CE77374E2CE3C14500868CEF /* GeneralAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE77374D2CE3C14500868CEF /* GeneralAssets.xcassets */; };
 		CE7737552CE3C32D00868CEF /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE7737542CE3C32D00868CEF /* Nunito-SemiBold.ttf */; };
 		CE7737562CE3C32D00868CEF /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE7737522CE3C32D00868CEF /* Nunito-ExtraBold.ttf */; };
 		CE7737572CE3C32D00868CEF /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE7737512CE3C32D00868CEF /* Nunito-Bold.ttf */; };
 		CE7737582CE3C32D00868CEF /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE7737532CE3C32D00868CEF /* Nunito-Regular.ttf */; };
 		CE77375A2CE3C43E00868CEF /* UIFont+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7737592CE3C43D00868CEF /* UIFont+extension.swift */; };
+		CE77A4B62EDE0F94003EBCD0 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = CE77A4B52EDE0F94003EBCD0 /* Localizable.xcstrings */; };
+		CE77A4B82EDE1980003EBCD0 /* String+localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77A4B72EDE197F003EBCD0 /* String+localizable.swift */; };
+		CE77A4BC2EDE201D003EBCD0 /* ToursCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77A4BB2EDE201C003EBCD0 /* ToursCoordinator.swift */; };
+		CE77A4BE2EDE204B003EBCD0 /* ToursListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77A4BD2EDE204B003EBCD0 /* ToursListingView.swift */; };
+		CE77A4C02EDE206E003EBCD0 /* ToursListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77A4BF2EDE206E003EBCD0 /* ToursListingViewController.swift */; };
+		CE77A4C22EDE20B2003EBCD0 /* OnlineToursViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77A4C12EDE20B2003EBCD0 /* OnlineToursViewModel.swift */; };
+		CE77A4C42EDE2183003EBCD0 /* TourModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77A4C32EDE2183003EBCD0 /* TourModel.swift */; };
+		CE77A4CA2EDE231A003EBCD0 /* ToursListingViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77A4C92EDE2319003EBCD0 /* ToursListingViewModelProtocol.swift */; };
+		CE77A4D12EDE250D003EBCD0 /* SavedToursViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE77A4D02EDE250D003EBCD0 /* SavedToursViewModel.swift */; };
 		CEAE727B2CEBB453009DDE12 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE727A2CEBB452009DDE12 /* String+extension.swift */; };
 		CEAEF9462CE5129E00CF227B /* UITableView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF9452CE5129D00CF227B /* UITableView+extension.swift */; };
 		CEAEF9492CE5151900CF227B /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF9482CE5151800CF227B /* PlaceTableViewCell.swift */; };
@@ -88,11 +92,10 @@
 		CE56D5CB2C63D97800164678 /* PlaceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailView.swift; sourceTree = "<group>"; };
 		CE56D5CD2C63D99700164678 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
 		CE56D5CF2C63D9F000164678 /* PlaceDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewModel.swift; sourceTree = "<group>"; };
-		CE6EE12B2C45698D00ED8D38 /* UFES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UFES.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE6EE12B2C45698D00ED8D38 /* Meu Guia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meu Guia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6EE12E2C45698D00ED8D38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE6EE1322C45698D00ED8D38 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		CE6EE1372C45698E00ED8D38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CE6EE13C2C45698E00ED8D38 /* UFES-info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UFES-info.plist"; sourceTree = "<group>"; };
+		CE6EE13C2C45698E00ED8D38 /* MeuGuia-info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MeuGuia-info.plist"; sourceTree = "<group>"; };
 		CE6EE1412C45698E00ED8D38 /* Meu GuiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meu GuiaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6EE14B2C45698E00ED8D38 /* Meu GuiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meu GuiaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6EE15F2C456CC400ED8D38 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -102,11 +105,7 @@
 		CE6EE1692C4572A700ED8D38 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CE6EE16B2C4575AD00ED8D38 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CE7737172CE3B6EC00868CEF /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
-		CE77371B2CE3B95C00868CEF /* TargetPlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetPlist.swift; sourceTree = "<group>"; };
-		CE77371D2CE3B99600868CEF /* TargetUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetUtils.swift; sourceTree = "<group>"; };
-		CE7737202CE3B9C600868CEF /* TargetUtilsColorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetUtilsColorProtocol.swift; sourceTree = "<group>"; };
-		CE7737232CE3BA0800868CEF /* TargetUtilsStringProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetUtilsStringProtocol.swift; sourceTree = "<group>"; };
-		CE7737252CE3BA4A00868CEF /* TargetUtilsGeneralProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetUtilsGeneralProtocol.swift; sourceTree = "<group>"; };
+		CE77371D2CE3B99600868CEF /* GlobalConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfiguration.swift; sourceTree = "<group>"; };
 		CE7737472CE3BD7B00868CEF /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
 		CE7737492CE3BF4700868CEF /* UIImage+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
 		CE77374D2CE3C14500868CEF /* GeneralAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = GeneralAssets.xcassets; sourceTree = "<group>"; };
@@ -115,6 +114,15 @@
 		CE7737532CE3C32D00868CEF /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		CE7737542CE3C32D00868CEF /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		CE7737592CE3C43D00868CEF /* UIFont+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+extension.swift"; sourceTree = "<group>"; };
+		CE77A4B52EDE0F94003EBCD0 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		CE77A4B72EDE197F003EBCD0 /* String+localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+localizable.swift"; sourceTree = "<group>"; };
+		CE77A4BB2EDE201C003EBCD0 /* ToursCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursCoordinator.swift; sourceTree = "<group>"; };
+		CE77A4BD2EDE204B003EBCD0 /* ToursListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursListingView.swift; sourceTree = "<group>"; };
+		CE77A4BF2EDE206E003EBCD0 /* ToursListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursListingViewController.swift; sourceTree = "<group>"; };
+		CE77A4C12EDE20B2003EBCD0 /* OnlineToursViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineToursViewModel.swift; sourceTree = "<group>"; };
+		CE77A4C32EDE2183003EBCD0 /* TourModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourModel.swift; sourceTree = "<group>"; };
+		CE77A4C92EDE2319003EBCD0 /* ToursListingViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursListingViewModelProtocol.swift; sourceTree = "<group>"; };
+		CE77A4D02EDE250D003EBCD0 /* SavedToursViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedToursViewModel.swift; sourceTree = "<group>"; };
 		CEAE727A2CEBB452009DDE12 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		CEAEF9452CE5129D00CF227B /* UITableView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+extension.swift"; sourceTree = "<group>"; };
 		CEAEF9482CE5151800CF227B /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
@@ -154,7 +162,6 @@
 		CE398C422D09EE0100F1A58E /* PlacesMap */ = {
 			isa = PBXGroup;
 			children = (
-				CE398C492D09EE3000F1A58E /* PlacesMapCoordinator.swift */,
 				CE398C472D09EE2100F1A58E /* PlacesMapViewModel.swift */,
 				CE398C452D09EE1A00F1A58E /* PlacesMapViewController.swift */,
 				CE398C432D09EE0F00F1A58E /* PlacesMapView.swift */,
@@ -166,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				CEAEF9472CE5151100CF227B /* Views */,
-				CE4A873A2CE3D4AC00EF8EFF /* PlacesCoordinator.swift */,
 				CE56D5C22C63D8C300164678 /* PlacesListingView.swift */,
 				CE56D5C62C63D91600164678 /* PlacesListingViewController.swift */,
 				CE56D5C82C63D93B00164678 /* PlacesListingViewModel.swift */,
@@ -195,7 +201,7 @@
 		CE6EE12C2C45698D00ED8D38 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE6EE12B2C45698D00ED8D38 /* UFES.app */,
+				CE6EE12B2C45698D00ED8D38 /* Meu Guia.app */,
 				CE6EE1412C45698E00ED8D38 /* Meu GuiaTests.xctest */,
 				CE6EE14B2C45698E00ED8D38 /* Meu GuiaUITests.xctest */,
 			);
@@ -205,7 +211,6 @@
 		CE6EE12D2C45698D00ED8D38 /* Meu Guia */ = {
 			isa = PBXGroup;
 			children = (
-				CE7737192CE3B94F00868CEF /* Targets */,
 				CEAEF9572CE533AC00CF227B /* Views */,
 				CEAEF9512CE5257900CF227B /* Network */,
 				CE6EE1632C456D2F00ED8D38 /* Scenes */,
@@ -219,7 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				CE7737162CE3B6E600868CEF /* Extensions */,
-				CE77371F2CE3B9C000868CEF /* Target */,
 				CE6EE15F2C456CC400ED8D38 /* BaseViewController.swift */,
 				CE6EE1612C456CDF00ED8D38 /* BaseView.swift */,
 				CE6EE16B2C4575AD00ED8D38 /* Coordinator.swift */,
@@ -230,9 +234,8 @@
 		CE6EE1632C456D2F00ED8D38 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				CE398C422D09EE0100F1A58E /* PlacesMap */,
-				CE56D5CA2C63D96B00164678 /* PlaceDetail */,
-				CE56D5C12C63D88800164678 /* PlacesListing */,
+				CE77A4C52EDE22A7003EBCD0 /* Places */,
+				CE77A4B92EDE1DE6003EBCD0 /* Tours */,
 				CE6EE1642C456D3700ED8D38 /* Home */,
 			);
 			path = Scenes;
@@ -253,6 +256,7 @@
 		CE7737162CE3B6E600868CEF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CE77A4B72EDE197F003EBCD0 /* String+localizable.swift */,
 				CE398C512D09FED200F1A58E /* MKMapView+extension.swift */,
 				CEAE727A2CEBB452009DDE12 /* String+extension.swift */,
 				CEAEF9452CE5129D00CF227B /* UITableView+extension.swift */,
@@ -265,49 +269,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		CE7737192CE3B94F00868CEF /* Targets */ = {
-			isa = PBXGroup;
-			children = (
-				CE77371A2CE3B95600868CEF /* UFES */,
-			);
-			path = Targets;
-			sourceTree = "<group>";
-		};
-		CE77371A2CE3B95600868CEF /* UFES */ = {
-			isa = PBXGroup;
-			children = (
-				CE77371B2CE3B95C00868CEF /* TargetPlist.swift */,
-				CE6EE13C2C45698E00ED8D38 /* UFES-info.plist */,
-				CE6EE1372C45698E00ED8D38 /* Assets.xcassets */,
-			);
-			path = UFES;
-			sourceTree = "<group>";
-		};
-		CE77371F2CE3B9C000868CEF /* Target */ = {
-			isa = PBXGroup;
-			children = (
-				CE7737222CE3BA0100868CEF /* Protocols */,
-				CE77371D2CE3B99600868CEF /* TargetUtils.swift */,
-			);
-			path = Target;
-			sourceTree = "<group>";
-		};
-		CE7737222CE3BA0100868CEF /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				CE7737252CE3BA4A00868CEF /* TargetUtilsGeneralProtocol.swift */,
-				CE7737232CE3BA0800868CEF /* TargetUtilsStringProtocol.swift */,
-				CE7737202CE3B9C600868CEF /* TargetUtilsColorProtocol.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		CE77374B2CE3C06800868CEF /* Support */ = {
 			isa = PBXGroup;
 			children = (
 				CE77374F2CE3C2F900868CEF /* Fonts */,
 				CE77374D2CE3C14500868CEF /* GeneralAssets.xcassets */,
 				CE6EE12E2C45698D00ED8D38 /* AppDelegate.swift */,
+				CE6EE13C2C45698E00ED8D38 /* MeuGuia-info.plist */,
+				CE77371D2CE3B99600868CEF /* GlobalConfiguration.swift */,
+				CE77A4B52EDE0F94003EBCD0 /* Localizable.xcstrings */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -331,6 +301,55 @@
 			path = Nunito;
 			sourceTree = "<group>";
 		};
+		CE77A4B92EDE1DE6003EBCD0 /* Tours */ = {
+			isa = PBXGroup;
+			children = (
+				CE77A4BB2EDE201C003EBCD0 /* ToursCoordinator.swift */,
+				CE77A4C62EDE22E1003EBCD0 /* ToursListing */,
+			);
+			path = Tours;
+			sourceTree = "<group>";
+		};
+		CE77A4C52EDE22A7003EBCD0 /* Places */ = {
+			isa = PBXGroup;
+			children = (
+				CE398C492D09EE3000F1A58E /* PlacesMapCoordinator.swift */,
+				CE4A873A2CE3D4AC00EF8EFF /* PlacesCoordinator.swift */,
+				CE56D5C12C63D88800164678 /* PlacesListing */,
+				CE398C422D09EE0100F1A58E /* PlacesMap */,
+				CE56D5CA2C63D96B00164678 /* PlaceDetail */,
+			);
+			path = Places;
+			sourceTree = "<group>";
+		};
+		CE77A4C62EDE22E1003EBCD0 /* ToursListing */ = {
+			isa = PBXGroup;
+			children = (
+				CE77A4CD2EDE24E2003EBCD0 /* SavedTours */,
+				CE77A4C72EDE22F6003EBCD0 /* OnlineTours */,
+				CE77A4BD2EDE204B003EBCD0 /* ToursListingView.swift */,
+				CE77A4BF2EDE206E003EBCD0 /* ToursListingViewController.swift */,
+				CE77A4C92EDE2319003EBCD0 /* ToursListingViewModelProtocol.swift */,
+			);
+			path = ToursListing;
+			sourceTree = "<group>";
+		};
+		CE77A4C72EDE22F6003EBCD0 /* OnlineTours */ = {
+			isa = PBXGroup;
+			children = (
+				CE77A4C12EDE20B2003EBCD0 /* OnlineToursViewModel.swift */,
+			);
+			path = OnlineTours;
+			sourceTree = "<group>";
+		};
+		CE77A4CD2EDE24E2003EBCD0 /* SavedTours */ = {
+			isa = PBXGroup;
+			children = (
+				CE77A4D02EDE250D003EBCD0 /* SavedToursViewModel.swift */,
+			);
+			path = SavedTours;
+			sourceTree = "<group>";
+		};
 		CEAEF9472CE5151100CF227B /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +369,7 @@
 		CEAEF9522CE5258200CF227B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CE77A4C32EDE2183003EBCD0 /* TourModel.swift */,
 				CEAEF9552CE525CE00CF227B /* NetworkError.swift */,
 				CEAEF9532CE5259B00CF227B /* ErrorResponse.swift */,
 				CEAEF94D2CE5237500CF227B /* PlaceModel.swift */,
@@ -378,9 +398,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CE6EE12A2C45698D00ED8D38 /* UFES */ = {
+		CE6EE12A2C45698D00ED8D38 /* Meu Guia */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE6EE1552C45698E00ED8D38 /* Build configuration list for PBXNativeTarget "UFES" */;
+			buildConfigurationList = CE6EE1552C45698E00ED8D38 /* Build configuration list for PBXNativeTarget "Meu Guia" */;
 			buildPhases = (
 				CE6EE1272C45698D00ED8D38 /* Sources */,
 				CE6EE1282C45698D00ED8D38 /* Frameworks */,
@@ -391,9 +411,9 @@
 			);
 			dependencies = (
 			);
-			name = UFES;
+			name = "Meu Guia";
 			productName = "Meu Guia";
-			productReference = CE6EE12B2C45698D00ED8D38 /* UFES.app */;
+			productReference = CE6EE12B2C45698D00ED8D38 /* Meu Guia.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CE6EE1402C45698E00ED8D38 /* Meu GuiaTests */ = {
@@ -440,7 +460,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1600;
+				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					CE6EE12A2C45698D00ED8D38 = {
 						CreatedOnToolsVersion = 15.2;
@@ -457,18 +477,19 @@
 			};
 			buildConfigurationList = CE6EE1262C45698D00ED8D38 /* Build configuration list for PBXProject "Meu Guia" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = "pt-BR";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = CE6EE1222C45698D00ED8D38;
 			productRefGroup = CE6EE12C2C45698D00ED8D38 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CE6EE12A2C45698D00ED8D38 /* UFES */,
+				CE6EE12A2C45698D00ED8D38 /* Meu Guia */,
 				CE6EE1402C45698E00ED8D38 /* Meu GuiaTests */,
 				CE6EE14A2C45698E00ED8D38 /* Meu GuiaUITests */,
 			);
@@ -480,9 +501,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE6EE1382C45698E00ED8D38 /* Assets.xcassets in Resources */,
 				CE77374E2CE3C14500868CEF /* GeneralAssets.xcassets in Resources */,
-				CE77374C2CE3C0D500868CEF /* UFES-info.plist in Resources */,
+				CE77374C2CE3C0D500868CEF /* MeuGuia-info.plist in Resources */,
+				CE77A4B62EDE0F94003EBCD0 /* Localizable.xcstrings in Resources */,
 				CE398C502D09F33B00F1A58E /* mock.json in Resources */,
 				CE7737552CE3C32D00868CEF /* Nunito-SemiBold.ttf in Resources */,
 				CE7737562CE3C32D00868CEF /* Nunito-ExtraBold.ttf in Resources */,
@@ -538,35 +559,39 @@
 				CEAEF94E2CE5237600CF227B /* PlaceModel.swift in Sources */,
 				CE6EE1602C456CC400ED8D38 /* BaseViewController.swift in Sources */,
 				CEAEF9502CE524B100CF227B /* HomeWorker.swift in Sources */,
+				CE77A4BC2EDE201D003EBCD0 /* ToursCoordinator.swift in Sources */,
 				CEAEF9492CE5151900CF227B /* PlaceTableViewCell.swift in Sources */,
 				CE77374A2CE3BF4C00868CEF /* UIImage+extension.swift in Sources */,
 				CE398C4A2D09EE3400F1A58E /* PlacesMapCoordinator.swift in Sources */,
-				CE7737462CE3BC0C00868CEF /* TargetPlist.swift in Sources */,
 				CE6EE1622C456CDF00ED8D38 /* BaseView.swift in Sources */,
 				CE398C462D09EE1F00F1A58E /* PlacesMapViewController.swift in Sources */,
 				CE4A873D2CE3D7C900EF8EFF /* UIViewController+extension.swift in Sources */,
 				CE6EE16A2C4572A800ED8D38 /* HomeViewModel.swift in Sources */,
 				CE6EE1662C456D4900ED8D38 /* HomeView.swift in Sources */,
-				CE7737262CE3BA4A00868CEF /* TargetUtilsGeneralProtocol.swift in Sources */,
 				CEAEF9462CE5129E00CF227B /* UITableView+extension.swift in Sources */,
+				CE77A4C22EDE20B2003EBCD0 /* OnlineToursViewModel.swift in Sources */,
 				CE7737182CE3B6EF00868CEF /* UIView+extension.swift in Sources */,
 				CEAEF9562CE525CE00CF227B /* NetworkError.swift in Sources */,
 				CE398C442D09EE1000F1A58E /* PlacesMapView.swift in Sources */,
 				CEAEF9542CE5259F00CF227B /* ErrorResponse.swift in Sources */,
 				CE7737482CE3BD8000868CEF /* UIColor+extension.swift in Sources */,
 				CE398C482D09EE2600F1A58E /* PlacesMapViewModel.swift in Sources */,
+				CE77A4D12EDE250D003EBCD0 /* SavedToursViewModel.swift in Sources */,
 				CEAE727B2CEBB453009DDE12 /* String+extension.swift in Sources */,
 				CEAEF95A2CE533C400CF227B /* CustomActivityIndicatorView.swift in Sources */,
-				CE7737242CE3BA0900868CEF /* TargetUtilsStringProtocol.swift in Sources */,
 				CE56D5C32C63D8C300164678 /* PlacesListingView.swift in Sources */,
 				CE77375A2CE3C43E00868CEF /* UIFont+extension.swift in Sources */,
+				CE77A4C02EDE206E003EBCD0 /* ToursListingViewController.swift in Sources */,
 				CE6EE12F2C45698D00ED8D38 /* AppDelegate.swift in Sources */,
+				CE77A4BE2EDE204B003EBCD0 /* ToursListingView.swift in Sources */,
 				CE6EE1682C45717100ED8D38 /* HomeCoordinator.swift in Sources */,
+				CE77A4CA2EDE231A003EBCD0 /* ToursListingViewModelProtocol.swift in Sources */,
+				CE77A4C42EDE2183003EBCD0 /* TourModel.swift in Sources */,
 				CE56D5CC2C63D97800164678 /* PlaceDetailView.swift in Sources */,
-				CE77371E2CE3B99600868CEF /* TargetUtils.swift in Sources */,
+				CE77371E2CE3B99600868CEF /* GlobalConfiguration.swift in Sources */,
 				CE4A873B2CE3D4AD00EF8EFF /* PlacesCoordinator.swift in Sources */,
 				CEDA30672D08AF2900CC9B39 /* TitleValueView.swift in Sources */,
-				CE7737212CE3B9C700868CEF /* TargetUtilsColorProtocol.swift in Sources */,
+				CE77A4B82EDE1980003EBCD0 /* String+localizable.swift in Sources */,
 				CE56D5D02C63D9F000164678 /* PlaceDetailViewModel.swift in Sources */,
 				CE56D5CE2C63D99700164678 /* PlaceDetailViewController.swift in Sources */,
 				CE398C522D09FED200F1A58E /* MKMapView+extension.swift in Sources */,
@@ -594,12 +619,12 @@
 /* Begin PBXTargetDependency section */
 		CE6EE1432C45698E00ED8D38 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CE6EE12A2C45698D00ED8D38 /* UFES */;
+			target = CE6EE12A2C45698D00ED8D38 /* Meu Guia */;
 			targetProxy = CE6EE1422C45698E00ED8D38 /* PBXContainerItemProxy */;
 		};
 		CE6EE14D2C45698E00ED8D38 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CE6EE12A2C45698D00ED8D38 /* UFES */;
+			target = CE6EE12A2C45698D00ED8D38 /* Meu Guia */;
 			targetProxy = CE6EE14C2C45698E00ED8D38 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -610,6 +635,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -640,6 +666,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = FFB3YFS8K2;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -663,7 +690,9 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -673,6 +702,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -703,6 +733,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = FFB3YFS8K2;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -719,7 +750,9 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -731,10 +764,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FFB3YFS8K2;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Meu Guia/Targets/UFES/UFES-info.plist";
+				INFOPLIST_FILE = "Meu Guia/Support/MeuGuia-info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -743,7 +775,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.matheusLoch.UFES;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.matheusLoch.MeuGuia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -758,10 +790,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FFB3YFS8K2;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Meu Guia/Targets/UFES/UFES-info.plist";
+				INFOPLIST_FILE = "Meu Guia/Support/MeuGuia-info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -770,7 +801,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.matheusLoch.UFES;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.matheusLoch.MeuGuia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -784,7 +815,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FFB3YFS8K2;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MARKETING_VERSION = 1.0;
@@ -803,7 +833,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FFB3YFS8K2;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MARKETING_VERSION = 1.0;
@@ -821,7 +850,6 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FFB3YFS8K2;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.matheusLoch.Meu-GuiaUITests";
@@ -838,7 +866,6 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FFB3YFS8K2;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.matheusLoch.Meu-GuiaUITests";
@@ -862,7 +889,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE6EE1552C45698E00ED8D38 /* Build configuration list for PBXNativeTarget "UFES" */ = {
+		CE6EE1552C45698E00ED8D38 /* Build configuration list for PBXNativeTarget "Meu Guia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE6EE1562C45698E00ED8D38 /* Debug */,

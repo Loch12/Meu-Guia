@@ -21,6 +21,10 @@ extension String {
     return !self.isEmpty
   }
 
+  var localized: String {
+    return NSLocalizedString(self, comment: "")
+  }
+
   func containsIgnoringCase(find: String) -> Bool {
     return range(of: find, options: .caseInsensitive) != nil
   }

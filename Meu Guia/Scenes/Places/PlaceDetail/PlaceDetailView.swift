@@ -85,7 +85,6 @@ class PlaceDetailView: BaseView {
 
   // MARK: - Override Methods
   override func setup() {
-    backgroundColor = .white
     addSubview(scrollView)
     setupActions()
   }
@@ -169,7 +168,7 @@ class PlaceDetailView: BaseView {
     guard let site = place?.site,
           let appURL = URL(string: site),
           UIApplication.shared.canOpenURL(appURL) else {
-      delegate?.showAlert(message: "Não foi possível abrir o site")
+      delegate?.showAlert(message: .siteErrorMessage)
       return
     }
     UIApplication.shared.open(appURL, options: [:], completionHandler: nil)
@@ -179,7 +178,7 @@ class PlaceDetailView: BaseView {
     guard let phone = place?.phone,
           let appURL = URL(string: "tel://" + phone),
           UIApplication.shared.canOpenURL(appURL) else {
-      delegate?.showAlert(message: "Não foi possível realizar a ligação")
+      delegate?.showAlert(message: .phoneCallErrorMessage)
       return
     }
     UIApplication.shared.open(appURL, options: [:], completionHandler: nil)
