@@ -3,28 +3,18 @@
 .AppleDouble
 .LSOverride
 
-# Pastas criadas pelo macOS
 __MACOSX/
-
-# Arquivos de ícone
 Icon?
 Icon\r
-
-# Arquivo de atributos
 .Spotlight-V100
 .Trashes
 
-# Arquivos temporários
-*.swp
-*.swo
-
 ### Xcode ###
-## User settings
 xcuserdata/
-*.xcscmblueprint
+*.xcuserstate
 *.xccheckout
+*.xcscmblueprint
 
-## Build generated
 build/
 DerivedData/
 DerivedData/*
@@ -32,15 +22,12 @@ DerivedData/*
 *.dSYM.zip
 *.dSYM
 
-## Index
 *.xcindexdb
 *.xcindex
 
-## Xcode project
 project.xcworkspace/
 !default.xcworkspace/
 
-## iOS specific
 *.hmap
 *.mobileprovision
 *.xccoverage
@@ -72,20 +59,16 @@ fastlane/test_output
 Library/Developer/CoreSimulator/
 *.deviceinfo
 
-### Arquivos de Logs ###
+### Logs ###
 *.log
 
-### Arquivos de Configuração sensíveis ###
+### Sensitive config ###
 *.xcconfig
 *.env
 .secret
 secrets.json
 
-### AppIcons e Assets temporários ###
-*.iconset
-*.imageset/tmp/
-
-### Outros ###
+### Misc ###
 *.bak
 *.tmp
 *.orig
