@@ -1,23 +1,91 @@
-# Generated .gitignore file for: Swift
-# Created with FOSSA's DevOps Tools
-
-# Swift
-# Add Swift-specific ignores here
-
-# Common
+### macOS ###
 .DS_Store
-Thumbs.db
+.AppleDouble
+.LSOverride
+
+# Pastas criadas pelo macOS
+__MACOSX/
+
+# Arquivos de ícone
+Icon?
+Icon\r
+
+# Arquivo de atributos
+.Spotlight-V100
+.Trashes
+
+# Arquivos temporários
+*.swp
+*.swo
+
+### Xcode ###
+## User settings
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+
+## Build generated
+build/
+DerivedData/
+DerivedData/*
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Index
+*.xcindexdb
+*.xcindex
+
+## Xcode project
+project.xcworkspace/
+!default.xcworkspace/
+
+## iOS specific
+*.hmap
+*.mobileprovision
+*.xccoverage
+
+### SwiftPM ###
+.swiftpm/
+.build/
+Package.resolved
+
+### CocoaPods ###
+Pods/
+Podfile.lock
+pod_install.log
+
+### Carthage ###
+Carthage/Build/
+
+### Fastlane ###
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+### SwiftUI Previews ###
+*.preview-thumbnails
+*.preview-thumbnails.db
+
+### Simulator ###
+Library/Developer/CoreSimulator/
+*.deviceinfo
+
+### Arquivos de Logs ###
 *.log
+
+### Arquivos de Configuração sensíveis ###
+*.xcconfig
+*.env
+.secret
+secrets.json
+
+### AppIcons e Assets temporários ###
+*.iconset
+*.imageset/tmp/
+
+### Outros ###
 *.bak
 *.tmp
-*.swp
-*~
-
-# IDE and editor generated files
-.idea/
-*.sublime-*
-
-# Local environment files
-.env
-.env.local
-.env.*.local
+*.orig
