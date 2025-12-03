@@ -64,15 +64,15 @@ class PlacesMapView: BaseView {
   }
 
   // MARK: - Methods
-  func setupMap(delegate: MKMapViewDelegate, places: [PlaceModel]) {
+  func setupMap(delegate: MKMapViewDelegate, places: [PlaceDetailModel]) {
     mapView.delegate = delegate
     setupAnnotations(places: places)
   }
 
-  func setupAnnotations(places: [PlaceModel]) {
+  func setupAnnotations(places: [PlaceDetailModel]) {
     var annotations = [MKPointAnnotation]()
     for place in places {
-      if let annotationLocation = place.coordinates.getAddressLocation() {
+      if let annotationLocation = place.coordinates?.getAddressLocation() {
         let annotation = MKPointAnnotation()
         annotation.title = place.name
         annotation.coordinate = CLLocationCoordinate2D(latitude: annotationLocation.coordinate.latitude,

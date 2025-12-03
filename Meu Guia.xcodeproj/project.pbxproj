@@ -10,14 +10,12 @@
 		CE398C442D09EE1000F1A58E /* PlacesMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE398C432D09EE0F00F1A58E /* PlacesMapView.swift */; };
 		CE398C462D09EE1F00F1A58E /* PlacesMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE398C452D09EE1A00F1A58E /* PlacesMapViewController.swift */; };
 		CE398C482D09EE2600F1A58E /* PlacesMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE398C472D09EE2100F1A58E /* PlacesMapViewModel.swift */; };
-		CE398C4A2D09EE3400F1A58E /* PlacesMapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE398C492D09EE3000F1A58E /* PlacesMapCoordinator.swift */; };
-		CE398C502D09F33B00F1A58E /* mock.json in Resources */ = {isa = PBXBuildFile; fileRef = CE398C4F2D09F33B00F1A58E /* mock.json */; };
+		CE398C502D09F33B00F1A58E /* mockPlace.json in Resources */ = {isa = PBXBuildFile; fileRef = CE398C4F2D09F33B00F1A58E /* mockPlace.json */; };
 		CE398C522D09FED200F1A58E /* MKMapView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE398C512D09FED200F1A58E /* MKMapView+extension.swift */; };
-		CE4A873B2CE3D4AD00EF8EFF /* PlacesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A873A2CE3D4AC00EF8EFF /* PlacesCoordinator.swift */; };
 		CE4A873D2CE3D7C900EF8EFF /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A873C2CE3D7C800EF8EFF /* UIViewController+extension.swift */; };
-		CE56D5C32C63D8C300164678 /* PlacesListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56D5C22C63D8C300164678 /* PlacesListingView.swift */; };
-		CE56D5C72C63D91600164678 /* PlacesListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56D5C62C63D91600164678 /* PlacesListingViewController.swift */; };
-		CE56D5C92C63D93B00164678 /* PlacesListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56D5C82C63D93B00164678 /* PlacesListingViewModel.swift */; };
+		CE56D5C32C63D8C300164678 /* TourDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56D5C22C63D8C300164678 /* TourDetailView.swift */; };
+		CE56D5C72C63D91600164678 /* TourDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56D5C62C63D91600164678 /* TourDetailViewController.swift */; };
+		CE56D5C92C63D93B00164678 /* TourDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56D5C82C63D93B00164678 /* TourDetailViewModel.swift */; };
 		CE56D5CC2C63D97800164678 /* PlaceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56D5CB2C63D97800164678 /* PlaceDetailView.swift */; };
 		CE56D5CE2C63D99700164678 /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56D5CD2C63D99700164678 /* PlaceDetailViewController.swift */; };
 		CE56D5D02C63D9F000164678 /* PlaceDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56D5CF2C63D9F000164678 /* PlaceDetailViewModel.swift */; };
@@ -52,11 +50,17 @@
 		CEAE727B2CEBB453009DDE12 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE727A2CEBB452009DDE12 /* String+extension.swift */; };
 		CEAEF9462CE5129E00CF227B /* UITableView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF9452CE5129D00CF227B /* UITableView+extension.swift */; };
 		CEAEF9492CE5151900CF227B /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF9482CE5151800CF227B /* PlaceTableViewCell.swift */; };
-		CEAEF94E2CE5237600CF227B /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF94D2CE5237500CF227B /* PlaceModel.swift */; };
+		CEAEF94E2CE5237600CF227B /* PlaceDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF94D2CE5237500CF227B /* PlaceDetailModel.swift */; };
 		CEAEF9502CE524B100CF227B /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF94F2CE524B000CF227B /* HomeWorker.swift */; };
 		CEAEF9542CE5259F00CF227B /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF9532CE5259B00CF227B /* ErrorResponse.swift */; };
 		CEAEF9562CE525CE00CF227B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF9552CE525CE00CF227B /* NetworkError.swift */; };
 		CEAEF95A2CE533C400CF227B /* CustomActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF9592CE533C300CF227B /* CustomActivityIndicatorView.swift */; };
+		CEC38DB32EDF557900A99EAB /* mockTours.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC38DB22EDF557900A99EAB /* mockTours.json */; };
+		CEC38DB52EE0A11000A99EAB /* mockTour.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC38DB42EE0A11000A99EAB /* mockTour.json */; };
+		CEC38DB72EE0A60D00A99EAB /* TourDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC38DB62EE0A60D00A99EAB /* TourDetailWorker.swift */; };
+		CEC38DB92EE0A67500A99EAB /* TourDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC38DB82EE0A67500A99EAB /* TourDetailModel.swift */; };
+		CEC38DBD2EE0AEFA00A99EAB /* PlaceDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC38DBC2EE0AEFA00A99EAB /* PlaceDetailWorker.swift */; };
+		CEC38DBF2EE0B1B000A99EAB /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC38DBE2EE0B1AF00A99EAB /* PlaceModel.swift */; };
 		CEDA30672D08AF2900CC9B39 /* TitleValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDA30662D08AF2800CC9B39 /* TitleValueView.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,14 +85,12 @@
 		CE398C432D09EE0F00F1A58E /* PlacesMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesMapView.swift; sourceTree = "<group>"; };
 		CE398C452D09EE1A00F1A58E /* PlacesMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesMapViewController.swift; sourceTree = "<group>"; };
 		CE398C472D09EE2100F1A58E /* PlacesMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesMapViewModel.swift; sourceTree = "<group>"; };
-		CE398C492D09EE3000F1A58E /* PlacesMapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesMapCoordinator.swift; sourceTree = "<group>"; };
-		CE398C4F2D09F33B00F1A58E /* mock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mock.json; sourceTree = "<group>"; };
+		CE398C4F2D09F33B00F1A58E /* mockPlace.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mockPlace.json; sourceTree = "<group>"; };
 		CE398C512D09FED200F1A58E /* MKMapView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+extension.swift"; sourceTree = "<group>"; };
-		CE4A873A2CE3D4AC00EF8EFF /* PlacesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesCoordinator.swift; sourceTree = "<group>"; };
 		CE4A873C2CE3D7C800EF8EFF /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
-		CE56D5C22C63D8C300164678 /* PlacesListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListingView.swift; sourceTree = "<group>"; };
-		CE56D5C62C63D91600164678 /* PlacesListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListingViewController.swift; sourceTree = "<group>"; };
-		CE56D5C82C63D93B00164678 /* PlacesListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListingViewModel.swift; sourceTree = "<group>"; };
+		CE56D5C22C63D8C300164678 /* TourDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourDetailView.swift; sourceTree = "<group>"; };
+		CE56D5C62C63D91600164678 /* TourDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourDetailViewController.swift; sourceTree = "<group>"; };
+		CE56D5C82C63D93B00164678 /* TourDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourDetailViewModel.swift; sourceTree = "<group>"; };
 		CE56D5CB2C63D97800164678 /* PlaceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailView.swift; sourceTree = "<group>"; };
 		CE56D5CD2C63D99700164678 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
 		CE56D5CF2C63D9F000164678 /* PlaceDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewModel.swift; sourceTree = "<group>"; };
@@ -126,11 +128,17 @@
 		CEAE727A2CEBB452009DDE12 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		CEAEF9452CE5129D00CF227B /* UITableView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+extension.swift"; sourceTree = "<group>"; };
 		CEAEF9482CE5151800CF227B /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
-		CEAEF94D2CE5237500CF227B /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		CEAEF94D2CE5237500CF227B /* PlaceDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailModel.swift; sourceTree = "<group>"; };
 		CEAEF94F2CE524B000CF227B /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
 		CEAEF9532CE5259B00CF227B /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		CEAEF9552CE525CE00CF227B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		CEAEF9592CE533C300CF227B /* CustomActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivityIndicatorView.swift; sourceTree = "<group>"; };
+		CEC38DB22EDF557900A99EAB /* mockTours.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mockTours.json; sourceTree = "<group>"; };
+		CEC38DB42EE0A11000A99EAB /* mockTour.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mockTour.json; sourceTree = "<group>"; };
+		CEC38DB62EE0A60D00A99EAB /* TourDetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourDetailWorker.swift; sourceTree = "<group>"; };
+		CEC38DB82EE0A67500A99EAB /* TourDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourDetailModel.swift; sourceTree = "<group>"; };
+		CEC38DBC2EE0AEFA00A99EAB /* PlaceDetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailWorker.swift; sourceTree = "<group>"; };
+		CEC38DBE2EE0B1AF00A99EAB /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		CEDA30662D08AF2800CC9B39 /* TitleValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,20 +177,10 @@
 			path = PlacesMap;
 			sourceTree = "<group>";
 		};
-		CE56D5C12C63D88800164678 /* PlacesListing */ = {
-			isa = PBXGroup;
-			children = (
-				CEAEF9472CE5151100CF227B /* Views */,
-				CE56D5C22C63D8C300164678 /* PlacesListingView.swift */,
-				CE56D5C62C63D91600164678 /* PlacesListingViewController.swift */,
-				CE56D5C82C63D93B00164678 /* PlacesListingViewModel.swift */,
-			);
-			path = PlacesListing;
-			sourceTree = "<group>";
-		};
 		CE56D5CA2C63D96B00164678 /* PlaceDetail */ = {
 			isa = PBXGroup;
 			children = (
+				CEC38DBC2EE0AEFA00A99EAB /* PlaceDetailWorker.swift */,
 				CE56D5CB2C63D97800164678 /* PlaceDetailView.swift */,
 				CE56D5CD2C63D99700164678 /* PlaceDetailViewController.swift */,
 				CE56D5CF2C63D9F000164678 /* PlaceDetailViewModel.swift */,
@@ -234,7 +232,9 @@
 		CE6EE1632C456D2F00ED8D38 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				CE77A4C52EDE22A7003EBCD0 /* Places */,
+				CE56D5CA2C63D96B00164678 /* PlaceDetail */,
+				CE398C422D09EE0100F1A58E /* PlacesMap */,
+				CE77A4C52EDE22A7003EBCD0 /* TourDetail */,
 				CE77A4B92EDE1DE6003EBCD0 /* Tours */,
 				CE6EE1642C456D3700ED8D38 /* Home */,
 			);
@@ -304,34 +304,26 @@
 		CE77A4B92EDE1DE6003EBCD0 /* Tours */ = {
 			isa = PBXGroup;
 			children = (
+				CE77A4CD2EDE24E2003EBCD0 /* SavedTours */,
+				CE77A4C72EDE22F6003EBCD0 /* OnlineTours */,
+				CE77A4BF2EDE206E003EBCD0 /* ToursListingViewController.swift */,
+				CE77A4C92EDE2319003EBCD0 /* ToursListingViewModelProtocol.swift */,
+				CE77A4BD2EDE204B003EBCD0 /* ToursListingView.swift */,
 				CE77A4BB2EDE201C003EBCD0 /* ToursCoordinator.swift */,
-				CE77A4C62EDE22E1003EBCD0 /* ToursListing */,
 			);
 			path = Tours;
 			sourceTree = "<group>";
 		};
-		CE77A4C52EDE22A7003EBCD0 /* Places */ = {
+		CE77A4C52EDE22A7003EBCD0 /* TourDetail */ = {
 			isa = PBXGroup;
 			children = (
-				CE398C492D09EE3000F1A58E /* PlacesMapCoordinator.swift */,
-				CE4A873A2CE3D4AC00EF8EFF /* PlacesCoordinator.swift */,
-				CE56D5C12C63D88800164678 /* PlacesListing */,
-				CE398C422D09EE0100F1A58E /* PlacesMap */,
-				CE56D5CA2C63D96B00164678 /* PlaceDetail */,
+				CEAEF9472CE5151100CF227B /* Views */,
+				CE56D5C82C63D93B00164678 /* TourDetailViewModel.swift */,
+				CE56D5C62C63D91600164678 /* TourDetailViewController.swift */,
+				CE56D5C22C63D8C300164678 /* TourDetailView.swift */,
+				CEC38DB62EE0A60D00A99EAB /* TourDetailWorker.swift */,
 			);
-			path = Places;
-			sourceTree = "<group>";
-		};
-		CE77A4C62EDE22E1003EBCD0 /* ToursListing */ = {
-			isa = PBXGroup;
-			children = (
-				CE77A4CD2EDE24E2003EBCD0 /* SavedTours */,
-				CE77A4C72EDE22F6003EBCD0 /* OnlineTours */,
-				CE77A4BD2EDE204B003EBCD0 /* ToursListingView.swift */,
-				CE77A4BF2EDE206E003EBCD0 /* ToursListingViewController.swift */,
-				CE77A4C92EDE2319003EBCD0 /* ToursListingViewModelProtocol.swift */,
-			);
-			path = ToursListing;
+			path = TourDetail;
 			sourceTree = "<group>";
 		};
 		CE77A4C72EDE22F6003EBCD0 /* OnlineTours */ = {
@@ -369,11 +361,10 @@
 		CEAEF9522CE5258200CF227B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CE77A4C32EDE2183003EBCD0 /* TourModel.swift */,
+				CEC38DBB2EE0A80400A99EAB /* Places */,
+				CEC38DBA2EE0A7FB00A99EAB /* Tour */,
 				CEAEF9552CE525CE00CF227B /* NetworkError.swift */,
 				CEAEF9532CE5259B00CF227B /* ErrorResponse.swift */,
-				CEAEF94D2CE5237500CF227B /* PlaceModel.swift */,
-				CE398C4F2D09F33B00F1A58E /* mock.json */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -393,6 +384,27 @@
 				CEAEF9592CE533C300CF227B /* CustomActivityIndicatorView.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		CEC38DBA2EE0A7FB00A99EAB /* Tour */ = {
+			isa = PBXGroup;
+			children = (
+				CEC38DB22EDF557900A99EAB /* mockTours.json */,
+				CEC38DB42EE0A11000A99EAB /* mockTour.json */,
+				CE77A4C32EDE2183003EBCD0 /* TourModel.swift */,
+				CEC38DB82EE0A67500A99EAB /* TourDetailModel.swift */,
+			);
+			path = Tour;
+			sourceTree = "<group>";
+		};
+		CEC38DBB2EE0A80400A99EAB /* Places */ = {
+			isa = PBXGroup;
+			children = (
+				CEC38DBE2EE0B1AF00A99EAB /* PlaceModel.swift */,
+				CE398C4F2D09F33B00F1A58E /* mockPlace.json */,
+				CEAEF94D2CE5237500CF227B /* PlaceDetailModel.swift */,
+			);
+			path = Places;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -504,11 +516,13 @@
 				CE77374E2CE3C14500868CEF /* GeneralAssets.xcassets in Resources */,
 				CE77374C2CE3C0D500868CEF /* MeuGuia-info.plist in Resources */,
 				CE77A4B62EDE0F94003EBCD0 /* Localizable.xcstrings in Resources */,
-				CE398C502D09F33B00F1A58E /* mock.json in Resources */,
+				CE398C502D09F33B00F1A58E /* mockPlace.json in Resources */,
 				CE7737552CE3C32D00868CEF /* Nunito-SemiBold.ttf in Resources */,
+				CEC38DB52EE0A11000A99EAB /* mockTour.json in Resources */,
 				CE7737562CE3C32D00868CEF /* Nunito-ExtraBold.ttf in Resources */,
 				CE7737572CE3C32D00868CEF /* Nunito-Bold.ttf in Resources */,
 				CE7737582CE3C32D00868CEF /* Nunito-Regular.ttf in Resources */,
+				CEC38DB32EDF557900A99EAB /* mockTours.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,31 +569,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE6EE1332C45698D00ED8D38 /* HomeViewController.swift in Sources */,
-				CE56D5C72C63D91600164678 /* PlacesListingViewController.swift in Sources */,
-				CEAEF94E2CE5237600CF227B /* PlaceModel.swift in Sources */,
+				CE56D5C72C63D91600164678 /* TourDetailViewController.swift in Sources */,
+				CEAEF94E2CE5237600CF227B /* PlaceDetailModel.swift in Sources */,
 				CE6EE1602C456CC400ED8D38 /* BaseViewController.swift in Sources */,
 				CEAEF9502CE524B100CF227B /* HomeWorker.swift in Sources */,
 				CE77A4BC2EDE201D003EBCD0 /* ToursCoordinator.swift in Sources */,
 				CEAEF9492CE5151900CF227B /* PlaceTableViewCell.swift in Sources */,
 				CE77374A2CE3BF4C00868CEF /* UIImage+extension.swift in Sources */,
-				CE398C4A2D09EE3400F1A58E /* PlacesMapCoordinator.swift in Sources */,
 				CE6EE1622C456CDF00ED8D38 /* BaseView.swift in Sources */,
 				CE398C462D09EE1F00F1A58E /* PlacesMapViewController.swift in Sources */,
+				CEC38DBD2EE0AEFA00A99EAB /* PlaceDetailWorker.swift in Sources */,
 				CE4A873D2CE3D7C900EF8EFF /* UIViewController+extension.swift in Sources */,
 				CE6EE16A2C4572A800ED8D38 /* HomeViewModel.swift in Sources */,
 				CE6EE1662C456D4900ED8D38 /* HomeView.swift in Sources */,
+				CEC38DB92EE0A67500A99EAB /* TourDetailModel.swift in Sources */,
 				CEAEF9462CE5129E00CF227B /* UITableView+extension.swift in Sources */,
 				CE77A4C22EDE20B2003EBCD0 /* OnlineToursViewModel.swift in Sources */,
 				CE7737182CE3B6EF00868CEF /* UIView+extension.swift in Sources */,
 				CEAEF9562CE525CE00CF227B /* NetworkError.swift in Sources */,
 				CE398C442D09EE1000F1A58E /* PlacesMapView.swift in Sources */,
 				CEAEF9542CE5259F00CF227B /* ErrorResponse.swift in Sources */,
+				CEC38DBF2EE0B1B000A99EAB /* PlaceModel.swift in Sources */,
 				CE7737482CE3BD8000868CEF /* UIColor+extension.swift in Sources */,
 				CE398C482D09EE2600F1A58E /* PlacesMapViewModel.swift in Sources */,
 				CE77A4D12EDE250D003EBCD0 /* SavedToursViewModel.swift in Sources */,
 				CEAE727B2CEBB453009DDE12 /* String+extension.swift in Sources */,
+				CEC38DB72EE0A60D00A99EAB /* TourDetailWorker.swift in Sources */,
 				CEAEF95A2CE533C400CF227B /* CustomActivityIndicatorView.swift in Sources */,
-				CE56D5C32C63D8C300164678 /* PlacesListingView.swift in Sources */,
+				CE56D5C32C63D8C300164678 /* TourDetailView.swift in Sources */,
 				CE77375A2CE3C43E00868CEF /* UIFont+extension.swift in Sources */,
 				CE77A4C02EDE206E003EBCD0 /* ToursListingViewController.swift in Sources */,
 				CE6EE12F2C45698D00ED8D38 /* AppDelegate.swift in Sources */,
@@ -589,13 +606,12 @@
 				CE77A4C42EDE2183003EBCD0 /* TourModel.swift in Sources */,
 				CE56D5CC2C63D97800164678 /* PlaceDetailView.swift in Sources */,
 				CE77371E2CE3B99600868CEF /* GlobalConfiguration.swift in Sources */,
-				CE4A873B2CE3D4AD00EF8EFF /* PlacesCoordinator.swift in Sources */,
 				CEDA30672D08AF2900CC9B39 /* TitleValueView.swift in Sources */,
 				CE77A4B82EDE1980003EBCD0 /* String+localizable.swift in Sources */,
 				CE56D5D02C63D9F000164678 /* PlaceDetailViewModel.swift in Sources */,
 				CE56D5CE2C63D99700164678 /* PlaceDetailViewController.swift in Sources */,
 				CE398C522D09FED200F1A58E /* MKMapView+extension.swift in Sources */,
-				CE56D5C92C63D93B00164678 /* PlacesListingViewModel.swift in Sources */,
+				CE56D5C92C63D93B00164678 /* TourDetailViewModel.swift in Sources */,
 				CE6EE16C2C4575AD00ED8D38 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

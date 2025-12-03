@@ -1,15 +1,15 @@
 import Foundation
 
-protocol HomeWorkerProtocol {
-  func fetchTours(completion: @escaping (Result<[TourModel], ErrorResponse>) -> Void)
+protocol TourDetailWorkerProtocol {
+  func fetchTourDetail(id: Int, completion: @escaping (Result<TourDetailModel, ErrorResponse>) -> Void)
 }
 
-class HomeWorker: HomeWorkerProtocol {
-  func fetchTours(completion: @escaping (Result<[TourModel], ErrorResponse>) -> Void) {
+class TourDetailWorker: TourDetailWorkerProtocol {
+  func fetchTourDetail(id: Int, completion: @escaping (Result<TourDetailModel, ErrorResponse>) -> Void) {
     let result = true
     switch result {
     case true:
-      if let mock = loadMockTours() {
+      if let mock = loadMockTour() {
         completion(.success(mock))
         return
       }
@@ -19,8 +19,8 @@ class HomeWorker: HomeWorkerProtocol {
     }
   }
 
-  func loadMockTours() -> [TourModel]? {
-    guard let url = Bundle.main.url(forResource: "mockTours", withExtension: "json") else {
+  func loadMockTour() -> TourDetailModel? {
+    guard let url = Bundle.main.url(forResource: "mockTour", withExtension: "json") else {
       print("JSON file not found")
       return nil
     }
@@ -28,7 +28,7 @@ class HomeWorker: HomeWorkerProtocol {
     do {
       let data = try Data(contentsOf: url)
       let decoder = JSONDecoder()
-      let places = try decoder.decode([TourModel].self, from: data)
+      let places = try decoder.decode(TourDetailModel.self, from: data)
       return places
     } catch {
       print("Error decoding JSON: \(error)")

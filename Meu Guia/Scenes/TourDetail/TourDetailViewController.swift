@@ -1,17 +1,17 @@
 import UIKit
 
-// MARK: - ToursListingViewControllerProtocol
-protocol ToursListingViewControllerProtocol: AnyObject {
+// MARK: - TourDetailViewControllerProtocol
+protocol TourDetailViewControllerProtocol: AnyObject, BaseViewControllerProtocol {
   func reloadInfo()
 }
 
-// MARK: - ToursListingViewController
-class ToursListingViewController: BaseViewController<ToursListingView> {
+// MARK: - TourDetailViewController
+class TourDetailViewController: BaseViewController<TourDetailView> {
   // MARK: - Properties
-  let viewModel: ToursListingViewModelProtocol
+  let viewModel: TourDetailViewModelProtocol
 
   // MARK: - Init
-  init(viewModel: ToursListingViewModelProtocol) {
+  init(viewModel: TourDetailViewModelProtocol) {
     self.viewModel = viewModel
 
     super.init(nibName: nil, bundle: nil)
@@ -24,9 +24,10 @@ class ToursListingViewController: BaseViewController<ToursListingView> {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    title = .tourListingTitle
+    title = .placeListingTitle
     setupActions()
     setupDelegates()
+    viewModel.fetchTourDetail()
   }
 
   func setupActions() {
@@ -35,33 +36,34 @@ class ToursListingViewController: BaseViewController<ToursListingView> {
   }
 
   func setupDelegates() {
+    viewModel.setupDelegate(delegate: self)
     baseView.setupDelegate(delegate: self)
   }
 }
 
 // MARK: - TableView
-extension ToursListingViewController: UITableViewDelegate, UITableViewDataSource {
+extension TourDetailViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     viewModel.didSelect(at: indexPath)
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return viewModel.getHowManyTours()
+    return viewModel.getHowManyPlaces()
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let place = viewModel.getTour(by: indexPath.row) else { return UITableViewCell() }
+    guard let place = viewModel.getPlace(by: indexPath.row) else { return UITableViewCell() }
 
     let cell = tableView.dequeueReusableCell(for: indexPath) as PlaceTableViewCell
-    cell.configure(text: place.name, image: nil)
+    cell.configure(text: place.name, image: place.image)
     return cell
   }
 }
 
 // MARK: - SearchBar
-extension ToursListingViewController: UISearchBarDelegate {
+extension TourDetailViewController: UISearchBarDelegate {
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    viewModel.filterTours(by: searchText)
+    viewModel.filterPlaces(by: searchText)
   }
 
   func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -69,8 +71,8 @@ extension ToursListingViewController: UISearchBarDelegate {
   }
 }
 
-// MARK: - ToursListingViewControllerProtocol
-extension ToursListingViewController: ToursListingViewControllerProtocol {
+// MARK: - TourDetailViewControllerProtocol
+extension TourDetailViewController: TourDetailViewControllerProtocol {
   func reloadInfo() {
     baseView.reloadData()
   }

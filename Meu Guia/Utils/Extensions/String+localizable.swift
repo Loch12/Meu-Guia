@@ -23,5 +23,5 @@ extension String {
   static var searchToursButtonText: String { "searchToursButtonText".localized }
   static var savedToursButtonText: String { "savedToursButtonText".localized }
   static var searchTourText: String { "searchTourText".localized }
-  static var tourListingTitle: String { "tourListingTitle".localized } 
+  static var tourListingTitle: String { "tourListingTitle".localized }
 }

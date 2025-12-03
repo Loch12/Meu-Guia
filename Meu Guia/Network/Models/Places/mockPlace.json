@@ -1,0 +1,12 @@
+{
+  "name":"Guriri Beach",
+  "image":"https://example.com/images/guriri_beach.jpg",
+  "description":"Uma das praias mais populares de São Mateus, conhecida por suas águas calmas e infraestrutura turística.",
+  "site":"https://saomateus.es.gov.br",
+  "phone":"(27) 3763-1234",
+  "schedule":"Todos os dias, 06:00 - 20:00",
+  "coordinates":{
+    "latitude":-18.7294,
+    "longitude":-39.8542
+  }
+}

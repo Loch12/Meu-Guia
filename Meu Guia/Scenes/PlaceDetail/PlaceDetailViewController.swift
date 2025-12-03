@@ -1,5 +1,10 @@
 import UIKit
 
+// MARK: - PlaceDetailViewControllerProtocol
+protocol PlaceDetailViewControllerProtocol: AnyObject, BaseViewControllerProtocol {
+  func reloadInfo()
+}
+
 // MARK: - PlaceDetailViewController
 class PlaceDetailViewController: BaseViewController<PlaceDetailView> {
   // MARK: - Properties
@@ -16,25 +21,27 @@ class PlaceDetailViewController: BaseViewController<PlaceDetailView> {
     fatalError("init(coder:) has not been implemented")
   }
 
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-
-    title = viewModel.place.name
-  }
-
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    setupView()
-    baseView.delegate = self
-  }
-
-  func setupView() {
     setupNavBarBackButton()
-    baseView.setupInfo(place: viewModel.place)
+    baseView.delegate = self
+    viewModel.setControllerDelegate(self)
+    viewModel.fetchPlaceDetail()
   }
 }
 
+// MARK: - PlaceDetailViewControllerProtocol
+extension PlaceDetailViewController: PlaceDetailViewControllerProtocol {
+  func reloadInfo() {
+    guard let place = viewModel.place else { return }
+
+    title = place.name
+    baseView.setupInfo(place: place)
+  }
+}
+
+// MARK: - PlaceDetailViewDelegate
 extension PlaceDetailViewController: PlaceDetailViewDelegate {
   func showAlert(message: String?) {
     let alert = UIAlertController(title: .alert, message: message, preferredStyle: UIAlertController.Style.alert)

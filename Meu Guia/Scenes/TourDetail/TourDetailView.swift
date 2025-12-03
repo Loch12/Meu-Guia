@@ -1,7 +1,7 @@
 import UIKit
 
-// MARK: - PlacesListing
-class PlacesListingView: BaseView {
+// MARK: - TourDetail
+class TourDetailView: BaseView {
   private lazy var searchBar: UISearchBar = {
     let view = UISearchBar()
     view.backgroundImage = UIImage()
@@ -44,7 +44,7 @@ class PlacesListingView: BaseView {
   }
 }
 
-extension PlacesListingView {
+extension TourDetailView {
   func setupDelegate(delegate: UITableViewDelegate & UITableViewDataSource & UISearchBarDelegate) {
     tableView.delegate = delegate
     tableView.dataSource = delegate

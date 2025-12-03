@@ -7,7 +7,7 @@ protocol PlaceDetailViewDelegate: AnyObject {
 // MARK: - PlaceDetail
 class PlaceDetailView: BaseView {
   // MARK: - Properties
-  var place: PlaceModel?
+  var place: PlaceDetailModel?
   var delegate: PlaceDetailViewDelegate?
 
   // MARK: - Components
@@ -144,7 +144,7 @@ class PlaceDetailView: BaseView {
     placePhone.isUserInteractionEnabled = true
   }
 
-  func setupInfo(place: PlaceModel) {
+  func setupInfo(place: PlaceDetailModel) {
     self.place = place
     placeIcon.image = .icHome
     placeName.text = place.name

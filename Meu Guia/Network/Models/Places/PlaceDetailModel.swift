@@ -1,13 +1,13 @@
 import MapKit
 
-struct PlaceModel: Codable {
+struct PlaceDetailModel: Codable {
   let name: String?
   let image: String?
   let description: String?
   let site: String?
   let phone: String?
   let schedule: String?
-  let coordinates: PlaceCoordinates
+  let coordinates: PlaceCoordinates?
 }
 
 struct PlaceCoordinates: Codable {

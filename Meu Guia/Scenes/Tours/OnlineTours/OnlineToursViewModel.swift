@@ -1,7 +1,7 @@
 import Foundation
 
-// MARK: - SavedToursViewModel
-class SavedToursViewModel: ToursListingViewModelProtocol {
+// MARK: - OnlineToursViewModel
+class OnlineToursViewModel: ToursListingViewModelProtocol {
   // MARK: - Properties
   let coordinator: ToursCoordinator
   let tours: [TourModel]
@@ -23,7 +23,7 @@ class SavedToursViewModel: ToursListingViewModelProtocol {
   }
 }
 
-extension SavedToursViewModel {
+extension OnlineToursViewModel {
   func getHowManyTours() -> Int {
     return filteredTours.count
   }
@@ -47,8 +47,9 @@ extension SavedToursViewModel {
   }
 
   func didSelect(at index: IndexPath) {
-    guard index.row < filteredTours.count else { return }
+    guard index.row < filteredTours.count,
+          let id = filteredTours[index.row].id else { return }
 
-    coordinator.redirectTo(tour: filteredTours[index.row])
+    coordinator.redirectToTour(with: id)
   }
 }

@@ -22,7 +22,15 @@ final class ToursCoordinator: Coordinator {
 }
 
 extension ToursCoordinator {
-  func redirectTo(tour: TourModel) {
+  func redirectToTour(with id: Int) {
+    let viewModel = TourDetailViewModel(id: id, coordinator: self)
+    let viewController = TourDetailViewController(viewModel: viewModel)
+    navigationController.pushViewController(viewController, animated: true)
+  }
 
+  func redirectToPlaceDetail(with id: Int) {
+    let viewModel = PlaceDetailViewModel(id: id, coordinator: self)
+    let viewController = PlaceDetailViewController(viewModel: viewModel)
+    navigationController.pushViewController(viewController, animated: true)
   }
 }

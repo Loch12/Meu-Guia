@@ -1,0 +1,14 @@
+[
+  {
+    "name":"Ufes - Ceunes",
+    "image":"https://example.com/images/guriri_beach.jpg",
+    "description":"Uma das praias mais populares de São Mateus, conhecida por suas águas calmas e infraestrutura turística.",
+    "id":1
+  },
+  {
+    "name":"Ufes - Goiabeiras",
+    "image":"https://example.com/images/guriri_beach.jpg",
+    "description":"Uma das praias mais populares de São Mateus, conhecida por suas águas calmas e infraestrutura turística.",
+    "id":2
+  }
+]
