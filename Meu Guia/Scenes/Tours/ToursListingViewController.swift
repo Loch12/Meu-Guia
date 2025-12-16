@@ -36,6 +36,18 @@ class ToursListingViewController: BaseViewController<ToursListingView> {
 
   func setupDelegates() {
     baseView.setupDelegate(delegate: self)
+    viewModel.setupDelegate(delegate: self)
+  }
+
+  override func showHelp() {
+    let alert = UIAlertController(
+      title: .tourListingHelpTitle,
+      message: .tourListingHelpMessage,
+      preferredStyle: .alert
+    )
+
+    alert.addAction(UIAlertAction(title: "Entendi", style: .default))
+    present(alert, animated: true)
   }
 }
 

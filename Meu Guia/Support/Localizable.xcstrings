@@ -12,6 +12,17 @@
         }
       }
     },
+    "description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descrição"
+          }
+        }
+      }
+    },
     "error" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -30,6 +41,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seja bem vindo ao app acessível de localização Meu Guia"
+          }
+        }
+      }
+    },
+    "homeHelpMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home"
+          }
+        }
+      }
+    },
+    "homeHelpTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajuda Home"
           }
         }
       }
@@ -74,6 +107,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Não foi possível realizar a ligação"
+          }
+        }
+      }
+    },
+    "placeHelpMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Local"
+          }
+        }
+      }
+    },
+    "placeHelpTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajuda Local"
           }
         }
       }
@@ -162,6 +217,50 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Não foi possível abrir o site"
+          }
+        }
+      }
+    },
+    "tourDetailHelpMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detalhes do Tour"
+          }
+        }
+      }
+    },
+    "tourDetailHelpTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajuda Detalhes do Tour"
+          }
+        }
+      }
+    },
+    "tourListingHelpMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listagem de Tour"
+          }
+        }
+      }
+    },
+    "tourListingHelpTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajuda Listagem de Tour"
           }
         }
       }

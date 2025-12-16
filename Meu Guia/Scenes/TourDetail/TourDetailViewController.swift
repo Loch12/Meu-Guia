@@ -39,6 +39,17 @@ class TourDetailViewController: BaseViewController<TourDetailView> {
     viewModel.setupDelegate(delegate: self)
     baseView.setupDelegate(delegate: self)
   }
+
+  override func showHelp() {
+    let alert = UIAlertController(
+      title: .tourDetailHelpTitle,
+      message: .tourDetailHelpMessage,
+      preferredStyle: .alert
+    )
+
+    alert.addAction(UIAlertAction(title: "Entendi", style: .default))
+    present(alert, animated: true)
+  }
 }
 
 // MARK: - TableView
@@ -74,6 +85,7 @@ extension TourDetailViewController: UISearchBarDelegate {
 // MARK: - TourDetailViewControllerProtocol
 extension TourDetailViewController: TourDetailViewControllerProtocol {
   func reloadInfo() {
-    baseView.reloadData()
+    guard let tour = viewModel.getTour() else { return }
+    baseView.reloadData(tour: tour)
   }
 }

@@ -12,21 +12,13 @@ class HomeView: BaseView {
   var delegate: HomeViewProtocol?
 
   // MARK: - Components
-  private lazy var homeIcon: UIImageView = {
-    let view = UIImageView()
-    view.image = .icHome
-    view.contentMode = .scaleAspectFill
-    view.translatesAutoresizingMaskIntoConstraints = false
-    return view
-  }()
-
-  private lazy var homeDescription: UILabel = {
-    let label = UILabel()
+  private lazy var homeDescription: BaseLabel = {
+    let label = BaseLabel()
     label.text = .homeDescriptionText
     label.textAlignment = .center
     label.numberOfLines = 0
     label.textColor = .primaryColor
-    label.font = .nunito(.bold, size: 24)
+    label.font = .nunito(.bold, textStyle: .largeTitle, size: 24)
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
@@ -34,7 +26,7 @@ class HomeView: BaseView {
   private lazy var seeToursButton: UIButton = {
     let button = UIButton()
     button.setTitle(.searchToursButtonText, for: .normal)
-    button.titleLabel?.font = .nunito(.bold, size: 20)
+    button.titleLabel?.font = .nunito(.bold, textStyle: .title1, size: 20)
     button.layer.cornerRadius = 7
     button.backgroundColor = .buttonBaseColor
     button.addTarget(self, action: #selector(redirectToOnlineTours), for: .touchUpInside)
@@ -45,7 +37,7 @@ class HomeView: BaseView {
   private lazy var savedToursButton: UIButton = {
     let button = UIButton()
     button.setTitle(.savedToursButtonText, for: .normal)
-    button.titleLabel?.font = .nunito(.bold, size: 20)
+    button.titleLabel?.font = .nunito(.bold, textStyle: .title1, size: 20)
     button.layer.cornerRadius = 7
     button.backgroundColor = .buttonBaseColor
     button.addTarget(self, action: #selector(redirectToSavedTours), for: .touchUpInside)
@@ -54,23 +46,16 @@ class HomeView: BaseView {
   }()
 
   override func setup() {
-    addSubviews(homeIcon,
-                homeDescription,
+    addSubviews(homeDescription,
                 seeToursButton,
                 savedToursButton)
   }
 
   override func setupConstraints() {
     NSLayoutConstraint.activate([
-      homeIcon.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30),
-      homeIcon.widthAnchor.constraint(equalToConstant: 150),
-      homeIcon.heightAnchor.constraint(equalToConstant: 150),
-      homeIcon.centerXAnchor.constraint(equalTo: centerXAnchor),
-
-      homeDescription.topAnchor.constraint(equalTo: homeIcon.bottomAnchor, constant: 48),
+      homeDescription.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30),
       homeDescription.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
       homeDescription.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-      homeDescription.bottomAnchor.constraint(equalTo: seeToursButton.topAnchor, constant: -10),
 
       savedToursButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -60),
       savedToursButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),

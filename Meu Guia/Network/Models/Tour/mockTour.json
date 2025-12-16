@@ -1,20 +1,225 @@
 {
-  "name":"Ufes - Ceunes",
-  "image":"https://example.com/images/guriri_beach.jpg",
-  "description":"Uma das praias mais populares de São Mateus, conhecida por suas águas calmas e infraestrutura turística.",
-  "id":1,
+  "name": "Ufes - Ceunes",
+  "image": "https://www.ufes.br/sites/default/files/field/image/whatsapp_image_2023-04-11_at_10.32.05.jpeg",
+  "description": "Campus da UFES localizado em São Mateus, com foco em cursos de graduação e pesquisa.",
+  "id": 1,
   "places": [
     {
-      "name":"Cantina",
-      "image":"https://example.com/images/guriri_beach.jpg",
-      "description":"Uma das praias mais populares de São Mateus, conhecida por suas águas calmas e infraestrutura turística.",
-      "id": 1
+      "name": "Guriri Beach",
+      "image": "",
+      "description": "Uma das praias mais populares de São Mateus (ES), conhecida por suas águas calmas, extensa faixa de areia e infraestrutura turística.",
+      "info": [
+        {
+          "title": "Site Oficial",
+          "value": "https://www.saomateus.es.gov.br",
+          "type": "link",
+          "description": "Site oficial da Prefeitura de São Mateus com informações turísticas"
+        },
+        {
+          "title": "Instagram",
+          "value": "https://www.instagram.com/praiadeguriri/",
+          "type": "link",
+          "description": "Perfil público no Instagram com fotos e eventos da região"
+        },
+        {
+          "title": "Telefone - Turismo",
+          "value": "(27) 3763-1234",
+          "type": "phone",
+          "description": "Contato da Secretaria de Turismo de São Mateus"
+        },
+        {
+          "title": "Horário de Funcionamento",
+          "value": "Acesso livre – 24 horas",
+          "type": "text",
+          "description": "A praia pode ser visitada a qualquer horário"
+        }
+      ],
+      "coordinates": {
+        "latitude": -18.7294,
+        "longitude": -39.8542
+      }
     },
     {
-      "name":"Eixo 3",
-      "image":"https://example.com/images/guriri_beach.jpg",
-      "description":"Uma das praias mais populares de São Mateus, conhecida por suas águas calmas e infraestrutura turística.",
-      "id": 2
+      "name": "Biblioteca Central",
+      "image": "https://www.ufes.br/sites/default/files/2024-03/teatro_ufes.png",
+      "description": "Biblioteca universitária com acervo físico e digital para apoio ao ensino e pesquisa.",
+      "info": [
+        {
+          "title": "Horário",
+          "value": "Segunda a sexta, 08:00 - 22:00",
+          "type": "text",
+          "description": "Horário de funcionamento da biblioteca"
+        },
+        {
+          "title": "Telefone",
+          "value": "(27) 3333-2222",
+          "type": "phone",
+          "description": "Telefone para atendimento ao público"
+        }
+      ],
+      "coordinates": {
+        "latitude": -18.7310,
+        "longitude": -39.8561
+      }
+    },
+    {
+      "name": "Auditório do Campus",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmQEKyaSTGnAYAFPUosY2jfU3CJSoiY3SiQQ&s",
+      "description": "Espaço destinado a palestras, eventos acadêmicos, seminários e apresentações culturais.",
+      "info": [
+        {
+          "title": "Capacidade",
+          "value": "300 pessoas",
+          "type": "text",
+          "description": "Capacidade máxima do auditório"
+        },
+        {
+          "title": "Uso",
+          "value": "Eventos acadêmicos e institucionais",
+          "type": "other",
+          "description": "Tipos de eventos realizados no local"
+        }
+      ],
+      "coordinates": {
+        "latitude": -18.7302,
+        "longitude": -39.8550
+      }
+    },
+    {
+      "name": "Área de Convivência",
+      "image": "https://www.ufes.br/sites/default/files/field/image/whatsapp_image_2023-04-11_at_10.32.05.jpeg",
+      "description": "Espaço aberto para descanso, alimentação, integração entre estudantes e atividades informais.",
+      "info": [
+        {
+          "title": "Acesso",
+          "value": "Livre para alunos e visitantes",
+          "type": "text",
+          "description": "Área aberta durante o horário de funcionamento do campus"
+        }
+      ],
+      "coordinates": {
+        "latitude": -18.7321,
+        "longitude": -39.8538
+      }
+    },
+    {
+      "name": "Área de Convivência",
+      "image": "https://www.ufes.br/sites/default/files/field/image/whatsapp_image_2023-04-11_at_10.32.05.jpeg",
+      "description": "Espaço aberto para descanso, alimentação, integração entre estudantes e atividades informais.",
+      "info": [
+        {
+          "title": "Acesso",
+          "value": "Livre para alunos e visitantes",
+          "type": "text",
+          "description": "Área aberta durante o horário de funcionamento do campus"
+        }
+      ],
+      "coordinates": {
+        "latitude": -18.7321,
+        "longitude": -39.8538
+      }
+    },
+    {
+      "name": "Área de Convivência",
+      "image": "https://www.ufes.br/sites/default/files/field/image/whatsapp_image_2023-04-11_at_10.32.05.jpeg",
+      "description": "Espaço aberto para descanso, alimentação, integração entre estudantes e atividades informais.",
+      "info": [
+        {
+          "title": "Acesso",
+          "value": "Livre para alunos e visitantes",
+          "type": "text",
+          "description": "Área aberta durante o horário de funcionamento do campus"
+        }
+      ],
+      "coordinates": {
+        "latitude": -18.7321,
+        "longitude": -39.8538
+      }
+    },
+    {
+      "name": "Área de Convivência",
+      "image": "https://www.ufes.br/sites/default/files/field/image/whatsapp_image_2023-04-11_at_10.32.05.jpeg",
+      "description": "Espaço aberto para descanso, alimentação, integração entre estudantes e atividades informais.",
+      "info": [
+        {
+          "title": "Acesso",
+          "value": "Livre para alunos e visitantes",
+          "type": "text",
+          "description": "Área aberta durante o horário de funcionamento do campus"
+        }
+      ],
+      "coordinates": {
+        "latitude": -18.7321,
+        "longitude": -39.8538
+      }
+    },
+    {
+      "name": "Área de Convivência",
+      "image": "https://www.ufes.br/sites/default/files/field/image/whatsapp_image_2023-04-11_at_10.32.05.jpeg",
+      "description": "Espaço aberto para descanso, alimentação, integração entre estudantes e atividades informais.",
+      "info": [
+        {
+          "title": "Acesso",
+          "value": "Livre para alunos e visitantes",
+          "type": "text",
+          "description": "Área aberta durante o horário de funcionamento do campus"
+        }
+      ],
+      "coordinates": {
+        "latitude": -18.7321,
+        "longitude": -39.8538
+      }
+    },
+    {
+      "name": "Área de Convivência",
+      "image": "https://www.ufes.br/sites/default/files/field/image/whatsapp_image_2023-04-11_at_10.32.05.jpeg",
+      "description": "Espaço aberto para descanso, alimentação, integração entre estudantes e atividades informais.",
+      "info": [
+        {
+          "title": "Acesso",
+          "value": "Livre para alunos e visitantes",
+          "type": "text",
+          "description": "Área aberta durante o horário de funcionamento do campus"
+        }
+      ],
+      "coordinates": {
+        "latitude": -18.7321,
+        "longitude": -39.8538
+      }
+    },
+    {
+      "name": "Área de Convivência",
+      "image": "https://www.ufes.br/sites/default/files/field/image/whatsapp_image_2023-04-11_at_10.32.05.jpeg",
+      "description": "Espaço aberto para descanso, alimentação, integração entre estudantes e atividades informais.",
+      "info": [
+        {
+          "title": "Acesso",
+          "value": "Livre para alunos e visitantes",
+          "type": "text",
+          "description": "Área aberta durante o horário de funcionamento do campus"
+        }
+      ],
+      "coordinates": {
+        "latitude": -18.7321,
+        "longitude": -39.8538
+      }
+    },
+    {
+      "name": "Área de Convivência",
+      "image": "https://www.ufes.br/sites/default/files/field/image/whatsapp_image_2023-04-11_at_10.32.05.jpeg",
+      "description": "Espaço aberto para descanso, alimentação, integração entre estudantes e atividades informais.",
+      "info": [
+        {
+          "title": "Acesso",
+          "value": "Livre para alunos e visitantes",
+          "type": "text",
+          "description": "Área aberta durante o horário de funcionamento do campus"
+        }
+      ],
+      "coordinates": {
+        "latitude": -18.7321,
+        "longitude": -39.8538
+      }
     }
   ]
 }

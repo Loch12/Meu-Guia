@@ -28,8 +28,8 @@ extension ToursCoordinator {
     navigationController.pushViewController(viewController, animated: true)
   }
 
-  func redirectToPlaceDetail(with id: Int) {
-    let viewModel = PlaceDetailViewModel(id: id, coordinator: self)
+  func redirectToPlaceDetail(place: PlaceModel) {
+    let viewModel = PlaceDetailViewModel(place: place, coordinator: self)
     let viewController = PlaceDetailViewController(viewModel: viewModel)
     navigationController.pushViewController(viewController, animated: true)
   }

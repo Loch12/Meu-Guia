@@ -8,6 +8,7 @@ protocol TourDetailViewModelProtocol {
   func filterPlaces(by text: String)
   func didSelect(at index: IndexPath)
   func fetchTourDetail()
+  func getTour() -> TourDetailModel?
 }
 
 // MARK: - TourDetailViewModel
@@ -78,8 +79,12 @@ extension TourDetailViewModel {
 
   func didSelect(at index: IndexPath) {
     guard index.row < filteredPlaces.count,
-          let id = filteredPlaces[index.row].id else { return }
+          filteredPlaces.count > 0 else { return }
 
-    coordinator.redirectToPlaceDetail(with: id)
+    coordinator.redirectToPlaceDetail(place: filteredPlaces[index.row])
+  }
+
+  func getTour() -> TourDetailModel? {
+    tour
   }
 }

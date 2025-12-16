@@ -1,10 +1,5 @@
 import UIKit
 
-// MARK: - PlaceDetailViewControllerProtocol
-protocol PlaceDetailViewControllerProtocol: AnyObject, BaseViewControllerProtocol {
-  func reloadInfo()
-}
-
 // MARK: - PlaceDetailViewController
 class PlaceDetailViewController: BaseViewController<PlaceDetailView> {
   // MARK: - Properties
@@ -24,20 +19,21 @@ class PlaceDetailViewController: BaseViewController<PlaceDetailView> {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    title = viewModel.getPlaceInfo().name
     setupNavBarBackButton()
     baseView.delegate = self
-    viewModel.setControllerDelegate(self)
-    viewModel.fetchPlaceDetail()
+    baseView.setupView(place: viewModel.getPlaceInfo())
   }
-}
 
-// MARK: - PlaceDetailViewControllerProtocol
-extension PlaceDetailViewController: PlaceDetailViewControllerProtocol {
-  func reloadInfo() {
-    guard let place = viewModel.place else { return }
+  override func showHelp() {
+    let alert = UIAlertController(
+      title: .placeHelpTitle,
+      message: .placeHelpMessage,
+      preferredStyle: .alert
+    )
 
-    title = place.name
-    baseView.setupInfo(place: place)
+    alert.addAction(UIAlertAction(title: "Entendi", style: .default))
+    present(alert, animated: true)
   }
 }
 

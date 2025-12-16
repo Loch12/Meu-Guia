@@ -1,8 +1,12 @@
 import UIKit
 
 extension UIFont {
-  class func nunito(_ type: NunitoType, size: CGFloat = UIFont.systemFontSize) -> UIFont {
-    return UIFont(name: "Nunito\(type.rawValue)", size: size) ?? UIFont.systemFont(ofSize: size)
+  static func nunito(_ type: NunitoType, textStyle: UIFont.TextStyle, size: CGFloat) -> UIFont {
+    guard let customFont = UIFont(name: "Nunito\(type.rawValue)", size: size) else {
+      return UIFont.preferredFont(forTextStyle: textStyle)
+    }
+
+    return UIFontMetrics(forTextStyle: textStyle).scaledFont(for: customFont)
   }
 }
 

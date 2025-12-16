@@ -1,7 +1,8 @@
 import UIKit
 
 extension UIImage {
-  static var icHome = UIImage(libImageNamed: "icHome")
+  static var placeholder = UIImage(libImageNamed: "placeholder")
+  static var detailPlaceholder = UIImage(libImageNamed: "detailPlaceholder")
   static var icArrowBack = UIImage(libImageNamed: "icArrowBack")
 }
 

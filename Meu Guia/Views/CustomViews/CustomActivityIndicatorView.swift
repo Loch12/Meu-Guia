@@ -2,17 +2,19 @@ import UIKit
 
 class CustomActivityIndicatorView: UIView {
   private let activity: UIActivityIndicatorView = {
-    let activity = UIActivityIndicatorView(style: .whiteLarge)
-    activity.backgroundColor = .gray.withAlphaComponent(0.95)
+    let activity = UIActivityIndicatorView()
+    activity.hidesWhenStopped = true
+    activity.layer.zPosition = CGFloat(Float.greatestFiniteMagnitude)
+    activity.color = .white
     activity.translatesAutoresizingMaskIntoConstraints = false
     return activity
   }()
 
-  private let warningText: UILabel = {
-    let label = UILabel()
+  private let warningText: BaseLabel = {
+    let label = BaseLabel()
     label.numberOfLines = 0
     label.textAlignment = .center
-    label.font = .nunito(.bold, size: 20)
+    label.font = .nunito(.bold, textStyle: .title1, size: 20)
     label.textColor = .white
     label.text = .loadingText
     label.translatesAutoresizingMaskIntoConstraints = false
@@ -30,20 +32,20 @@ class CustomActivityIndicatorView: UIView {
   }
 
   func setupView() {
+    backgroundColor = .gray.withAlphaComponent(0.95)
     addSubviews(activity, warningText)
     setupConstraints()
   }
 
   func setupConstraints() {
     NSLayoutConstraint.activate([
-      activity.topAnchor.constraint(equalTo: topAnchor),
-      activity.leadingAnchor.constraint(equalTo: leadingAnchor),
-      activity.trailingAnchor.constraint(equalTo: trailingAnchor),
-      activity.bottomAnchor.constraint(equalTo: bottomAnchor),
+      activity.centerXAnchor.constraint(equalTo: centerXAnchor),
+      activity.centerYAnchor.constraint(equalTo: centerYAnchor),
+      activity.heightAnchor.constraint(equalToConstant: 30),
+      activity.widthAnchor.constraint(equalToConstant: 30),
 
-      warningText.topAnchor.constraint(equalTo: activity.centerYAnchor, constant: 20),
-      warningText.leadingAnchor.constraint(equalTo: activity.leadingAnchor, constant: 30),
-      warningText.trailingAnchor.constraint(equalTo: activity.trailingAnchor, constant: -30)
+      warningText.topAnchor.constraint(equalTo: activity.bottomAnchor, constant: 20),
+      warningText.centerXAnchor.constraint(equalTo: centerXAnchor)
     ])
   }
 

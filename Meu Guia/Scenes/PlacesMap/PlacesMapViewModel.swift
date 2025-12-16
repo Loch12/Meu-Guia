@@ -2,23 +2,23 @@ import Foundation
 
 // MARK: - PlacesMapViewModelProtocol
 protocol PlacesMapViewModelProtocol {
-  var places: [PlaceDetailModel] { get }
+  var places: [PlaceModel] { get }
 
-  func redirectToDetail(place: PlaceDetailModel)
+  func redirectToDetail(place: PlaceModel)
 }
 
 // MARK: - PlacesMapViewModel
 class PlacesMapViewModel: PlacesMapViewModelProtocol {
   // MARK: - Properties
-  let places: [PlaceDetailModel]
+  let places: [PlaceModel]
 
-  init(places: [PlaceDetailModel]) {
+  init(places: [PlaceModel]) {
     self.places = places
   }
 }
 
 extension PlacesMapViewModel {
-  func redirectToDetail(place: PlaceDetailModel) {
+  func redirectToDetail(place: PlaceModel) {
 
   }
 }

@@ -28,30 +28,34 @@ class HomeViewModel: HomeViewModelProtocol {
 extension HomeViewModel {
   func redirectToSavedTours() {
     controllerDelegate?.startLoading()
-    worker.fetchTours { [weak self] result in
-      guard let self = self else { return }
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+      self.worker.fetchTours { [weak self] result in
+        guard let self = self else { return }
 
-      self.controllerDelegate?.stopLoading()
-      switch result {
-      case .success(let tours):
-        self.coordinator.redirectToSavedTours(tours: tours)
-      case .failure(let error):
-        coordinator.showError(error)
+        self.controllerDelegate?.stopLoading()
+        switch result {
+        case .success(let tours):
+          self.coordinator.redirectToSavedTours(tours: tours)
+        case .failure(let error):
+          coordinator.showError(error)
+        }
       }
     }
   }
 
   func redirectToOnlineTours() {
     controllerDelegate?.startLoading()
-    worker.fetchTours { [weak self] result in
-      guard let self = self else { return }
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+      self.worker.fetchTours { [weak self] result in
+        guard let self = self else { return }
 
-      self.controllerDelegate?.stopLoading()
-      switch result {
-      case .success(let tours):
-        self.coordinator.redirectToSavedTours(tours: tours)
-      case .failure(let error):
-        coordinator.showError(error)
+        self.controllerDelegate?.stopLoading()
+        switch result {
+        case .success(let tours):
+          self.coordinator.redirectToSavedTours(tours: tours)
+        case .failure(let error):
+          coordinator.showError(error)
+        }
       }
     }
   }

@@ -31,11 +31,11 @@ class PlacesMapView: BaseView {
     return view
   }()
 
-  private lazy var detailButtonLabel: UILabel = {
-    let label = UILabel()
+  private lazy var detailButtonLabel: BaseLabel = {
+    let label = BaseLabel()
     label.text = .seeDetailsText
     label.textColor = .primaryColor
-    label.font = .nunito(.bold, size: 16)
+    label.font = .nunito(.bold, textStyle: .title1, size: 16)
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
@@ -64,12 +64,12 @@ class PlacesMapView: BaseView {
   }
 
   // MARK: - Methods
-  func setupMap(delegate: MKMapViewDelegate, places: [PlaceDetailModel]) {
+  func setupMap(delegate: MKMapViewDelegate, places: [PlaceModel]) {
     mapView.delegate = delegate
     setupAnnotations(places: places)
   }
 
-  func setupAnnotations(places: [PlaceDetailModel]) {
+  func setupAnnotations(places: [PlaceModel]) {
     var annotations = [MKPointAnnotation]()
     for place in places {
       if let annotationLocation = place.coordinates?.getAddressLocation() {

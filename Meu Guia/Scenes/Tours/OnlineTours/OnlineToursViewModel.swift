@@ -17,10 +17,6 @@ class OnlineToursViewModel: ToursListingViewModelProtocol {
     self.tours = tours
     self.filteredTours = tours
   }
-
-  func setupDelegate(delegate: ToursListingViewControllerProtocol) {
-    self.delegate = delegate
-  }
 }
 
 extension OnlineToursViewModel {
@@ -40,8 +36,8 @@ extension OnlineToursViewModel {
       return
     }
 
-    filteredTours = tours.filter { place in
-      guard let name = place.name else { return false }
+    filteredTours = tours.filter { tour in
+      guard let name = tour.name else { return false }
       return name.containsIgnoringCase(find: text)
     }
   }
@@ -51,5 +47,9 @@ extension OnlineToursViewModel {
           let id = filteredTours[index.row].id else { return }
 
     coordinator.redirectToTour(with: id)
+  }
+
+  func setupDelegate(delegate: ToursListingViewControllerProtocol) {
+    self.delegate = delegate
   }
 }

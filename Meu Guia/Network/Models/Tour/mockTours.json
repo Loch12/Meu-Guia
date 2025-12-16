@@ -1,14 +1,50 @@
 [
   {
-    "name":"Ufes - Ceunes",
-    "image":"https://example.com/images/guriri_beach.jpg",
-    "description":"Uma das praias mais populares de São Mateus, conhecida por suas águas calmas e infraestrutura turística.",
-    "id":1
+    "name": "Ufes - Ceunes",
+    "image": "",
+    "description": "Campus da UFES localizado em São Mateus, com foco em cursos das áreas de exatas, humanas e biológicas.",
+    "id": 1
   },
   {
-    "name":"Ufes - Goiabeiras",
-    "image":"https://example.com/images/guriri_beach.jpg",
-    "description":"Uma das praias mais populares de São Mateus, conhecida por suas águas calmas e infraestrutura turística.",
-    "id":2
+    "name": "Ufes - Goiabeiras",
+    "image": "https://www.ufes.br/sites/default/files/2024-03/campus_goiabeiras.jpeg",
+    "description": "Principal campus da UFES, localizado em Vitória, concentrando grande parte dos cursos e centros de pesquisa.",
+    "id": 2
+  },
+  {
+    "name": "Ufes - Maruípe",
+    "image": "https://www.ufes.br/sites/default/files/2024-03/teatro_ufes.png",
+    "description": "Campus voltado principalmente para cursos da área da saúde, como Medicina, Enfermagem e Odontologia.",
+    "id": 3
+  },
+  {
+    "name": "Ufes - Alegre",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmQEKyaSTGnAYAFPUosY2jfU3CJSoiY3SiQQ&s",
+    "description": "Campus localizado no sul do estado, com forte atuação em cursos de ciências agrárias e engenharias.",
+    "id": 4
+  },
+  {
+    "name": "Parque Pedra da Cebola",
+    "image": "https://www.ufes.br/sites/default/files/2024-03/campus_goiabeiras.jpeg",
+    "description": "Parque urbano em Vitória, ideal para caminhadas, lazer ao ar livre e contato com a natureza.",
+    "id": 5
+  },
+  {
+    "name": "Convento da Penha",
+    "image": "https://www.ufes.br/sites/default/files/2024-03/teatro_ufes.png",
+    "description": "Um dos pontos turísticos mais famosos do Espírito Santo, com vista panorâmica e valor histórico-religioso.",
+    "id": 6
+  },
+  {
+    "name": "Praia da Costa",
+    "image": "https://www.ufes.br/sites/default/files/field/image/whatsapp_image_2023-04-11_at_10.32.05.jpeg",
+    "description": "Praia urbana muito procurada em Vila Velha, conhecida por sua infraestrutura e águas limpas.",
+    "id": 7
+  },
+  {
+    "name": "Praça dos Namorados",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmQEKyaSTGnAYAFPUosY2jfU3CJSoiY3SiQQ&s",
+    "description": "Área de lazer em Vitória com feiras, restaurantes e espaço para eventos culturais.",
+    "id": 8
   }
 ]

@@ -1,7 +1,7 @@
 import UIKit
 
 // MARK: - HomeViewController
-class HomeViewController: BaseViewController<HomeView> {
+final class HomeViewController: BaseViewController<HomeView> {
   // MARK: - Properties
   let viewModel: HomeViewModelProtocol
 
@@ -22,6 +22,17 @@ class HomeViewController: BaseViewController<HomeView> {
 
     title = .homeTitle
     viewModel.setupDelegate(delegate: self)
+  }
+
+  override func showHelp() {
+    let alert = UIAlertController(
+      title: .homeHelpTitle,
+      message: .homeHelpMessage,
+      preferredStyle: .alert
+    )
+
+    alert.addAction(UIAlertAction(title: "Entendi", style: .default))
+    present(alert, animated: true)
   }
 }
 
