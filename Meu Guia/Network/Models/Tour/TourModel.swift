@@ -5,4 +5,5 @@ struct TourModel: Codable {
   let id: Int?
   let description: String?
   let image: String?
+  let places: [PlaceModel]?
 }

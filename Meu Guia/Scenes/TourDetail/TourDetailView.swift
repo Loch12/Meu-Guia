@@ -51,12 +51,12 @@ extension TourDetailView {
     searchBar.delegate = delegate
   }
 
-  func reloadData(tour: TourDetailModel) {
+  func reloadData(tour: TourModel) {
     setTableHeaderView(tour: tour)
     tableView.reloadData()
   }
 
-  func setTableHeaderView(tour: TourDetailModel) {
+  func setTableHeaderView(tour: TourModel) {
     let contentView = TourDetailHeaderView()
     contentView.configure(tour: tour)
 

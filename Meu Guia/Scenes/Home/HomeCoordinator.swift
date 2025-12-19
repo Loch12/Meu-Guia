@@ -34,6 +34,6 @@ extension HomeCoordinator {
 
   func redirectToSavedTours(tours: [TourModel]) {
     let coordinator = ToursCoordinator(navigationController: navigationController, tours: tours)
-    coordinator.start()
+    coordinator.startOffline()
   }
 }

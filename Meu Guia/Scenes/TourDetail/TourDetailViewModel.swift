@@ -8,14 +8,14 @@ protocol TourDetailViewModelProtocol {
   func filterPlaces(by text: String)
   func didSelect(at index: IndexPath)
   func fetchTourDetail()
-  func getTour() -> TourDetailModel?
+  func getTour() -> TourModel?
 }
 
 // MARK: - TourDetailViewModel
 class TourDetailViewModel: TourDetailViewModelProtocol {
   // MARK: - Properties
   let id: Int
-  var tour: TourDetailModel?
+  var tour: TourModel?
   let coordinator: ToursCoordinator
   let worker: TourDetailWorkerProtocol
   var controllerDelegate: TourDetailViewControllerProtocol?
@@ -84,7 +84,7 @@ extension TourDetailViewModel {
     coordinator.redirectToPlaceDetail(place: filteredPlaces[index.row])
   }
 
-  func getTour() -> TourDetailModel? {
+  func getTour() -> TourModel? {
     tour
   }
 }

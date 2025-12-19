@@ -27,20 +27,10 @@ class HomeViewModel: HomeViewModelProtocol {
 // MARK: - Methods
 extension HomeViewModel {
   func redirectToSavedTours() {
-    controllerDelegate?.startLoading()
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-      self.worker.fetchTours { [weak self] result in
-        guard let self = self else { return }
+    let persistence = CoreDataTourPersistence()
+    let tours = persistence.fetchAllTours()
 
-        self.controllerDelegate?.stopLoading()
-        switch result {
-        case .success(let tours):
-          self.coordinator.redirectToSavedTours(tours: tours)
-        case .failure(let error):
-          coordinator.showError(error)
-        }
-      }
-    }
+    coordinator.redirectToSavedTours(tours: tours)
   }
 
   func redirectToOnlineTours() {
@@ -52,7 +42,7 @@ extension HomeViewModel {
         self.controllerDelegate?.stopLoading()
         switch result {
         case .success(let tours):
-          self.coordinator.redirectToSavedTours(tours: tours)
+          self.coordinator.redirectToOnlineTours(tours: tours)
         case .failure(let error):
           coordinator.showError(error)
         }

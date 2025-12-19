@@ -58,11 +58,15 @@ extension ToursListingViewController: UITableViewDelegate, UITableViewDataSource
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return viewModel.getHowManyTours()
+    viewModel.getHowManyTours() == 0 ? 1 : viewModel.getHowManyTours()
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let tour = viewModel.getTour(by: indexPath.row) else { return UITableViewCell() }
+    guard let tour = viewModel.getTour(by: indexPath.row) else {
+      let cell = TourPlaceholderTableViewCell()
+      cell.configure(isOnline: viewModel.isOnline)
+      return cell
+    }
 
     let cell = tableView.dequeueReusableCell(for: indexPath) as PlaceTableViewCell
     cell.configure(text: tour.name, image: tour.image)

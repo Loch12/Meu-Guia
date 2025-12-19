@@ -35,4 +35,6 @@ extension String {
   static var placeHelpMessage: String { "placeHelpMessage".localized }
   static var placeHelpTitle: String { "placeHelpTitle".localized }
 
+  static var savedToursPlaceholderMessage: String { "savedToursPlaceholderMessage".localized }
+  static var onlineToursPlaceholderMessage: String { "onlineToursPlaceholderMessage".localized }
 }

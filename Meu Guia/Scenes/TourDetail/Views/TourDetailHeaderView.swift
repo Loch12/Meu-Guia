@@ -94,7 +94,7 @@ final class TourDetailHeaderView: UIView {
   }
 
   // MARK: - Public API
-  func configure(tour: TourDetailModel) {
+  func configure(tour: TourModel) {
     titleLabel.text = tour.name
     descriptionLabel.text = tour.description
 

@@ -3,6 +3,7 @@ import Foundation
 // MARK: - OnlineToursViewModel
 class OnlineToursViewModel: ToursListingViewModelProtocol {
   // MARK: - Properties
+  let isOnline = true
   let coordinator: ToursCoordinator
   let tours: [TourModel]
   var delegate: ToursListingViewControllerProtocol?
@@ -25,7 +26,8 @@ extension OnlineToursViewModel {
   }
 
   func getTour(by index: Int) -> TourModel? {
-    guard index < filteredTours.count else { return nil }
+    guard index < filteredTours.count,
+          filteredTours.count > 0 else { return nil }
 
     return filteredTours[index]
   }

@@ -100,6 +100,17 @@
         }
       }
     },
+    "onlineToursPlaceholderMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhum tour disponível"
+          }
+        }
+      }
+    },
     "phoneCallErrorMessage" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -162,6 +173,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tours Salvos"
+          }
+        }
+      }
+    },
+    "savedToursPlaceholderMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não existem tour salvos, caso deseje ver os tours disponíveis clique em 'Ver todos'"
           }
         }
       }

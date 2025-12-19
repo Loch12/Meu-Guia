@@ -16,6 +16,12 @@ final class ToursCoordinator: Coordinator {
     navigationController.pushViewController(viewController, animated: true)
   }
 
+  func startOffline() {
+    let viewModel = SavedToursViewModel(coordinator: self, tours: tours)
+    let viewController = ToursListingViewController(viewModel: viewModel)
+    navigationController.pushViewController(viewController, animated: true)
+  }
+
   func showError(_ error: ErrorResponse) {
 
   }
