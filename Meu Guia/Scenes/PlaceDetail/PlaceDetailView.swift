@@ -21,8 +21,7 @@ class PlaceDetailView: BaseView {
 
   private lazy var contentView: UIView = {
     let view = UIView()
-    view.addSubviews(placeIcon,
-                     placeName,
+    view.addSubviews(placeName,
                      placeDescription,
                      infoStackView)
     view.translatesAutoresizingMaskIntoConstraints = false
@@ -37,38 +36,24 @@ class PlaceDetailView: BaseView {
     return view
   }()
 
-  private lazy var placeIcon: UIImageView = {
-    let view = UIImageView()
-    view.addSubview(activity)
-    view.contentMode = .scaleAspectFill
-    view.clipsToBounds = true
-    view.backgroundColor = .gray.withAlphaComponent(0.1)
-    view.translatesAutoresizingMaskIntoConstraints = false
-    return view
-  }()
-
-  private lazy var activity: UIActivityIndicatorView = {
-    let activity = UIActivityIndicatorView()
-    activity.hidesWhenStopped = true
-    activity.layer.zPosition = CGFloat(Float.greatestFiniteMagnitude)
-    activity.color = .primaryColor
-    activity.translatesAutoresizingMaskIntoConstraints = false
-    return activity
-  }()
-
   private lazy var placeName: BaseLabel = {
     let label = BaseLabel()
     label.numberOfLines = 0
     label.font = .nunito(.bold, textStyle: .largeTitle, size: 32)
     label.textColor = .black
+    label.textAlignment = .center
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
 
-  private lazy var placeDescription: TitleValueView = {
-    let view = TitleValueView()
-    view.translatesAutoresizingMaskIntoConstraints = false
-    return view
+  private lazy var placeDescription: BaseLabel = {
+    let label = BaseLabel()
+    label.numberOfLines = 0
+    label.font = .nunito(.regular, textStyle: .title1, size: 20)
+    label.textColor = .black
+    label.textAlignment = .justified
+    label.translatesAutoresizingMaskIntoConstraints = false
+    return label
   }()
 
   // MARK: - Override Methods
@@ -89,17 +74,7 @@ class PlaceDetailView: BaseView {
       contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
       contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
 
-      placeIcon.topAnchor.constraint(equalTo: contentView.topAnchor),
-      placeIcon.leadingAnchor.constraint(equalTo: leadingAnchor),
-      placeIcon.trailingAnchor.constraint(equalTo: trailingAnchor),
-      placeIcon.heightAnchor.constraint(equalToConstant: 200),
-
-      activity.centerXAnchor.constraint(equalTo: placeIcon.centerXAnchor),
-      activity.centerYAnchor.constraint(equalTo: placeIcon.centerYAnchor),
-      activity.widthAnchor.constraint(equalToConstant: 30),
-      activity.heightAnchor.constraint(equalToConstant: 30),
-
-      placeName.topAnchor.constraint(equalTo: placeIcon.bottomAnchor, constant: 24),
+      placeName.topAnchor.constraint(equalTo: contentView.topAnchor),
       placeName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
       placeName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
 
@@ -107,7 +82,7 @@ class PlaceDetailView: BaseView {
       placeDescription.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
       placeDescription.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
 
-      infoStackView.topAnchor.constraint(equalTo: placeDescription.bottomAnchor, constant: 12),
+      infoStackView.topAnchor.constraint(equalTo: placeDescription.bottomAnchor, constant: 16),
       infoStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
       infoStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
       infoStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
@@ -117,13 +92,8 @@ class PlaceDetailView: BaseView {
   func setupView(place: PlaceModel) {
     self.place = place
     placeName.text = place.name
-    placeDescription.setupInfo(info: PlaceDetailInfo(title: .description,
-                                                     value: place.description,
-                                                     description: "",
-                                                     type: .text),
-                               delegate: delegate)
+    placeDescription.text = place.description
     setupInfo()
-    loadImage()
   }
 
   func setupInfo() {
@@ -134,15 +104,5 @@ class PlaceDetailView: BaseView {
       infoView.setupInfo(info: info, delegate: delegate)
       infoStackView.addArrangedSubview(infoView)
     }
-  }
-
-  func loadImage() {
-    activity.startAnimating()
-    place?.image?.loadRemoteImage(completion: { image in
-      DispatchQueue.main.async {
-        self.activity.stopAnimating()
-        self.placeIcon.image = image ?? .detailPlaceholder
-      }
-    })
   }
 }

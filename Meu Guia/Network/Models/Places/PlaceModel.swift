@@ -3,7 +3,6 @@ import MapKit
 struct PlaceModel: Codable {
   let id: Int?
   let name: String?
-  let image: String?
   let description: String?
   let info: [PlaceDetailInfo]?
   let coordinates: PlaceCoordinates?

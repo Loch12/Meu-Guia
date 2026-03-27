@@ -25,7 +25,7 @@ class TourDetailView: BaseView {
     addSubviews(searchBar, tableView)
     if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
       textfield.attributedPlaceholder = NSAttributedString(string: textfield.placeholder ?? "",
-                                                           attributes: [.foregroundColor: UIColor.white])
+                                                           attributes: [.foregroundColor: UIColor.primaryColor])
       textfield.backgroundColor = .lightColor
     }
   }
@@ -52,37 +52,6 @@ extension TourDetailView {
   }
 
   func reloadData(tour: TourModel) {
-    setTableHeaderView(tour: tour)
     tableView.reloadData()
-  }
-
-  func setTableHeaderView(tour: TourModel) {
-    let contentView = TourDetailHeaderView()
-    contentView.configure(tour: tour)
-
-    let containerView = UIView()
-    containerView.backgroundColor = .clear
-    containerView.addSubview(contentView)
-    let targetWidth = UIScreen.main.bounds.width
-
-    contentView.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([
-      contentView.topAnchor.constraint(equalTo: containerView.topAnchor),
-      contentView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-      contentView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-
-      containerView.widthAnchor.constraint(equalToConstant: targetWidth),
-      containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 8)
-    ])
-
-    let fittingSize = CGSize(width: targetWidth, height: UIView.layoutFittingCompressedSize.height)
-
-    containerView.setNeedsLayout()
-    containerView.layoutIfNeeded()
-
-    let height = containerView.systemLayoutSizeFitting(fittingSize).height
-    containerView.frame = CGRect(x: 0, y: 0, width: targetWidth, height: height)
-
-    tableView.tableHeaderView = containerView
   }
 }

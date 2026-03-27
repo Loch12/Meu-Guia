@@ -8,7 +8,7 @@ extension PlaceEntity {
     return PlaceModel(
       id: Int(id),
       name: name,
-      image: image, description: desc,
+      description: desc,
       info: nil,
       coordinates: PlaceCoordinates(latitude: latitude, longitude: longitude)
     )

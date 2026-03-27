@@ -42,7 +42,7 @@ class TourDetailViewController: BaseViewController<TourDetailView> {
 
   override func showHelp() {
     let alert = UIAlertController(
-      title: .tourDetailHelpTitle,
+      title: nil,
       message: .tourDetailHelpMessage,
       preferredStyle: .alert
     )
@@ -66,7 +66,7 @@ extension TourDetailViewController: UITableViewDelegate, UITableViewDataSource {
     guard let place = viewModel.getPlace(by: indexPath.row) else { return UITableViewCell() }
 
     let cell = tableView.dequeueReusableCell(for: indexPath) as PlaceTableViewCell
-    cell.configure(text: place.name, image: place.image)
+    cell.configure(text: place.name)
     return cell
   }
 }

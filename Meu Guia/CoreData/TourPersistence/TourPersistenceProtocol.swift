@@ -34,8 +34,6 @@ final class CoreDataTourPersistence: TourPersistenceProtocol {
     }
 
     entity.name = tour.name
-    entity.desc = tour.description
-    entity.image = tour.image
 
     if let oldPlaces = entity.places as? Set<PlaceEntity> {
       oldPlaces.forEach { context.delete($0) }
@@ -46,7 +44,6 @@ final class CoreDataTourPersistence: TourPersistenceProtocol {
       placeEntity.id = Int64(place.id ?? 0)
       placeEntity.name = place.name
       placeEntity.desc = place.description
-      placeEntity.image = place.image
       placeEntity.latitude = place.coordinates?.latitude ?? 0
       placeEntity.longitude = place.coordinates?.longitude ?? 0
       entity.addToPlaces(placeEntity)
