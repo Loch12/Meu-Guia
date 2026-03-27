@@ -39,4 +39,10 @@ extension ToursCoordinator {
     let viewController = PlaceDetailViewController(viewModel: viewModel)
     navigationController.pushViewController(viewController, animated: true)
   }
+  
+  func redirectToOnlineTours(tours: [TourModel]) {
+    let viewModel = OnlineToursViewModel(coordinator: self, tours: tours)
+    let viewController = ToursListingViewController(viewModel: viewModel)
+    navigationController.pushViewController(viewController, animated: true)
+  }
 }

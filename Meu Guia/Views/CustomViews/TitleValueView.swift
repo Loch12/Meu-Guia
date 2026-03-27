@@ -59,7 +59,7 @@ class TitleValueView: UIView {
   func setupInfo(info: PlaceDetailInfo, delegate: PlaceDetailViewDelegate?) {
     self.info = info
     self.delegate = delegate
-    titleLabel.text = "• \(info.title ?? "Informação"):"
+    titleLabel.text = "\(info.title ?? "Informação"):"
     valueLabel.text = info.value
     setupAction(type: info.type)
   }

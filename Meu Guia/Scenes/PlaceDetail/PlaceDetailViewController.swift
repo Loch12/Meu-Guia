@@ -19,7 +19,6 @@ class PlaceDetailViewController: BaseViewController<PlaceDetailView> {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    title = viewModel.getPlaceInfo().name
     setupNavBarBackButton()
     baseView.delegate = self
     baseView.setupView(place: viewModel.getPlaceInfo())
@@ -27,7 +26,7 @@ class PlaceDetailViewController: BaseViewController<PlaceDetailView> {
 
   override func showHelp() {
     let alert = UIAlertController(
-      title: .placeHelpTitle,
+      title: nil,
       message: .placeHelpMessage,
       preferredStyle: .alert
     )

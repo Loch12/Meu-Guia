@@ -54,4 +54,8 @@ extension OnlineToursViewModel {
   func setupDelegate(delegate: ToursListingViewControllerProtocol) {
     self.delegate = delegate
   }
+  
+  func didSelectPlaceholder() {
+    
+  }
 }

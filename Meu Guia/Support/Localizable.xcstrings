@@ -56,17 +56,6 @@
         }
       }
     },
-    "homeHelpTitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ajuda Home"
-          }
-        }
-      }
-    },
     "homeTitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -133,17 +122,6 @@
         }
       }
     },
-    "placeHelpTitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ajuda Local"
-          }
-        }
-      }
-    },
     "placeListingTitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -151,17 +129,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Locais"
-          }
-        }
-      }
-    },
-    "placesMapTitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mapa"
           }
         }
       }
@@ -183,7 +150,18 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Não existem tour salvos, caso deseje ver os tours disponíveis clique em 'Ver todos'"
+            "value" : "Não existem tour salvos, caso deseje ver os tours online disponíveis clique aqui"
+          }
+        }
+      }
+    },
+    "saveLocationButtonText" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvar localização atual"
           }
         }
       }
@@ -221,17 +199,6 @@
         }
       }
     },
-    "seeDetailsText" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ver detalhes"
-          }
-        }
-      }
-    },
     "siteErrorMessage" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -254,17 +221,6 @@
         }
       }
     },
-    "tourDetailHelpTitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ajuda Detalhes do Tour"
-          }
-        }
-      }
-    },
     "tourListingHelpMessage" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -272,17 +228,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Listagem de Tour"
-          }
-        }
-      }
-    },
-    "tourListingHelpTitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ajuda Listagem de Tour"
           }
         }
       }

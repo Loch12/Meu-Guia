@@ -46,7 +46,7 @@ class BaseViewController<T: BaseView>: UIViewController {
 
   func showHelp() {
     let alert = UIAlertController(
-      title: "Ajuda",
+      title: nil,
       message: "Nenhuma ajuda disponível para esta tela.",
       preferredStyle: .alert
     )

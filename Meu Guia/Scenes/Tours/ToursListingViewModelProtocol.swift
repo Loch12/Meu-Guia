@@ -8,5 +8,6 @@ protocol ToursListingViewModelProtocol {
   func getTour(by index: Int) -> TourModel?
   func filterTours(by text: String)
   func didSelect(at index: IndexPath)
+  func didSelectPlaceholder()
   func setupDelegate(delegate: ToursListingViewControllerProtocol)
 }

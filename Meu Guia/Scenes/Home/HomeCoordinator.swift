@@ -4,6 +4,7 @@ import UIKit
 protocol HomeCoordinatorProtocol: Coordinator {
   func redirectToOnlineTours(tours: [TourModel])
   func redirectToSavedTours(tours: [TourModel])
+  func redirectToSaveLocation()
 }
 
 // MARK: - HomeCoordinator
@@ -35,5 +36,9 @@ extension HomeCoordinator {
   func redirectToSavedTours(tours: [TourModel]) {
     let coordinator = ToursCoordinator(navigationController: navigationController, tours: tours)
     coordinator.startOffline()
+  }
+  
+  func redirectToSaveLocation() {
+    
   }
 }

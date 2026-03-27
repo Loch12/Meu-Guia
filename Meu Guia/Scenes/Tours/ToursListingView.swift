@@ -16,7 +16,7 @@ class ToursListingView: BaseView {
     view.backgroundColor = .clear
     view.separatorStyle = .none
     view.bounces = false
-    view.registerReusableCell(PlaceTableViewCell.self)
+    view.registerReusableCell(TourTableViewCell.self)
     view.translatesAutoresizingMaskIntoConstraints = false
     return view
   }()
@@ -25,7 +25,7 @@ class ToursListingView: BaseView {
     addSubviews(searchBar, tableView)
     if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
       textfield.attributedPlaceholder = NSAttributedString(string: textfield.placeholder ?? "",
-                                                           attributes: [.foregroundColor: UIColor.white])
+                                                           attributes: [.foregroundColor: UIColor.primaryColor])
       textfield.backgroundColor = .lightColor
     }
   }

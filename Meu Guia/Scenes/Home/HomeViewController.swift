@@ -26,7 +26,7 @@ final class HomeViewController: BaseViewController<HomeView> {
 
   override func showHelp() {
     let alert = UIAlertController(
-      title: .homeHelpTitle,
+      title: nil,
       message: .homeHelpMessage,
       preferredStyle: .alert
     )
@@ -38,6 +38,10 @@ final class HomeViewController: BaseViewController<HomeView> {
 
 // MARK: - HomeViewProtocol
 extension HomeViewController: HomeViewProtocol {
+  func redirectToSaveLocation() {
+    viewModel.redirectToSaveLocation()
+  }
+  
   func redirectToOnlineTours() {
     viewModel.redirectToOnlineTours()
   }

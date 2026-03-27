@@ -35,6 +35,7 @@ class TourPlaceholderTableViewCell: UITableViewCell {
 
   // MARK: - Methods
   private func setupComponents() {
+    selectionStyle = .none
     backgroundColor = .clear
     contentView.addSubviews(cardView)
     cardView.addSubviews(title)

@@ -7,16 +7,18 @@ class SavedToursViewModel: ToursListingViewModelProtocol {
   let coordinator: ToursCoordinator
   let tours: [TourModel]
   var delegate: ToursListingViewControllerProtocol?
+  let worker: HomeWorkerProtocol
   var filteredTours: [TourModel] {
     didSet {
       delegate?.reloadInfo()
     }
   }
 
-  init(coordinator: ToursCoordinator, tours: [TourModel]) {
+  init(coordinator: ToursCoordinator, tours: [TourModel], worker: HomeWorkerProtocol = HomeWorker()) {
     self.coordinator = coordinator
     self.tours = tours
     self.filteredTours = tours
+    self.worker = worker
   }
 }
 
@@ -53,5 +55,22 @@ extension SavedToursViewModel {
 
   func setupDelegate(delegate: ToursListingViewControllerProtocol) {
     self.delegate = delegate
+  }
+  
+  func didSelectPlaceholder() {
+    delegate?.startLoading()
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+      self.worker.fetchTours { [weak self] result in
+        guard let self = self else { return }
+        
+        self.delegate?.stopLoading()
+        switch result {
+          case .success(let tours):
+            self.coordinator.redirectToOnlineTours(tours: tours)
+          case .failure(let error):
+            coordinator.showError(error)
+        }
+      }
+    }
   }
 }

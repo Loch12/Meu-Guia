@@ -1,7 +1,7 @@
 import UIKit
 
 // MARK: - ToursListingViewControllerProtocol
-protocol ToursListingViewControllerProtocol: AnyObject {
+protocol ToursListingViewControllerProtocol: BaseViewControllerProtocol {
   func reloadInfo()
 }
 
@@ -41,7 +41,7 @@ class ToursListingViewController: BaseViewController<ToursListingView> {
 
   override func showHelp() {
     let alert = UIAlertController(
-      title: .tourListingHelpTitle,
+      title: nil,
       message: .tourListingHelpMessage,
       preferredStyle: .alert
     )
@@ -54,7 +54,7 @@ class ToursListingViewController: BaseViewController<ToursListingView> {
 // MARK: - TableView
 extension ToursListingViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    viewModel.didSelect(at: indexPath)
+    viewModel.getHowManyTours() == 0 ? viewModel.didSelectPlaceholder() : viewModel.didSelect(at: indexPath)
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,8 +68,8 @@ extension ToursListingViewController: UITableViewDelegate, UITableViewDataSource
       return cell
     }
 
-    let cell = tableView.dequeueReusableCell(for: indexPath) as PlaceTableViewCell
-    cell.configure(text: tour.name, image: tour.image)
+    let cell = tableView.dequeueReusableCell(for: indexPath) as TourTableViewCell
+    cell.configure(text: tour.name, image: nil)
     return cell
   }
 }

@@ -4,6 +4,7 @@ import Foundation
 protocol HomeViewModelProtocol: AnyObject {
   func redirectToOnlineTours()
   func redirectToSavedTours()
+  func redirectToSaveLocation()
   func setupDelegate(delegate: BaseViewControllerProtocol)
 }
 
@@ -31,6 +32,10 @@ extension HomeViewModel {
     let tours = persistence.fetchAllTours()
 
     coordinator.redirectToSavedTours(tours: tours)
+  }
+  
+  func redirectToSaveLocation() {
+    coordinator.redirectToSaveLocation()
   }
 
   func redirectToOnlineTours() {
