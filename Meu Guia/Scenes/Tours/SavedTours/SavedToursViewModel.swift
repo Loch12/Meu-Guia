@@ -5,24 +5,28 @@ class SavedToursViewModel: ToursListingViewModelProtocol {
   // MARK: - Properties
   let isOnline = false
   let coordinator: ToursCoordinator
-  let tours: [TourModel]
+  var tours: [TourModel] = []
   var delegate: ToursListingViewControllerProtocol?
-  let worker: HomeWorkerProtocol
-  var filteredTours: [TourModel] {
+  let coreDataPersitance: TourPersistenceProtocol
+  var filteredTours: [TourModel] = [] {
     didSet {
       delegate?.reloadInfo()
     }
   }
 
-  init(coordinator: ToursCoordinator, tours: [TourModel], worker: HomeWorkerProtocol = HomeWorker()) {
+  init(coordinator: ToursCoordinator) {
     self.coordinator = coordinator
-    self.tours = tours
-    self.filteredTours = tours
-    self.worker = worker
+    self.coreDataPersitance = CoreDataTourPersistence()
   }
 }
 
 extension SavedToursViewModel {
+  func fetchTours() {
+    tours = coreDataPersitance.fetchAllTours()
+    filteredTours = tours
+    delegate?.reloadInfo()
+  }
+  
   func getHowManyTours() -> Int {
     return filteredTours.count
   }
@@ -47,10 +51,9 @@ extension SavedToursViewModel {
   }
 
   func didSelect(at index: IndexPath) {
-    guard index.row < filteredTours.count,
-          let id = filteredTours[index.row].id else { return }
+    guard index.row < filteredTours.count else { return }
 
-    coordinator.redirectToTour(with: id)
+    coordinator.redirectToTour(with: filteredTours[index.row], isOnline: isOnline)
   }
 
   func setupDelegate(delegate: ToursListingViewControllerProtocol) {
@@ -58,19 +61,6 @@ extension SavedToursViewModel {
   }
   
   func didSelectPlaceholder() {
-    delegate?.startLoading()
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-      self.worker.fetchTours { [weak self] result in
-        guard let self = self else { return }
-        
-        self.delegate?.stopLoading()
-        switch result {
-          case .success(let tours):
-            self.coordinator.redirectToOnlineTours(tours: tours)
-          case .failure(let error):
-            coordinator.showError(error)
-        }
-      }
-    }
+    coordinator.redirectToOnlineTours()
   }
 }

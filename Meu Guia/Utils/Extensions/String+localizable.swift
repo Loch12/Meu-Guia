@@ -6,10 +6,13 @@ extension String {
   static var loadingText: String { "loadingText".localized }
   static var okMessage: String { "okMessage".localized }
   static var description: String { "description".localized }
+  static var duplicateTourWarning: String { "duplicateTourWarning".localized }
+  static var saveTourSuccessMessage: String { "saveTourSuccessMessage".localized }
+  static var deleteTourWarning: String { "deleteTourWarning".localized }
+  static var successDeleteTour: String { "successDeleteTour".localized }
 
   // MARK: - Home
   static var homeDescriptionText: String { "homeDescriptionText".localized }
-  static var homeTitle: String { "homeTitle".localized }
   static var homeHelpMessage: String { "homeHelpMessage".localized }
   static var saveLocationButtonText: String { "saveLocationButtonText".localized }
   static var searchToursButtonText: String { "searchToursButtonText".localized }
@@ -18,13 +21,9 @@ extension String {
   // MARK: - Tour Listing
   static var searchTourText: String { "searchTourText".localized }
   static var tourListingHelpMessage: String { "tourListingHelpMessage".localized }
-  static var tourListingTitle: String { "tourListingTitle".localized }
   static var savedToursPlaceholderMessage: String { "savedToursPlaceholderMessage".localized }
   static var onlineToursPlaceholderMessage: String { "onlineToursPlaceholderMessage".localized }
   static var tourDetailHelpMessage: String { "tourDetailHelpMessage".localized }
-  
-  // MARK: - Tour Detail
-  static var placeListingTitle: String { "placeListingTitle".localized }
   
   // MARK: - Place Detail
   static var placeHelpMessage: String { "placeHelpMessage".localized }
@@ -36,5 +35,6 @@ extension String {
   static var userNotFoundErrorMessage: String { "userNotFoundErrorMessage".localized }
   static var phoneCallErrorMessage: String { "phoneCallErrorMessage".localized }
   static var siteErrorMessage: String { "siteErrorMessage".localized }
+  static var saveTourFailureMessage: String { "saveTourFailureMessage".localized }
   static var error: String { "error".localized }
 }

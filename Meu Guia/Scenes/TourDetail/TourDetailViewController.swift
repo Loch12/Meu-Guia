@@ -24,10 +24,10 @@ class TourDetailViewController: BaseViewController<TourDetailView> {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    title = .placeListingTitle
+    baseView.delegate = self
+    baseView.setupButton(isOnline: viewModel.isOnline)
     setupActions()
     setupDelegates()
-    viewModel.fetchTourDetail()
   }
 
   func setupActions() {
@@ -38,17 +38,6 @@ class TourDetailViewController: BaseViewController<TourDetailView> {
   func setupDelegates() {
     viewModel.setupDelegate(delegate: self)
     baseView.setupDelegate(delegate: self)
-  }
-
-  override func showHelp() {
-    let alert = UIAlertController(
-      title: nil,
-      message: .tourDetailHelpMessage,
-      preferredStyle: .alert
-    )
-
-    alert.addAction(UIAlertAction(title: "Entendi", style: .default))
-    present(alert, animated: true)
   }
 }
 
@@ -87,5 +76,27 @@ extension TourDetailViewController: TourDetailViewControllerProtocol {
   func reloadInfo() {
     guard let tour = viewModel.getTour() else { return }
     baseView.reloadData(tour: tour)
+  }
+}
+
+// MARK: - TourDetailViewDelegate
+extension TourDetailViewController: TourDetailViewDelegate {
+  func saveTour() {
+    let message: String = viewModel.saveTour() ? .saveTourSuccessMessage : .saveTourFailureMessage
+    showAlert(message: message)
+  }
+  
+  func deleteTour() {
+    showAlert(message: .deleteTourWarning, cancelOption: true) {
+      self.viewModel.deleteTour {
+        self.successfulDelete()
+      }
+    }
+  }
+  
+  func successfulDelete() {
+    showAlert(message: .successDeleteTour) {
+      self.viewModel.returnToListing()
+    }
   }
 }

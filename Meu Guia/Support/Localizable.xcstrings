@@ -12,6 +12,17 @@
         }
       }
     },
+    "deleteTourWarning" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deseja mesmo excluir o tour? Não será possível recuperar as informações a menos que o tour esteja disponível online."
+          }
+        }
+      }
+    },
     "description" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -19,6 +30,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Descrição"
+          }
+        }
+      }
+    },
+    "duplicateTourWarning" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Já existe um tour salvo com as mesmas informações"
           }
         }
       }
@@ -46,17 +68,6 @@
       }
     },
     "homeHelpMessage" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Home"
-          }
-        }
-      }
-    },
-    "homeTitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "pt-BR" : {
@@ -122,17 +133,6 @@
         }
       }
     },
-    "placeListingTitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Locais"
-          }
-        }
-      }
-    },
     "savedToursButtonText" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -162,6 +162,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Salvar localização atual"
+          }
+        }
+      }
+    },
+    "saveTourFailureMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Houve um erro ao tentar salvar o tour, tente novamente"
+          }
+        }
+      }
+    },
+    "saveTourSuccessMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O tour foi salvo com sucesso"
           }
         }
       }
@@ -210,6 +232,17 @@
         }
       }
     },
+    "successDeleteTour" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O tour foi excluído com sucesso"
+          }
+        }
+      }
+    },
     "tourDetailHelpMessage" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -228,17 +261,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Listagem de Tour"
-          }
-        }
-      }
-    },
-    "tourListingTitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tours"
           }
         }
       }

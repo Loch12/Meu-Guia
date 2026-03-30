@@ -7,4 +7,5 @@ protocol Coordinator {
 
   func start()
   func showError(_ error: ErrorResponse)
+  func popViewController()
 }

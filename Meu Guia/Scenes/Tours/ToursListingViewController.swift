@@ -24,9 +24,15 @@ class ToursListingViewController: BaseViewController<ToursListingView> {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    title = .tourListingTitle
     setupActions()
     setupDelegates()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    baseView.tableView.isHidden = true
+    viewModel.fetchTours()
   }
 
   func setupActions() {
@@ -37,17 +43,6 @@ class ToursListingViewController: BaseViewController<ToursListingView> {
   func setupDelegates() {
     baseView.setupDelegate(delegate: self)
     viewModel.setupDelegate(delegate: self)
-  }
-
-  override func showHelp() {
-    let alert = UIAlertController(
-      title: nil,
-      message: .tourListingHelpMessage,
-      preferredStyle: .alert
-    )
-
-    alert.addAction(UIAlertAction(title: "Entendi", style: .default))
-    present(alert, animated: true)
   }
 }
 
@@ -88,6 +83,7 @@ extension ToursListingViewController: UISearchBarDelegate {
 // MARK: - ToursListingViewControllerProtocol
 extension ToursListingViewController: ToursListingViewControllerProtocol {
   func reloadInfo() {
-    baseView.reloadData()
+    baseView.tableView.reloadData()
+    baseView.tableView.isHidden = false
   }
 }

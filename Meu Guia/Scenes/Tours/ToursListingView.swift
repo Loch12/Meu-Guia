@@ -11,11 +11,12 @@ class ToursListingView: BaseView {
     return view
   }()
 
-  private lazy var tableView: UITableView = {
+  lazy var tableView: UITableView = {
     let view = UITableView()
     view.backgroundColor = .clear
     view.separatorStyle = .none
     view.bounces = false
+    view.isHidden = true
     view.registerReusableCell(TourTableViewCell.self)
     view.translatesAutoresizingMaskIntoConstraints = false
     return view

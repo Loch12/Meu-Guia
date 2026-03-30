@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F0E49892F75BDF700CE1336 /* TourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0E49882F75BDF700CE1336 /* TourTableViewCell.swift */; };
-		CE1F83362EF45A7A00C16E29 /* TourPersistenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F83352EF45A7900C16E29 /* TourPersistenceProtocol.swift */; };
+		CE1F83362EF45A7A00C16E29 /* CoreDataTourPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F83352EF45A7900C16E29 /* CoreDataTourPersistence.swift */; };
 		CE1F833E2EF45C6F00C16E29 /* TourDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE1F833C2EF45C6F00C16E29 /* TourDataModel.xcdatamodeld */; };
 		CE1F83432EF45F4B00C16E29 /* PlaceEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F833F2EF45F4B00C16E29 /* PlaceEntity+CoreDataClass.swift */; };
 		CE1F83452EF45F4B00C16E29 /* TourEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F83412EF45F4B00C16E29 /* TourEntity+CoreDataClass.swift */; };
@@ -55,13 +55,11 @@
 		CEAE727B2CEBB453009DDE12 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE727A2CEBB452009DDE12 /* String+extension.swift */; };
 		CEAEF9462CE5129E00CF227B /* UITableView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF9452CE5129D00CF227B /* UITableView+extension.swift */; };
 		CEAEF9492CE5151900CF227B /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF9482CE5151800CF227B /* PlaceTableViewCell.swift */; };
-		CEAEF9502CE524B100CF227B /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF94F2CE524B000CF227B /* HomeWorker.swift */; };
+		CEAEF9502CE524B100CF227B /* OnlineToursWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF94F2CE524B000CF227B /* OnlineToursWorker.swift */; };
 		CEAEF9542CE5259F00CF227B /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF9532CE5259B00CF227B /* ErrorResponse.swift */; };
 		CEAEF9562CE525CE00CF227B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF9552CE525CE00CF227B /* NetworkError.swift */; };
 		CEAEF95A2CE533C400CF227B /* CustomActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAEF9592CE533C300CF227B /* CustomActivityIndicatorView.swift */; };
 		CEC38DB32EDF557900A99EAB /* mockTours.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC38DB22EDF557900A99EAB /* mockTours.json */; };
-		CEC38DB52EE0A11000A99EAB /* mockTour.json in Resources */ = {isa = PBXBuildFile; fileRef = CEC38DB42EE0A11000A99EAB /* mockTour.json */; };
-		CEC38DB72EE0A60D00A99EAB /* TourDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC38DB62EE0A60D00A99EAB /* TourDetailWorker.swift */; };
 		CEC38DBF2EE0B1B000A99EAB /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC38DBE2EE0B1AF00A99EAB /* PlaceModel.swift */; };
 		CEDA30672D08AF2900CC9B39 /* TitleValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDA30662D08AF2800CC9B39 /* TitleValueView.swift */; };
 /* End PBXBuildFile section */
@@ -85,7 +83,7 @@
 
 /* Begin PBXFileReference section */
 		2F0E49882F75BDF700CE1336 /* TourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourTableViewCell.swift; sourceTree = "<group>"; };
-		CE1F83352EF45A7900C16E29 /* TourPersistenceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourPersistenceProtocol.swift; sourceTree = "<group>"; };
+		CE1F83352EF45A7900C16E29 /* CoreDataTourPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTourPersistence.swift; sourceTree = "<group>"; };
 		CE1F833D2EF45C6F00C16E29 /* TourDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TourDataModel.xcdatamodel; sourceTree = "<group>"; };
 		CE1F833F2EF45F4B00C16E29 /* PlaceEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaceEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CE1F83412EF45F4B00C16E29 /* TourEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TourEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -136,13 +134,11 @@
 		CEAE727A2CEBB452009DDE12 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		CEAEF9452CE5129D00CF227B /* UITableView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+extension.swift"; sourceTree = "<group>"; };
 		CEAEF9482CE5151800CF227B /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
-		CEAEF94F2CE524B000CF227B /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
+		CEAEF94F2CE524B000CF227B /* OnlineToursWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineToursWorker.swift; sourceTree = "<group>"; };
 		CEAEF9532CE5259B00CF227B /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		CEAEF9552CE525CE00CF227B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		CEAEF9592CE533C300CF227B /* CustomActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivityIndicatorView.swift; sourceTree = "<group>"; };
 		CEC38DB22EDF557900A99EAB /* mockTours.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mockTours.json; sourceTree = "<group>"; };
-		CEC38DB42EE0A11000A99EAB /* mockTour.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mockTour.json; sourceTree = "<group>"; };
-		CEC38DB62EE0A60D00A99EAB /* TourDetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourDetailWorker.swift; sourceTree = "<group>"; };
 		CEC38DBE2EE0B1AF00A99EAB /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		CEDA30662D08AF2800CC9B39 /* TitleValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,7 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				CE1F834B2EF4618900C16E29 /* CoreDataStack.swift */,
-				CE1F83352EF45A7900C16E29 /* TourPersistenceProtocol.swift */,
+				CE1F83352EF45A7900C16E29 /* CoreDataTourPersistence.swift */,
 			);
 			path = TourPersistence;
 			sourceTree = "<group>";
@@ -286,7 +282,6 @@
 		CE6EE1642C456D3700ED8D38 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				CEAEF94F2CE524B000CF227B /* HomeWorker.swift */,
 				CE6EE1672C45717100ED8D38 /* HomeCoordinator.swift */,
 				CE6EE1652C456D4900ED8D38 /* HomeView.swift */,
 				CE6EE1322C45698D00ED8D38 /* HomeViewController.swift */,
@@ -364,7 +359,6 @@
 				CE56D5C82C63D93B00164678 /* TourDetailViewModel.swift */,
 				CE56D5C62C63D91600164678 /* TourDetailViewController.swift */,
 				CE56D5C22C63D8C300164678 /* TourDetailView.swift */,
-				CEC38DB62EE0A60D00A99EAB /* TourDetailWorker.swift */,
 			);
 			path = TourDetail;
 			sourceTree = "<group>";
@@ -372,6 +366,7 @@
 		CE77A4C72EDE22F6003EBCD0 /* OnlineTours */ = {
 			isa = PBXGroup;
 			children = (
+				CEAEF94F2CE524B000CF227B /* OnlineToursWorker.swift */,
 				CE77A4C12EDE20B2003EBCD0 /* OnlineToursViewModel.swift */,
 			);
 			path = OnlineTours;
@@ -433,7 +428,6 @@
 			isa = PBXGroup;
 			children = (
 				CEC38DB22EDF557900A99EAB /* mockTours.json */,
-				CEC38DB42EE0A11000A99EAB /* mockTour.json */,
 				CE77A4C32EDE2183003EBCD0 /* TourModel.swift */,
 			);
 			path = Tour;
@@ -555,7 +549,6 @@
 				CE77374E2CE3C14500868CEF /* GeneralAssets.xcassets in Resources */,
 				CE77A4B62EDE0F94003EBCD0 /* Localizable.xcstrings in Resources */,
 				CE7737552CE3C32D00868CEF /* Nunito-SemiBold.ttf in Resources */,
-				CEC38DB52EE0A11000A99EAB /* mockTour.json in Resources */,
 				CE7737562CE3C32D00868CEF /* Nunito-ExtraBold.ttf in Resources */,
 				CE7737572CE3C32D00868CEF /* Nunito-Bold.ttf in Resources */,
 				CE7737582CE3C32D00868CEF /* Nunito-Regular.ttf in Resources */,
@@ -587,7 +580,7 @@
 				CE6EE1332C45698D00ED8D38 /* HomeViewController.swift in Sources */,
 				CE56D5C72C63D91600164678 /* TourDetailViewController.swift in Sources */,
 				CE6EE1602C456CC400ED8D38 /* BaseViewController.swift in Sources */,
-				CEAEF9502CE524B100CF227B /* HomeWorker.swift in Sources */,
+				CEAEF9502CE524B100CF227B /* OnlineToursWorker.swift in Sources */,
 				CE77A4BC2EDE201D003EBCD0 /* ToursCoordinator.swift in Sources */,
 				CEAEF9492CE5151900CF227B /* PlaceTableViewCell.swift in Sources */,
 				CE77374A2CE3BF4C00868CEF /* UIImage+extension.swift in Sources */,
@@ -612,12 +605,11 @@
 				CE1F833E2EF45C6F00C16E29 /* TourDataModel.xcdatamodeld in Sources */,
 				CE77A4D12EDE250D003EBCD0 /* SavedToursViewModel.swift in Sources */,
 				CEAE727B2CEBB453009DDE12 /* String+extension.swift in Sources */,
-				CEC38DB72EE0A60D00A99EAB /* TourDetailWorker.swift in Sources */,
 				CEAEF95A2CE533C400CF227B /* CustomActivityIndicatorView.swift in Sources */,
 				CE56D5C32C63D8C300164678 /* TourDetailView.swift in Sources */,
 				CE77375A2CE3C43E00868CEF /* UIFont+extension.swift in Sources */,
 				CE77A4C02EDE206E003EBCD0 /* ToursListingViewController.swift in Sources */,
-				CE1F83362EF45A7A00C16E29 /* TourPersistenceProtocol.swift in Sources */,
+				CE1F83362EF45A7A00C16E29 /* CoreDataTourPersistence.swift in Sources */,
 				CE6EE12F2C45698D00ED8D38 /* AppDelegate.swift in Sources */,
 				CE77A4BE2EDE204B003EBCD0 /* ToursListingView.swift in Sources */,
 				CE6EE1682C45717100ED8D38 /* HomeCoordinator.swift in Sources */,

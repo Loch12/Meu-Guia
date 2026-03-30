@@ -10,10 +10,12 @@ class PlaceDetailViewModel: PlaceDetailViewModelProtocol {
   // MARK: - Properties
   let place: PlaceModel
   let coordinator: ToursCoordinator
+  let isOnline: Bool
 
-  init(place: PlaceModel, coordinator: ToursCoordinator) {
+  init(place: PlaceModel, isOnline: Bool, coordinator: ToursCoordinator) {
     self.place = place
     self.coordinator = coordinator
+    self.isOnline = isOnline
   }
 }
 

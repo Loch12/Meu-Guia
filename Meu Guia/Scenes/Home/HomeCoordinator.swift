@@ -2,8 +2,8 @@ import UIKit
 
 // MARK: - HomeCoordinatorProtocol
 protocol HomeCoordinatorProtocol: Coordinator {
-  func redirectToOnlineTours(tours: [TourModel])
-  func redirectToSavedTours(tours: [TourModel])
+  func redirectToOnlineTours()
+  func redirectToSavedTours()
   func redirectToSaveLocation()
 }
 
@@ -18,23 +18,27 @@ final class HomeCoordinator: HomeCoordinatorProtocol {
   func start() {
     let viewModel = HomeViewModel(coordinator: self)
     let viewController = HomeViewController(viewModel: viewModel)
-    navigationController.pushViewController(viewController, animated: false)
+    navigationController.pushViewController(viewController, animated: true)
   }
 
   func showError(_ error: ErrorResponse) {
 
   }
+  
+  func popViewController() {
+    navigationController.popViewController(animated: true)
+  }
 }
 
 // MARK: - HomeCoordinatorProtocol
 extension HomeCoordinator {
-  func redirectToOnlineTours(tours: [TourModel]) {
-    let coordinator = ToursCoordinator(navigationController: navigationController, tours: tours)
+  func redirectToOnlineTours() {
+    let coordinator = ToursCoordinator(navigationController: navigationController)
     coordinator.start()
   }
 
-  func redirectToSavedTours(tours: [TourModel]) {
-    let coordinator = ToursCoordinator(navigationController: navigationController, tours: tours)
+  func redirectToSavedTours() {
+    let coordinator = ToursCoordinator(navigationController: navigationController)
     coordinator.startOffline()
   }
   

@@ -2,7 +2,7 @@ import Foundation
 import CoreData
 
 protocol TourPersistenceProtocol {
-  func saveTour(_ tour: TourModel)
+  func saveTour(_ tour: TourModel) -> Bool
   func fetchTour(by id: Int) -> TourModel?
   func fetchAllTours() -> [TourModel]
   func deleteTour(by id: Int)
@@ -16,9 +16,9 @@ final class CoreDataTourPersistence: TourPersistenceProtocol {
     self.context = context
   }
 
-  func saveTour(_ tour: TourModel) {
+  func saveTour(_ tour: TourModel) -> Bool {
 
-    guard let tourId = tour.id else { return }
+    guard let tourId = tour.id else { return false }
 
     let request: NSFetchRequest<TourEntity> = TourEntity.fetchRequest()
     request.predicate = NSPredicate(format: "id == %d", tourId)
@@ -51,8 +51,10 @@ final class CoreDataTourPersistence: TourPersistenceProtocol {
 
     do {
       try context.save()
+      return true
     } catch {
       print("Erro ao salvar tour: \(error)")
+      return false
     }
   }
 

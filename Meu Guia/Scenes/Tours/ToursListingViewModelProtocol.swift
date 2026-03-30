@@ -10,4 +10,5 @@ protocol ToursListingViewModelProtocol {
   func didSelect(at index: IndexPath)
   func didSelectPlaceholder()
   func setupDelegate(delegate: ToursListingViewControllerProtocol)
+  func fetchTours()
 }

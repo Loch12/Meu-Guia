@@ -3,7 +3,7 @@ import UIKit
 class TitleValueView: UIView {
   // MARK: - Properties
   var info: PlaceDetailInfo?
-  var delegate: PlaceDetailViewDelegate?
+  var delegate: AlertMessageProtocol?
 
   // MARK: - Components
   let titleLabel: BaseLabel = {
@@ -56,7 +56,7 @@ class TitleValueView: UIView {
     ])
   }
 
-  func setupInfo(info: PlaceDetailInfo, delegate: PlaceDetailViewDelegate?) {
+  func setupInfo(info: PlaceDetailInfo, delegate: AlertMessageProtocol?) {
     self.info = info
     self.delegate = delegate
     titleLabel.text = "\(info.title ?? "Informação"):"
@@ -81,7 +81,7 @@ class TitleValueView: UIView {
     guard let site = info?.value,
           let appURL = URL(string: site),
           UIApplication.shared.canOpenURL(appURL) else {
-      delegate?.showAlert(message: .siteErrorMessage)
+      delegate?.showAlert(message: .siteErrorMessage, cancelOption: false) {}
       return
     }
     UIApplication.shared.open(appURL, options: [:], completionHandler: nil)
@@ -91,7 +91,7 @@ class TitleValueView: UIView {
     guard let phone = info?.value,
           let appURL = URL(string: "tel://" + phone),
           UIApplication.shared.canOpenURL(appURL) else {
-      delegate?.showAlert(message: .phoneCallErrorMessage)
+      delegate?.showAlert(message: .phoneCallErrorMessage, cancelOption: false) {}
       return
     }
     UIApplication.shared.open(appURL, options: [:], completionHandler: nil)

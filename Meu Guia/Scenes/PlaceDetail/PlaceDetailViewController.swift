@@ -23,24 +23,4 @@ class PlaceDetailViewController: BaseViewController<PlaceDetailView> {
     baseView.delegate = self
     baseView.setupView(place: viewModel.getPlaceInfo())
   }
-
-  override func showHelp() {
-    let alert = UIAlertController(
-      title: nil,
-      message: .placeHelpMessage,
-      preferredStyle: .alert
-    )
-
-    alert.addAction(UIAlertAction(title: "Entendi", style: .default))
-    present(alert, animated: true)
-  }
-}
-
-// MARK: - PlaceDetailViewDelegate
-extension PlaceDetailViewController: PlaceDetailViewDelegate {
-  func showAlert(message: String?) {
-    let alert = UIAlertController(title: .alert, message: message, preferredStyle: UIAlertController.Style.alert)
-    alert.addAction(UIAlertAction(title: .okMessage, style: UIAlertAction.Style.default, handler: nil))
-    self.present(alert, animated: true, completion: nil)
-  }
 }

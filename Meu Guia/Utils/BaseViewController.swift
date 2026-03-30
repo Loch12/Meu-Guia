@@ -1,9 +1,12 @@
 import UIKit
 
-protocol BaseViewControllerProtocol: AnyObject {
+protocol AlertMessageProtocol: AnyObject {
+  func showAlert(message: String?, cancelOption: Bool, onConfirm: (() -> Void)?)
+}
+
+protocol BaseViewControllerProtocol: AlertMessageProtocol {
   func startLoading()
   func stopLoading()
-  func showHelp()
 }
 
 class BaseViewController<T: BaseView>: UIViewController {
@@ -25,34 +28,6 @@ class BaseViewController<T: BaseView>: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupHelpButton()
-  }
-
-  // MARK: - Help
-  func setupHelpButton() {
-    let helpButton = UIBarButtonItem(
-      title: "Ajuda",
-      style: .plain,
-      target: self,
-      action: #selector(helpButtonTapped)
-    )
-
-    navigationItem.rightBarButtonItem = helpButton
-  }
-
-  @objc func helpButtonTapped() {
-    showHelp()
-  }
-
-  func showHelp() {
-    let alert = UIAlertController(
-      title: nil,
-      message: "Nenhuma ajuda disponível para esta tela.",
-      preferredStyle: .alert
-    )
-
-    alert.addAction(UIAlertAction(title: "OK", style: .default))
-    present(alert, animated: true)
   }
 }
 
@@ -63,5 +38,18 @@ extension BaseViewController: BaseViewControllerProtocol {
 
   func stopLoading() {
     baseView.stopLoading()
+  }
+  
+  func showAlert(message: String?, cancelOption: Bool = false, onConfirm: (() -> Void)? = nil) {
+    let alert = UIAlertController(title: nil,
+                                  message: message,
+                                  preferredStyle: .alert)
+    
+    alert.addAction(UIAlertAction(title: "Confirmar", style: .default) { _ in onConfirm?() })
+    if cancelOption {
+      alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
+    }
+    
+    present(alert, animated: true)
   }
 }

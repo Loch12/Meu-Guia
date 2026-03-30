@@ -4,6 +4,8 @@ extension UIColor {
   static var primaryColor = UIColor(hex: GlobalConfiguration.primaryColor)
   static var buttonBaseColor = UIColor(hex: GlobalConfiguration.buttonBaseColor)
   static var lightColor = UIColor(hex: GlobalConfiguration.lightColor)
+  static var validGreen = UIColor(hex: "139A7E")
+  static var invalidRed = UIColor(hex: "E9574F")
   static var warmGray = UIColor(hex: "979797")
 }
 

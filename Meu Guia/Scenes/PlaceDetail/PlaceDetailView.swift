@@ -1,14 +1,10 @@
 import UIKit
 
-protocol PlaceDetailViewDelegate: AnyObject {
-  func showAlert(message: String?)
-}
-
 // MARK: - PlaceDetail
 class PlaceDetailView: BaseView {
   // MARK: - Properties
   var place: PlaceModel?
-  var delegate: PlaceDetailViewDelegate?
+  var delegate: AlertMessageProtocol?
 
   // MARK: - Components
   private lazy var scrollView: UIScrollView = {
