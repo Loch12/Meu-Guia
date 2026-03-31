@@ -9,6 +9,7 @@ protocol ToursListingViewControllerProtocol: BaseViewControllerProtocol {
 class ToursListingViewController: BaseViewController<ToursListingView> {
   // MARK: - Properties
   let viewModel: ToursListingViewModelProtocol
+  var isSearching: Bool = false
 
   // MARK: - Init
   init(viewModel: ToursListingViewModelProtocol) {
@@ -59,7 +60,7 @@ extension ToursListingViewController: UITableViewDelegate, UITableViewDataSource
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let tour = viewModel.getTour(by: indexPath.row) else {
       let cell = TourPlaceholderTableViewCell()
-      cell.configure(isOnline: viewModel.isOnline)
+      cell.configure(isOnline: viewModel.isOnline, isSearching: isSearching)
       return cell
     }
 
@@ -72,10 +73,12 @@ extension ToursListingViewController: UITableViewDelegate, UITableViewDataSource
 // MARK: - SearchBar
 extension ToursListingViewController: UISearchBarDelegate {
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    isSearching = !searchText.isEmpty
     viewModel.filterTours(by: searchText)
   }
 
   func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    isSearching = false
     searchBar.resignFirstResponder()
   }
 }

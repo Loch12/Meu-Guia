@@ -46,6 +46,22 @@ final class CoreDataTourPersistence: TourPersistenceProtocol {
       placeEntity.desc = place.description
       placeEntity.latitude = place.coordinates?.latitude ?? 0
       placeEntity.longitude = place.coordinates?.longitude ?? 0
+      
+      if let infos = place.info {
+        let infoEntities: [PlaceDetailInfoEntity] = infos.map { info in
+          let infoEntity = PlaceDetailInfoEntity(context: context)
+          infoEntity.title = info.title
+          infoEntity.value = info.value
+          infoEntity.infoDescription = info.description
+          infoEntity.type = info.type?.rawValue
+          infoEntity.place = placeEntity
+          
+          return infoEntity
+        }
+        
+        placeEntity.infos = Set(infoEntities) as Set<PlaceDetailInfoEntity>
+      }
+      
       entity.addToPlaces(placeEntity)
     }
 
@@ -53,7 +69,6 @@ final class CoreDataTourPersistence: TourPersistenceProtocol {
       try context.save()
       return true
     } catch {
-      print("Erro ao salvar tour: \(error)")
       return false
     }
   }

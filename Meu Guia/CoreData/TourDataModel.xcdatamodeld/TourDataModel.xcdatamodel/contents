@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="24512" systemVersion="25D125" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="PlaceDetailInfoEntity" representedClassName="PlaceDetailInfoEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="infoDescription" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="value" optional="YES" attributeType="String"/>
+        <relationship name="place" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlaceEntity" inverseName="infos" inverseEntity="PlaceEntity"/>
+    </entity>
     <entity name="PlaceEntity" representedClassName="PlaceEntity" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="infos" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PlaceDetailInfoEntity" inverseName="place" inverseEntity="PlaceDetailInfoEntity"/>
         <relationship name="tour" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TourEntity" inverseName="places" inverseEntity="TourEntity"/>
     </entity>
     <entity name="TourEntity" representedClassName="TourEntity" syncable="YES">

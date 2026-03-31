@@ -14,4 +14,5 @@ extension PlaceEntity {
   @NSManaged public var latitude: Double
   @NSManaged public var longitude: Double
   @NSManaged public var tour: TourEntity?
+  @NSManaged public var infos: Set<PlaceDetailInfoEntity>?
 }
