@@ -70,7 +70,7 @@ extension TourDetailViewModel {
     guard index.row < filteredPlaces.count,
           filteredPlaces.count > 0 else { return }
 
-    coordinator.redirectToPlaceDetail(place: filteredPlaces[index.row], isOnline: isOnline)
+    coordinator.redirectToPlaceDetail(with: filteredPlaces[index.row], of: tour, isOnline: isOnline)
   }
 
   func getTour() -> TourModel? {

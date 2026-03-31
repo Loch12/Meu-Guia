@@ -10,6 +10,12 @@ extension String {
   static var saveTourSuccessMessage: String { "saveTourSuccessMessage".localized }
   static var deleteTourWarning: String { "deleteTourWarning".localized }
   static var successDeleteTour: String { "successDeleteTour".localized }
+  
+  // MARK: - Buttons
+  static var saveAction: String { "saveAction".localized }
+  static var editAction: String { "editAction".localized }
+  static var deleteAction: String { "deleteAction".localized }
+  static var navigationAction: String { "navigationAction".localized }
 
   // MARK: - Home
   static var homeDescriptionText: String { "homeDescriptionText".localized }

@@ -43,6 +43,7 @@ extension HomeCoordinator {
   }
   
   func redirectToSaveLocation() {
-    
+    let coordinator = PlaceCreationCoordinator(navigationController: navigationController)
+    coordinator.start()
   }
 }

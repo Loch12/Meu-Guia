@@ -21,6 +21,17 @@ class PlaceDetailViewController: BaseViewController<PlaceDetailView> {
 
     setupNavBarBackButton()
     baseView.delegate = self
-    baseView.setupView(place: viewModel.getPlaceInfo())
+    baseView.setupView(place: viewModel.getPlaceInfo(), isOnline: viewModel.isOnline)
+  }
+}
+
+// MARK: - PlaceDetailViewDelegate
+extension PlaceDetailViewController: PlaceDetailViewDelegate {
+  func startNavigation() {
+    viewModel.startNavigation()
+  }
+  
+  func editPlace() {
+    viewModel.editPlace()
   }
 }

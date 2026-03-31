@@ -79,7 +79,7 @@ extension TourDetailView {
   
   func setupButton(isOnline: Bool) {
     actionButton.backgroundColor = isOnline ? .validGreen : .invalidRed
-    actionButton.setTitle(isOnline ? "Salvar" : "Excluir", for: .normal)
+    actionButton.setTitle(isOnline ? .saveAction : .deleteAction, for: .normal)
     let action = isOnline ? #selector(saveTourAction) : #selector(deleteTourAction)
     actionButton.addTarget(self, action: action, for: .touchUpInside)
   }

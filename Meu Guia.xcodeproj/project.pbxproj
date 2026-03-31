@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		2F0E49892F75BDF700CE1336 /* TourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0E49882F75BDF700CE1336 /* TourTableViewCell.swift */; };
+		2F9253872F7C56F900361D53 /* PlaceCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9253862F7C56F900361D53 /* PlaceCreationView.swift */; };
+		2F9253892F7C579C00361D53 /* PlaceCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9253882F7C579C00361D53 /* PlaceCreationViewController.swift */; };
+		2F92538B2F7C57E500361D53 /* PlaceCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F92538A2F7C57E500361D53 /* PlaceCreationViewModel.swift */; };
+		2F92538D2F7C584800361D53 /* PlaceEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F92538C2F7C584800361D53 /* PlaceEditViewModel.swift */; };
+		2F92538F2F7C586700361D53 /* PlaceEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F92538E2F7C586700361D53 /* PlaceEditViewController.swift */; };
+		2F9253912F7C589600361D53 /* PlaceEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9253902F7C589600361D53 /* PlaceEditView.swift */; };
+		2F9253952F7C58E000361D53 /* PlaceNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9253922F7C58E000361D53 /* PlaceNavigationView.swift */; };
+		2F9253962F7C58E000361D53 /* PlaceNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9253932F7C58E000361D53 /* PlaceNavigationViewController.swift */; };
+		2F9253972F7C58E000361D53 /* PlaceNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9253942F7C58E000361D53 /* PlaceNavigationViewModel.swift */; };
+		2F92539A2F7C59CC00361D53 /* PlaceCreationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9253992F7C59CC00361D53 /* PlaceCreationCoordinator.swift */; };
 		CE1F83362EF45A7A00C16E29 /* CoreDataTourPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F83352EF45A7900C16E29 /* CoreDataTourPersistence.swift */; };
 		CE1F833E2EF45C6F00C16E29 /* TourDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE1F833C2EF45C6F00C16E29 /* TourDataModel.xcdatamodeld */; };
 		CE1F83432EF45F4B00C16E29 /* PlaceEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F833F2EF45F4B00C16E29 /* PlaceEntity+CoreDataClass.swift */; };
@@ -83,6 +93,16 @@
 
 /* Begin PBXFileReference section */
 		2F0E49882F75BDF700CE1336 /* TourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourTableViewCell.swift; sourceTree = "<group>"; };
+		2F9253862F7C56F900361D53 /* PlaceCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCreationView.swift; sourceTree = "<group>"; };
+		2F9253882F7C579C00361D53 /* PlaceCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCreationViewController.swift; sourceTree = "<group>"; };
+		2F92538A2F7C57E500361D53 /* PlaceCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCreationViewModel.swift; sourceTree = "<group>"; };
+		2F92538C2F7C584800361D53 /* PlaceEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceEditViewModel.swift; sourceTree = "<group>"; };
+		2F92538E2F7C586700361D53 /* PlaceEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceEditViewController.swift; sourceTree = "<group>"; };
+		2F9253902F7C589600361D53 /* PlaceEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceEditView.swift; sourceTree = "<group>"; };
+		2F9253922F7C58E000361D53 /* PlaceNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceNavigationView.swift; sourceTree = "<group>"; };
+		2F9253932F7C58E000361D53 /* PlaceNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceNavigationViewController.swift; sourceTree = "<group>"; };
+		2F9253942F7C58E000361D53 /* PlaceNavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceNavigationViewModel.swift; sourceTree = "<group>"; };
+		2F9253992F7C59CC00361D53 /* PlaceCreationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCreationCoordinator.swift; sourceTree = "<group>"; };
 		CE1F83352EF45A7900C16E29 /* CoreDataTourPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTourPersistence.swift; sourceTree = "<group>"; };
 		CE1F833D2EF45C6F00C16E29 /* TourDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TourDataModel.xcdatamodel; sourceTree = "<group>"; };
 		CE1F833F2EF45F4B00C16E29 /* PlaceEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaceEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -168,6 +188,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F9253832F7C552300361D53 /* PlaceNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				2F9253922F7C58E000361D53 /* PlaceNavigationView.swift */,
+				2F9253932F7C58E000361D53 /* PlaceNavigationViewController.swift */,
+				2F9253942F7C58E000361D53 /* PlaceNavigationViewModel.swift */,
+			);
+			path = PlaceNavigation;
+			sourceTree = "<group>";
+		};
+		2F9253842F7C552A00361D53 /* PlaceEdit */ = {
+			isa = PBXGroup;
+			children = (
+				2F9253902F7C589600361D53 /* PlaceEditView.swift */,
+				2F92538E2F7C586700361D53 /* PlaceEditViewController.swift */,
+				2F92538C2F7C584800361D53 /* PlaceEditViewModel.swift */,
+			);
+			path = PlaceEdit;
+			sourceTree = "<group>";
+		};
+		2F9253852F7C56ED00361D53 /* PlaceCreation */ = {
+			isa = PBXGroup;
+			children = (
+				2F92538A2F7C57E500361D53 /* PlaceCreationViewModel.swift */,
+				2F9253882F7C579C00361D53 /* PlaceCreationViewController.swift */,
+				2F9253862F7C56F900361D53 /* PlaceCreationView.swift */,
+			);
+			path = PlaceCreation;
+			sourceTree = "<group>";
+		};
+		2F9253982F7C59BE00361D53 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				2F9253992F7C59CC00361D53 /* PlaceCreationCoordinator.swift */,
+				CE77A4BB2EDE201C003EBCD0 /* ToursCoordinator.swift */,
+				CE6EE1672C45717100ED8D38 /* HomeCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 		CE1F83342EF45A6A00C16E29 /* TourPersistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +331,10 @@
 		CE6EE1632C456D2F00ED8D38 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2F9253982F7C59BE00361D53 /* Coordinators */,
+				2F9253852F7C56ED00361D53 /* PlaceCreation */,
+				2F9253842F7C552A00361D53 /* PlaceEdit */,
+				2F9253832F7C552300361D53 /* PlaceNavigation */,
 				CE56D5CA2C63D96B00164678 /* PlaceDetail */,
 				CE77A4C52EDE22A7003EBCD0 /* TourDetail */,
 				CE77A4B92EDE1DE6003EBCD0 /* Tours */,
@@ -282,7 +346,6 @@
 		CE6EE1642C456D3700ED8D38 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				CE6EE1672C45717100ED8D38 /* HomeCoordinator.swift */,
 				CE6EE1652C456D4900ED8D38 /* HomeView.swift */,
 				CE6EE1322C45698D00ED8D38 /* HomeViewController.swift */,
 				CE6EE1692C4572A700ED8D38 /* HomeViewModel.swift */,
@@ -347,7 +410,6 @@
 				CE77A4BF2EDE206E003EBCD0 /* ToursListingViewController.swift */,
 				CE77A4C92EDE2319003EBCD0 /* ToursListingViewModelProtocol.swift */,
 				CE77A4BD2EDE204B003EBCD0 /* ToursListingView.swift */,
-				CE77A4BB2EDE201C003EBCD0 /* ToursCoordinator.swift */,
 			);
 			path = Tours;
 			sourceTree = "<group>";
@@ -577,6 +639,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F9253872F7C56F900361D53 /* PlaceCreationView.swift in Sources */,
 				CE6EE1332C45698D00ED8D38 /* HomeViewController.swift in Sources */,
 				CE56D5C72C63D91600164678 /* TourDetailViewController.swift in Sources */,
 				CE6EE1602C456CC400ED8D38 /* BaseViewController.swift in Sources */,
@@ -595,6 +658,9 @@
 				CE1F834C2EF4618900C16E29 /* CoreDataStack.swift in Sources */,
 				CE77A4C22EDE20B2003EBCD0 /* OnlineToursViewModel.swift in Sources */,
 				CE7737182CE3B6EF00868CEF /* UIView+extension.swift in Sources */,
+				2F9253952F7C58E000361D53 /* PlaceNavigationView.swift in Sources */,
+				2F9253962F7C58E000361D53 /* PlaceNavigationViewController.swift in Sources */,
+				2F9253972F7C58E000361D53 /* PlaceNavigationViewModel.swift in Sources */,
 				CEAEF9562CE525CE00CF227B /* NetworkError.swift in Sources */,
 				CE1F83522EF4631700C16E29 /* PlaceEntity+CoreDataProperties.swift in Sources */,
 				CE1F83542EF4631700C16E29 /* TourEntity+CoreDataProperties.swift in Sources */,
@@ -603,14 +669,18 @@
 				CE5C2B612EF1CBB300B5214F /* BaseLabel.swift in Sources */,
 				CE7737482CE3BD8000868CEF /* UIColor+extension.swift in Sources */,
 				CE1F833E2EF45C6F00C16E29 /* TourDataModel.xcdatamodeld in Sources */,
+				2F92538F2F7C586700361D53 /* PlaceEditViewController.swift in Sources */,
 				CE77A4D12EDE250D003EBCD0 /* SavedToursViewModel.swift in Sources */,
 				CEAE727B2CEBB453009DDE12 /* String+extension.swift in Sources */,
 				CEAEF95A2CE533C400CF227B /* CustomActivityIndicatorView.swift in Sources */,
+				2F92539A2F7C59CC00361D53 /* PlaceCreationCoordinator.swift in Sources */,
 				CE56D5C32C63D8C300164678 /* TourDetailView.swift in Sources */,
+				2F9253912F7C589600361D53 /* PlaceEditView.swift in Sources */,
 				CE77375A2CE3C43E00868CEF /* UIFont+extension.swift in Sources */,
 				CE77A4C02EDE206E003EBCD0 /* ToursListingViewController.swift in Sources */,
 				CE1F83362EF45A7A00C16E29 /* CoreDataTourPersistence.swift in Sources */,
 				CE6EE12F2C45698D00ED8D38 /* AppDelegate.swift in Sources */,
+				2F92538D2F7C584800361D53 /* PlaceEditViewModel.swift in Sources */,
 				CE77A4BE2EDE204B003EBCD0 /* ToursListingView.swift in Sources */,
 				CE6EE1682C45717100ED8D38 /* HomeCoordinator.swift in Sources */,
 				CE77A4CA2EDE231A003EBCD0 /* ToursListingViewModelProtocol.swift in Sources */,
@@ -623,8 +693,10 @@
 				CE56D5D02C63D9F000164678 /* PlaceDetailViewModel.swift in Sources */,
 				CE56D5CE2C63D99700164678 /* PlaceDetailViewController.swift in Sources */,
 				CE398C522D09FED200F1A58E /* MKMapView+extension.swift in Sources */,
+				2F9253892F7C579C00361D53 /* PlaceCreationViewController.swift in Sources */,
 				CE56D5C92C63D93B00164678 /* TourDetailViewModel.swift in Sources */,
 				CE6EE16C2C4575AD00ED8D38 /* Coordinator.swift in Sources */,
+				2F92538B2F7C57E500361D53 /* PlaceCreationViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

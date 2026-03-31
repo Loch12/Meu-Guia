@@ -1,16 +1,15 @@
 import UIKit
 
-protocol PlaceDetailViewDelegate: BaseViewControllerProtocol {
-  func editPlace()
-  func startNavigation()
+protocol PlaceEditViewDelegate: BaseViewControllerProtocol {
+  func confirmEdition()
 }
 
-// MARK: - PlaceDetail
-class PlaceDetailView: BaseView {
+// MARK: - PlaceEditView
+class PlaceEditView: BaseView {
   // MARK: - Properties
   var place: PlaceModel?
-  var delegate: PlaceDetailViewDelegate?
-
+  var delegate: PlaceEditViewDelegate?
+  
   // MARK: - Components
   private lazy var scrollView: UIScrollView = {
     let view = UIScrollView()
@@ -57,39 +56,20 @@ class PlaceDetailView: BaseView {
     return label
   }()
   
-  private lazy var editButton: UIButton = {
+  private lazy var confirmButton: UIButton = {
     let button = UIButton()
     button.layer.cornerRadius = 7
     button.titleLabel?.font = .nunito(.bold, textStyle: .title1, size: 18)
     button.backgroundColor = .buttonBaseColor
-    button.setTitle(.editAction, for: .normal)
-    button.addTarget(self, action: #selector(editAction), for: .touchUpInside)
+    button.setTitle(.saveAction, for: .normal)
+    button.addTarget(self, action: #selector(confirmEdition), for: .touchUpInside)
     button.translatesAutoresizingMaskIntoConstraints = false
     return button
-  }()
-  
-  private lazy var navigationButton: UIButton = {
-    let button = UIButton()
-    button.layer.cornerRadius = 7
-    button.titleLabel?.font = .nunito(.bold, textStyle: .title1, size: 18)
-    button.backgroundColor = .buttonBaseColor
-    button.setTitle(.navigationAction, for: .normal)
-    button.addTarget(self, action: #selector(navigationAction), for: .touchUpInside)
-    button.translatesAutoresizingMaskIntoConstraints = false
-    return button
-  }()
-  
-  private lazy var buttonStackView: UIStackView = {
-    let view = UIStackView(arrangedSubviews: [editButton, navigationButton])
-    view.spacing = 8
-    view.axis = .vertical
-    view.translatesAutoresizingMaskIntoConstraints = false
-    return view
   }()
 
   // MARK: - Override Methods
   override func setup() {
-    addSubviews(scrollView, buttonStackView)
+    addSubviews(scrollView, confirmButton)
   }
 
   override func setupConstraints() {
@@ -97,7 +77,7 @@ class PlaceDetailView: BaseView {
       scrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
       scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
       scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
-      scrollView.bottomAnchor.constraint(equalTo: buttonStackView.topAnchor, constant: -5),
+      scrollView.bottomAnchor.constraint(equalTo: confirmButton.topAnchor, constant: -5),
 
       contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
       contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
@@ -118,39 +98,14 @@ class PlaceDetailView: BaseView {
       infoStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
       infoStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
       
-      editButton.heightAnchor.constraint(equalToConstant: 48),
-      
-      navigationButton.heightAnchor.constraint(equalToConstant: 48),
-      
-      buttonStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -30),
-      buttonStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-      buttonStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+      confirmButton.heightAnchor.constraint(equalToConstant: 48),
+      confirmButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -30),
+      confirmButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+      confirmButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
     ])
   }
   
-  @objc func editAction() {
-    delegate?.editPlace()
-  }
-  
-  @objc func navigationAction() {
-    delegate?.startNavigation()
-  }
-
-  func setupView(place: PlaceModel, isOnline: Bool) {
-    editButton.isHidden = isOnline
-    self.place = place
-    placeName.text = place.name
-    placeDescription.text = place.description
-    setupInfo()
-  }
-
-  func setupInfo() {
-    guard let infos = place?.info else { return }
-    for info in infos {
-      let infoView = TitleValueView()
-      infoView.translatesAutoresizingMaskIntoConstraints = false
-      infoView.setupInfo(info: info, delegate: delegate)
-      infoStackView.addArrangedSubview(infoView)
-    }
+  @objc func confirmEdition() {
+    delegate?.confirmEdition()
   }
 }

@@ -12,6 +12,17 @@
         }
       }
     },
+    "deleteAction" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Excluir"
+          }
+        }
+      }
+    },
     "deleteTourWarning" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -41,6 +52,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Já existe um tour salvo com as mesmas informações"
+          }
+        }
+      }
+    },
+    "editAction" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar"
           }
         }
       }
@@ -89,6 +111,17 @@
         }
       }
     },
+    "navigationAction" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iniciar Navegação"
+          }
+        }
+      }
+    },
     "okMessage" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -129,6 +162,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Local"
+          }
+        }
+      }
+    },
+    "saveAction" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvar"
           }
         }
       }
