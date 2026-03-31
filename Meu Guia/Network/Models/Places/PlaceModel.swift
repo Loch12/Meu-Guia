@@ -1,4 +1,5 @@
 import MapKit
+import CoreData
 
 struct PlaceModel: Codable {
   let id: Int?
@@ -37,5 +38,37 @@ struct PlaceCoordinates: Codable {
           let latitude = self.latitude else { return nil }
 
     return CLLocation(latitude: latitude, longitude: longitude)
+  }
+}
+
+extension PlaceModel {
+  func toEntity(context: NSManagedObjectContext) -> PlaceEntity {
+    let entity = PlaceEntity(context: context)
+    
+    entity.id = Int64(id ?? 0)
+    entity.name = name
+    entity.desc = description
+    entity.latitude = coordinates?.latitude ?? 0
+    entity.longitude = coordinates?.longitude ?? 0
+    
+    if let infos = info {
+      let infoEntities = infos.map { $0.toEntity(context: context) }
+      entity.infos = Set(infoEntities) as Set<PlaceDetailInfoEntity>
+    }
+    
+    return entity
+  }
+}
+
+extension PlaceDetailInfo {
+  func toEntity(context: NSManagedObjectContext) -> PlaceDetailInfoEntity {
+    let entity = PlaceDetailInfoEntity(context: context)
+    
+    entity.title = title
+    entity.value = value
+    entity.infoDescription = description
+    entity.type = type?.rawValue
+    
+    return entity
   }
 }
