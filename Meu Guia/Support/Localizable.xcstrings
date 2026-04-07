@@ -1,6 +1,17 @@
 {
   "sourceLanguage" : "pt-BR",
   "strings" : {
+    "addCustomFieldButton" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar informação"
+          }
+        }
+      }
+    },
     "alert" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -8,6 +19,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aviso"
+          }
+        }
+      }
+    },
+    "cancelAction" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        }
+      }
+    },
+    "contentFieldText" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conteúdo"
           }
         }
       }
@@ -74,6 +107,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Erro"
+          }
+        }
+      }
+    },
+    "fieldsRequiredAlert" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ambos os campos são obrigatórios"
           }
         }
       }
@@ -155,6 +199,17 @@
         }
       }
     },
+    "placeDescriptionCreation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descrição do local"
+          }
+        }
+      }
+    },
     "placeHelpMessage" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -162,6 +217,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Local"
+          }
+        }
+      }
+    },
+    "placeNameCreation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nome do local"
+          }
+        }
+      }
+    },
+    "requiredNameAlert" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O campo de nome é obrigatório"
           }
         }
       }
@@ -283,6 +360,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "O tour foi excluído com sucesso"
+          }
+        }
+      }
+    },
+    "titleFieldCreation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Título"
           }
         }
       }

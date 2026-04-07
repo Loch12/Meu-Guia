@@ -16,14 +16,14 @@ extension String {
   static var editAction: String { "editAction".localized }
   static var deleteAction: String { "deleteAction".localized }
   static var navigationAction: String { "navigationAction".localized }
-
+  
   // MARK: - Home
   static var homeDescriptionText: String { "homeDescriptionText".localized }
   static var homeHelpMessage: String { "homeHelpMessage".localized }
   static var saveLocationButtonText: String { "saveLocationButtonText".localized }
   static var searchToursButtonText: String { "searchToursButtonText".localized }
   static var savedToursButtonText: String { "savedToursButtonText".localized }
-
+  
   // MARK: - Tour Listing
   static var searchTourText: String { "searchTourText".localized }
   static var tourListingHelpMessage: String { "tourListingHelpMessage".localized }
@@ -34,7 +34,7 @@ extension String {
   // MARK: - Place Detail
   static var placeHelpMessage: String { "placeHelpMessage".localized }
   static var searchPlaceText: String { "searchPlaceText".localized }
-
+  
   // MARK: - Error message
   static var unauthorizedErrorMessage: String { "unauthorizedErrorMessage".localized }
   static var unexpectedErrorMessage: String { "unexpectedErrorMessage".localized }
@@ -43,4 +43,14 @@ extension String {
   static var siteErrorMessage: String { "siteErrorMessage".localized }
   static var saveTourFailureMessage: String { "saveTourFailureMessage".localized }
   static var error: String { "error".localized }
+  
+  // MARK: - Creation and Edition
+  static var placeNameCreation: String { "placeNameCreation".localized }
+  static var placeDescriptionCreation: String { "placeDescriptionCreation".localized }
+  static var addCustomFieldButton: String { "addCustomFieldButton".localized }
+  static var requiredNameAlert: String { "requiredNameAlert".localized }
+  static var cancelAction: String { "cancelAction".localized }
+  static var fieldsRequiredAlert: String { "fieldsRequiredAlert".localized }
+  static var contentFieldText: String { "contentFieldText".localized }
+  static var titleFieldCreation: String { "titleFieldCreation".localized }
 }

@@ -41,7 +41,7 @@ final class CoreDataTourPersistence: TourPersistenceProtocol {
 
     tour.places?.forEach { place in
       let placeEntity = PlaceEntity(context: context)
-      placeEntity.id = Int64(place.id ?? 0)
+      placeEntity.id = Int64(place.id ?? IdGenerator.nextId())
       placeEntity.name = place.name
       placeEntity.desc = place.description
       placeEntity.latitude = place.coordinates?.latitude ?? 0
@@ -110,7 +110,6 @@ final class CoreDataTourPersistence: TourPersistenceProtocol {
       let result = try context.fetch(request)
       return result.map { $0.toDomain() }
     } catch {
-      print("Erro ao buscar tours salvos: \(error)")
       return []
     }
   }

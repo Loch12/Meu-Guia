@@ -1,7 +1,7 @@
 import UIKit
 
 // MARK: - PlaceEditViewController
-class PlaceEditViewController: BaseViewController<PlaceEditView> {
+class PlaceEditViewController: BaseViewController<PlaceCreationView> {
   // MARK: - Properties
   let viewModel: PlaceEditViewModelProtocol
 
@@ -21,12 +21,33 @@ class PlaceEditViewController: BaseViewController<PlaceEditView> {
 
     setupNavBarBackButton()
     baseView.delegate = self
+    baseView.setupStartValues(place: viewModel.getPlace())
   }
 }
 
-// MARK: - PlaceEditViewDelegate
-extension PlaceEditViewController: PlaceEditViewDelegate {
-  func confirmEdition() {
-    print("confirm")
+// MARK: - PlaceCreationViewDelegate
+extension PlaceEditViewController: PlaceCreationViewDelegate {
+  func customFieldCreation() {
+    viewModel.presentCustomFieldCreation { info in
+      self.baseView.createInfoView(info: info)
+    }
+  }
+  
+  func confirmCreation() {
+    guard baseView.checkValidation() else {
+      showAlert(message: "O campo de nome é obrigatório")
+      return
+    }
+    
+    let place = PlaceModel(id: viewModel.getPlace().id,
+                          name: baseView.getName(),
+                          description: baseView.getDescription(),
+                          info: baseView.getInfo(),
+                          coordinates: viewModel.getPlace().coordinates)
+    guard viewModel.save(place) else {
+      showAlert(message: "Ocorreu um erro ao salvar, tente novamente")
+      return
+    }
+    viewModel.returnView()
   }
 }

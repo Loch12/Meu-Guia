@@ -21,4 +21,11 @@ final class PlaceCreationCoordinator: Coordinator {
   func popViewController() {
     navigationController.popViewController(animated: true)
   }
+  
+  func presentCustomFieldCreation(completion: @escaping (PlaceDetailInfo?) -> Void) {
+    let viewController = CustomFieldCreationViewController()
+    viewController.onComplete = completion
+    viewController.modalPresentationStyle = .overFullScreen
+    navigationController.present(viewController, animated: true)
+  }
 }

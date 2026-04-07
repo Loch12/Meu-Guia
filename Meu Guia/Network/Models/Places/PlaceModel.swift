@@ -72,3 +72,12 @@ extension PlaceDetailInfo {
     return entity
   }
 }
+
+class IdGenerator {
+  private static var currentId: Int = 0
+  
+  static func nextId() -> Int {
+    currentId += 1
+    return currentId
+  }
+}

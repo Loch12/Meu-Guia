@@ -48,4 +48,36 @@ extension String {
       }
     }
   }
+  
+  func detectFieldType() -> InfoType {
+    let content = self.trimmingCharacters(in: .whitespacesAndNewlines)
+    guard !content.isEmpty else {
+      return .other
+    }
+    if isValidURL(content) {
+      return .link
+    }
+    if isValidPhone(content) {
+      return .phone
+    }
+    if content.count > 0 {
+      return .text
+    }
+    
+    return .other
+  }
+  
+  private func isValidURL(_ string: String) -> Bool {
+    let detector = try? NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
+    let range = NSRange(location: 0, length: string.utf16.count)
+    
+    let matches = detector?.matches(in: string, options: [], range: range)
+    return matches?.first?.url != nil
+  }
+  
+  private func isValidPhone(_ string: String) -> Bool {
+    let numbers = string.filter { $0.isNumber }
+    
+    return numbers.count >= 10 && numbers.count <= 11
+  }
 }

@@ -27,6 +27,17 @@ final class ToursCoordinator: Coordinator {
   func popViewController() {
     navigationController.popViewController(animated: true)
   }
+  
+  func popToRootViewController() {
+    navigationController.popToRootViewController(animated: true)
+  }
+  
+  func presentCustomFieldCreation(completion: @escaping (PlaceDetailInfo?) -> Void) {
+    let viewController = CustomFieldCreationViewController()
+    viewController.onComplete = completion
+    viewController.modalPresentationStyle = .overFullScreen
+    navigationController.present(viewController, animated: true)
+  }
 }
 
 extension ToursCoordinator {

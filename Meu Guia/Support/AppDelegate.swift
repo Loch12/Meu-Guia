@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     self.window?.rootViewController = navVC
     homeCoordinator = HomeCoordinator(navigationController: navVC)
     homeCoordinator?.start()
+    LocationService.shared.start()
     self.window?.makeKeyAndVisible()
     return true
   }
