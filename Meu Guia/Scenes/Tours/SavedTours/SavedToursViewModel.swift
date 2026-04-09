@@ -3,6 +3,7 @@ import Foundation
 // MARK: - SavedToursViewModel
 class SavedToursViewModel: ToursListingViewModelProtocol {
   // MARK: - Properties
+  let placeToSave: PlaceModel? = nil
   let isOnline = false
   let coordinator: ToursCoordinator
   var tours: [TourModel] = []
@@ -62,5 +63,9 @@ extension SavedToursViewModel {
   
   func didSelectPlaceholder() {
     coordinator.redirectToOnlineTours()
+  }
+  
+  func getPlaceholderMessage(isSearching: Bool) -> String? {
+    isSearching ? .onlineToursPlaceholderMessage : .savedToursPlaceholderMessage
   }
 }

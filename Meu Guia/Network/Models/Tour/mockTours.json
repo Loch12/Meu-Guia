@@ -5,6 +5,7 @@
     "places": [
       {
         "name": "Guriri Beach",
+        "id": 0,
         "image": "",
         "description": "Uma das praias mais populares de São Mateus (ES), conhecida por suas águas calmas, extensa faixa de areia e infraestrutura turística.",
         "info": [
@@ -40,6 +41,7 @@
       },
       {
         "name": "Biblioteca Central",
+        "id": 1,
         "image": "https://www.ufes.br/sites/default/files/2024-03/teatro_ufes.png",
         "description": "Biblioteca universitária com acervo físico e digital para apoio ao ensino e pesquisa.",
         "info": [
@@ -63,6 +65,7 @@
       },
       {
         "name": "Auditório do Campus",
+        "id": 2,
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmQEKyaSTGnAYAFPUosY2jfU3CJSoiY3SiQQ&s",
         "description": "Espaço destinado a palestras, eventos acadêmicos, seminários e apresentações culturais.",
         "info": [
@@ -86,6 +89,7 @@
       },
       {
         "name": "Área de Convivência",
+        "id": 3,
         "image": "https://www.ufes.br/sites/default/files/field/image/whatsapp_image_2023-04-11_at_10.32.05.jpeg",
         "description": "Espaço aberto para descanso, alimentação, integração entre estudantes e atividades informais.",
         "info": [

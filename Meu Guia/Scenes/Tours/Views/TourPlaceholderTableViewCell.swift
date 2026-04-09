@@ -57,8 +57,7 @@ class TourPlaceholderTableViewCell: UITableViewCell {
     ])
   }
 
-  func configure(isOnline: Bool, isSearching: Bool) {
-    let text: String = isOnline ? .onlineToursPlaceholderMessage : .savedToursPlaceholderMessage
-    title.text = isSearching ? .onlineToursPlaceholderMessage : text
+  func configure(placeholder: String?) {
+    title.text = placeholder
   }
 }

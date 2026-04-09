@@ -33,17 +33,17 @@ final class HomeCoordinator: HomeCoordinatorProtocol {
 // MARK: - HomeCoordinatorProtocol
 extension HomeCoordinator {
   func redirectToOnlineTours() {
-    let coordinator = ToursCoordinator(navigationController: navigationController)
+    let coordinator = ToursCoordinator(homeCoordinator: self, navigationController: navigationController)
     coordinator.start()
   }
 
   func redirectToSavedTours() {
-    let coordinator = ToursCoordinator(navigationController: navigationController)
+    let coordinator = ToursCoordinator(homeCoordinator: self, navigationController: navigationController)
     coordinator.startOffline()
   }
   
   func redirectToSaveLocation() {
-    let coordinator = PlaceCreationCoordinator(navigationController: navigationController)
+    let coordinator = PlaceCreationCoordinator(homeCoordinator: self, navigationController: navigationController)
     coordinator.start()
   }
 }

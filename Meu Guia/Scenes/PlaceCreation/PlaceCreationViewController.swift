@@ -76,12 +76,13 @@ extension PlaceCreationViewController: PlaceCreationViewDelegate {
       return
     }
     
-    let info = PlaceModel(id: IdGenerator.nextId(),
-                          name: baseView.getName(),
-                          description: baseView.getDescription(),
-                          info: baseView.getInfo(),
-                          coordinates: generateCoordinates())
-    print(info)
+    showAlert(message: "Escolha um tour para salvar o local") {
+      self.viewModel.savePlace(place: PlaceModel(id: IdGenerator.nextId(),
+                                                 name: self.baseView.getName(),
+                                                 description: self.baseView.getDescription(),
+                                                 info: self.baseView.getInfo(),
+                                                 coordinates: self.generateCoordinates()))
+    }
   }
   
   func generateCoordinates() -> PlaceCoordinates? {

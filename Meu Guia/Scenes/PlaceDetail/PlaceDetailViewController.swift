@@ -23,10 +23,36 @@ class PlaceDetailViewController: BaseViewController<PlaceDetailView> {
     baseView.delegate = self
     baseView.setupView(place: viewModel.getPlaceInfo(), isOnline: viewModel.isOnline)
   }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    viewModel.fetchPlace()
+    baseView.setupView(place: viewModel.getPlaceInfo(), isOnline: viewModel.isOnline)
+  }
 }
 
 // MARK: - PlaceDetailViewDelegate
 extension PlaceDetailViewController: PlaceDetailViewDelegate {
+  func deletePlace() {
+    showAlert(message: .deletePlaceWarning, cancelOption: true) {
+      self.viewModel.deletePlace { result in
+        let action = result ? { self.successfulDelete() } : { self.failedDelete() }
+        action()
+      }
+    }
+  }
+  
+  func successfulDelete() {
+    showAlert(message: .successDeletePlace) {
+      self.viewModel.returnToListing()
+    }
+  }
+  
+  func failedDelete() {
+    showAlert(message: "Houve um erro ao tentar excluir o local. Tente novamente.")
+  }
+  
   func startNavigation() {
     viewModel.startNavigation()
   }

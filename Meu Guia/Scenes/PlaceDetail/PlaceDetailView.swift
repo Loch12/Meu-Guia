@@ -3,6 +3,7 @@ import UIKit
 protocol PlaceDetailViewDelegate: BaseViewControllerProtocol {
   func editPlace()
   func startNavigation()
+  func deletePlace()
 }
 
 // MARK: - PlaceDetail
@@ -68,6 +69,17 @@ class PlaceDetailView: BaseView {
     return button
   }()
   
+  private lazy var deleteButton: UIButton = {
+    let button = UIButton()
+    button.layer.cornerRadius = 7
+    button.titleLabel?.font = .nunito(.bold, textStyle: .title1, size: 18)
+    button.backgroundColor = .invalidRed
+    button.setTitle(.deleteAction, for: .normal)
+    button.addTarget(self, action: #selector(deleteAction), for: .touchUpInside)
+    button.translatesAutoresizingMaskIntoConstraints = false
+    return button
+  }()
+  
   private lazy var navigationButton: UIButton = {
     let button = UIButton()
     button.layer.cornerRadius = 7
@@ -80,7 +92,7 @@ class PlaceDetailView: BaseView {
   }()
   
   private lazy var buttonStackView: UIStackView = {
-    let view = UIStackView(arrangedSubviews: [editButton, navigationButton])
+    let view = UIStackView(arrangedSubviews: [editButton, navigationButton, deleteButton])
     view.spacing = 8
     view.axis = .vertical
     view.translatesAutoresizingMaskIntoConstraints = false
@@ -119,8 +131,8 @@ class PlaceDetailView: BaseView {
       infoStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
       
       editButton.heightAnchor.constraint(equalToConstant: 48),
-      
       navigationButton.heightAnchor.constraint(equalToConstant: 48),
+      deleteButton.heightAnchor.constraint(equalToConstant: 48),
       
       buttonStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -30),
       buttonStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
@@ -135,9 +147,14 @@ class PlaceDetailView: BaseView {
   @objc func navigationAction() {
     delegate?.startNavigation()
   }
+  
+  @objc func deleteAction() {
+    delegate?.deletePlace()
+  }
 
   func setupView(place: PlaceModel, isOnline: Bool) {
     editButton.isHidden = isOnline
+    deleteButton.isHidden = isOnline
     self.place = place
     placeName.text = place.name
     placeDescription.text = place.description

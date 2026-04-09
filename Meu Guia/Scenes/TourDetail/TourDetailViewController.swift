@@ -9,6 +9,7 @@ protocol TourDetailViewControllerProtocol: AnyObject, BaseViewControllerProtocol
 class TourDetailViewController: BaseViewController<TourDetailView> {
   // MARK: - Properties
   let viewModel: TourDetailViewModelProtocol
+  var isSearching: Bool = false
 
   // MARK: - Init
   init(viewModel: TourDetailViewModelProtocol) {
@@ -29,6 +30,13 @@ class TourDetailViewController: BaseViewController<TourDetailView> {
     setupActions()
     setupDelegates()
   }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    viewModel.fetchTour()
+    reloadInfo()
+  }
 
   func setupActions() {
     setupNavBarBackButton()
@@ -44,15 +52,19 @@ class TourDetailViewController: BaseViewController<TourDetailView> {
 // MARK: - TableView
 extension TourDetailViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    viewModel.didSelect(at: indexPath)
+    viewModel.getHowManyPlaces() == 0 ? viewModel.didSelectPlaceholder(isSearching: isSearching) : viewModel.didSelect(at: indexPath)
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return viewModel.getHowManyPlaces()
+    return viewModel.getHowManyPlaces() == 0 ? 1 : viewModel.getHowManyPlaces()
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let place = viewModel.getPlace(by: indexPath.row) else { return UITableViewCell() }
+    guard let place = viewModel.getPlace(by: indexPath.row) else {
+      let cell = TourPlaceholderTableViewCell()
+      cell.configure(placeholder: viewModel.getPlaceholderMessage(isSearching: isSearching))
+      return cell
+    }
 
     let cell = tableView.dequeueReusableCell(for: indexPath) as PlaceTableViewCell
     cell.configure(text: place.name)
@@ -63,10 +75,12 @@ extension TourDetailViewController: UITableViewDelegate, UITableViewDataSource {
 // MARK: - SearchBar
 extension TourDetailViewController: UISearchBarDelegate {
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    isSearching = !searchText.isEmpty
     viewModel.filterPlaces(by: searchText)
   }
 
   func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    isSearching = false
     searchBar.resignFirstResponder()
   }
 }

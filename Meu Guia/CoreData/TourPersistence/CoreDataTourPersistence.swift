@@ -2,7 +2,7 @@ import Foundation
 import CoreData
 
 protocol TourPersistenceProtocol {
-  func saveTour(_ tour: TourModel) -> Bool
+  func saveTour(_ tour: TourModel, editing: Bool) -> Bool
   func fetchTour(by id: Int) -> TourModel?
   func fetchAllTours() -> [TourModel]
   func deleteTour(by id: Int)
@@ -16,24 +16,8 @@ final class CoreDataTourPersistence: TourPersistenceProtocol {
     self.context = context
   }
 
-  func saveTour(_ tour: TourModel) -> Bool {
-
-    guard let tourId = tour.id else { return false }
-
-    let request: NSFetchRequest<TourEntity> = TourEntity.fetchRequest()
-    request.predicate = NSPredicate(format: "id == %d", tourId)
-    request.fetchLimit = 1
-
-    let entity: TourEntity
-
-    if let existing = try? context.fetch(request).first {
-      entity = existing
-    } else {
-      entity = TourEntity(context: context)
-      entity.id = Int64(tourId)
-    }
-
-    entity.name = tour.name
+  func saveTour(_ tour: TourModel, editing: Bool) -> Bool {
+    guard let entity = createTourEntity(tour: tour, editing: editing) else { return false }
 
     if let oldPlaces = entity.places as? Set<PlaceEntity> {
       oldPlaces.forEach { context.delete($0) }
@@ -71,6 +55,28 @@ final class CoreDataTourPersistence: TourPersistenceProtocol {
     } catch {
       return false
     }
+  }
+  
+  private func createTourEntity(tour: TourModel, editing: Bool) -> TourEntity? {
+    guard let tourId = tour.id else { return nil }
+    let request: NSFetchRequest<TourEntity> = TourEntity.fetchRequest()
+    request.predicate = NSPredicate(format: "id == %d", tourId)
+    request.fetchLimit = 1
+    
+    let entity: TourEntity
+    
+    if let existing = try? context.fetch(request).first {
+      guard editing else { return nil }
+      entity = existing
+    } else {
+      entity = TourEntity(context: context)
+      entity.id = Int64(tourId)
+    }
+    
+    entity.name = tour.name
+    entity.isEdited = tour.isEdited ?? false
+    
+    return entity
   }
 
   func fetchTour(by id: Int) -> TourModel? {

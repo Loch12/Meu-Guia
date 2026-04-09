@@ -2,10 +2,12 @@ import UIKit
 
 // MARK: - PlacesCoordinator
 final class ToursCoordinator: Coordinator {
+  let homeCoordinator: HomeCoordinatorProtocol
   var navigationController: UINavigationController
 
-  init(navigationController: UINavigationController) {
+  init(homeCoordinator: HomeCoordinatorProtocol, navigationController: UINavigationController) {
     self.navigationController = navigationController
+    self.homeCoordinator = homeCoordinator
   }
 
   func start() {
@@ -54,9 +56,8 @@ extension ToursCoordinator {
   }
   
   func redirectToOnlineTours() {
-    let viewModel = OnlineToursViewModel(coordinator: self)
-    let viewController = ToursListingViewController(viewModel: viewModel)
-    navigationController.pushViewController(viewController, animated: true)
+    navigationController.popToRootViewController(animated: true)
+    homeCoordinator.redirectToOnlineTours()
   }
   
   func redirectToNavigation(with place: PlaceModel) {
@@ -69,5 +70,10 @@ extension ToursCoordinator {
     let viewModel = PlaceEditViewModel(place: place, tour: tour, coordinator: self)
     let viewController = PlaceEditViewController(viewModel: viewModel)
     navigationController.pushViewController(viewController, animated: true)
+  }
+  
+  func redirectToSaveLocation() {
+    let coordinator = PlaceCreationCoordinator(homeCoordinator: homeCoordinator, navigationController: navigationController)
+    coordinator.start()
   }
 }

@@ -25,6 +25,7 @@ class ToursListingViewController: BaseViewController<ToursListingView> {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    baseView.delegate = self
     setupActions()
     setupDelegates()
   }
@@ -33,6 +34,7 @@ class ToursListingViewController: BaseViewController<ToursListingView> {
     super.viewWillAppear(animated)
     
     baseView.tableView.isHidden = true
+    baseView.setActionButton(hidden: viewModel.placeToSave == nil)
     viewModel.fetchTours()
   }
 
@@ -60,7 +62,7 @@ extension ToursListingViewController: UITableViewDelegate, UITableViewDataSource
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let tour = viewModel.getTour(by: indexPath.row) else {
       let cell = TourPlaceholderTableViewCell()
-      cell.configure(isOnline: viewModel.isOnline, isSearching: isSearching)
+      cell.configure(placeholder: viewModel.getPlaceholderMessage(isSearching: isSearching))
       return cell
     }
 
@@ -88,5 +90,12 @@ extension ToursListingViewController: ToursListingViewControllerProtocol {
   func reloadInfo() {
     baseView.tableView.reloadData()
     baseView.tableView.isHidden = false
+  }
+}
+
+// MARK: - ToursListingViewDelegate
+extension ToursListingViewController: ToursListingViewDelegate {
+  func createTour() {
+    viewModel.didSelectPlaceholder()
   }
 }

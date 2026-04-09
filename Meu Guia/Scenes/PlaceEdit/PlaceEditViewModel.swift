@@ -45,10 +45,12 @@ class PlaceEditViewModel: PlaceEditViewModelProtocol {
     
     return coreDataPersistance.saveTour(TourModel(name: tour.name,
                                                   id: tour.id,
-                                                  places: updatedPlaces))
+                                                  places: updatedPlaces,
+                                                  isEdited: true),
+                                        editing: true)
   }
   
   func returnView() {
-    coordinator.popToRootViewController()
+    coordinator.popViewController()
   }
 }

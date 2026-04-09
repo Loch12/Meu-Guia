@@ -2,8 +2,7 @@ import UIKit
 
 // MARK: - ToursListingViewModelProtocol
 protocol ToursListingViewModelProtocol {
-  var isOnline: Bool { get }
-
+  var placeToSave: PlaceModel? { get }
   func getHowManyTours() -> Int
   func getTour(by index: Int) -> TourModel?
   func filterTours(by text: String)
@@ -11,4 +10,5 @@ protocol ToursListingViewModelProtocol {
   func didSelectPlaceholder()
   func setupDelegate(delegate: ToursListingViewControllerProtocol)
   func fetchTours()
+  func getPlaceholderMessage(isSearching: Bool) -> String?
 }

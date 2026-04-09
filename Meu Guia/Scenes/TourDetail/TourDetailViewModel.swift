@@ -13,12 +13,15 @@ protocol TourDetailViewModelProtocol {
   func saveTour() -> Bool
   func deleteTour(completion: @escaping () -> Void)
   func returnToListing()
+  func fetchTour()
+  func getPlaceholderMessage(isSearching: Bool) -> String?
+  func didSelectPlaceholder(isSearching: Bool)
 }
 
 // MARK: - TourDetailViewModel
 class TourDetailViewModel: TourDetailViewModelProtocol {
   // MARK: - Properties
-  let tour: TourModel
+  var tour: TourModel
   let coordinator: ToursCoordinator
   var controllerDelegate: TourDetailViewControllerProtocol?
   let isOnline: Bool
@@ -39,6 +42,16 @@ class TourDetailViewModel: TourDetailViewModelProtocol {
 
   func setupDelegate(delegate: TourDetailViewControllerProtocol) {
     self.controllerDelegate = delegate
+  }
+  
+  func fetchTour() {
+    guard let id = tour.id,
+          !isOnline,
+          let updatedTour = coreDataPersistance.fetchTour(by: id) else {
+      return
+    }
+    self.tour = updatedTour
+    self.filteredPlaces = tour.places ?? []
   }
 }
 
@@ -78,7 +91,7 @@ extension TourDetailViewModel {
   }
   
   func saveTour() -> Bool {
-    return coreDataPersistance.saveTour(tour)
+    return coreDataPersistance.saveTour(tour, editing: false)
   }
   
   func deleteTour(completion: @escaping () -> Void) {
@@ -89,5 +102,14 @@ extension TourDetailViewModel {
   
   func returnToListing() {
     coordinator.popViewController()
+  }
+  
+  func getPlaceholderMessage(isSearching: Bool) -> String? {
+    isSearching ? .emptyPlacesPlaceholder : .savedPlacesPlaceholderMessage
+  }
+  
+  func didSelectPlaceholder(isSearching: Bool) {
+    guard !isSearching else { return }
+    coordinator.redirectToSaveLocation()
   }
 }

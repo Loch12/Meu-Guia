@@ -10,12 +10,15 @@ extension String {
   static var saveTourSuccessMessage: String { "saveTourSuccessMessage".localized }
   static var deleteTourWarning: String { "deleteTourWarning".localized }
   static var successDeleteTour: String { "successDeleteTour".localized }
+  static var deletePlaceWarning: String { "deletePlaceWarning".localized }
+  static var successDeletePlace: String { "successDeletePlace".localized }
   
   // MARK: - Buttons
   static var saveAction: String { "saveAction".localized }
   static var editAction: String { "editAction".localized }
   static var deleteAction: String { "deleteAction".localized }
   static var navigationAction: String { "navigationAction".localized }
+  static var createTourAction: String { "createTourAction".localized }
   
   // MARK: - Home
   static var homeDescriptionText: String { "homeDescriptionText".localized }
@@ -29,6 +32,9 @@ extension String {
   static var tourListingHelpMessage: String { "tourListingHelpMessage".localized }
   static var savedToursPlaceholderMessage: String { "savedToursPlaceholderMessage".localized }
   static var onlineToursPlaceholderMessage: String { "onlineToursPlaceholderMessage".localized }
+  static var editingToursPlaceholderMessage: String { "editingToursPlaceholderMessage".localized }
+  static var savedPlacesPlaceholderMessage: String { "savedPlacesPlaceholderMessage".localized }
+  static var emptyPlacesPlaceholder: String { "emptyPlacesPlaceholder".localized }
   static var tourDetailHelpMessage: String { "tourDetailHelpMessage".localized }
   
   // MARK: - Place Detail
@@ -45,6 +51,7 @@ extension String {
   static var error: String { "error".localized }
   
   // MARK: - Creation and Edition
+  static var tourNameCreation: String { "tourNameCreation".localized }
   static var placeNameCreation: String { "placeNameCreation".localized }
   static var placeDescriptionCreation: String { "placeDescriptionCreation".localized }
   static var addCustomFieldButton: String { "addCustomFieldButton".localized }

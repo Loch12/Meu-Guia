@@ -4,4 +4,5 @@ struct TourModel: Codable {
   let name: String?
   let id: Int?
   let places: [PlaceModel]?
+  let isEdited: Bool?
 }

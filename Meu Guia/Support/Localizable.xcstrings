@@ -45,6 +45,17 @@
         }
       }
     },
+    "createTourAction" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Criar tour"
+          }
+        }
+      }
+    },
     "deleteAction" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -52,6 +63,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Excluir"
+          }
+        }
+      }
+    },
+    "deletePlaceWarning" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deseja mesmo excluir o local? Não será possível recuperar as informações"
           }
         }
       }
@@ -96,6 +118,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Editar"
+          }
+        }
+      }
+    },
+    "editingToursPlaceholderMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não existe nenhum tour salvo, clique para criar um novo"
+          }
+        }
+      }
+    },
+    "emptyPlacesPlaceholder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhum local encontrado"
           }
         }
       }
@@ -254,6 +298,17 @@
         }
       }
     },
+    "savedPlacesPlaceholderMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não existe nenhum local nesse tour, caso deseje criar, clique aqui"
+          }
+        }
+      }
+    },
     "savedToursButtonText" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -353,6 +408,17 @@
         }
       }
     },
+    "successDeletePlace" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O local foi excluído com sucesso"
+          }
+        }
+      }
+    },
     "successDeleteTour" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -393,6 +459,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Listagem de Tour"
+          }
+        }
+      }
+    },
+    "tourNameCreation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nome do Tour"
           }
         }
       }

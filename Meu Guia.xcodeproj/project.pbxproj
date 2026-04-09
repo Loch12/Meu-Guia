@@ -17,6 +17,9 @@
 		2F9253962F7C58E000361D53 /* PlaceNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9253932F7C58E000361D53 /* PlaceNavigationViewController.swift */; };
 		2F9253972F7C58E000361D53 /* PlaceNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9253942F7C58E000361D53 /* PlaceNavigationViewModel.swift */; };
 		2F92539A2F7C59CC00361D53 /* PlaceCreationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9253992F7C59CC00361D53 /* PlaceCreationCoordinator.swift */; };
+		2FBCF0C22F88508F005189C1 /* EditingTourViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBCF0C12F88508F005189C1 /* EditingTourViewModel.swift */; };
+		2FBCF0C52F8867C4005189C1 /* TourCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBCF0C42F8867C4005189C1 /* TourCreationViewController.swift */; };
+		2FBCF0C72F8867C9005189C1 /* TourCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBCF0C62F8867C9005189C1 /* TourCreationView.swift */; };
 		2FDE66982F8597AD00B926BE /* EditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDE66972F8597AC00B926BE /* EditTextView.swift */; };
 		2FDE669B2F85A0DB00B926BE /* CustomFieldCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDE669A2F85A0DB00B926BE /* CustomFieldCreationViewController.swift */; };
 		2FDE669D2F85A0FC00B926BE /* CustomFieldCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDE669C2F85A0FC00B926BE /* CustomFieldCreationView.swift */; };
@@ -106,6 +109,9 @@
 		2F9253932F7C58E000361D53 /* PlaceNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceNavigationViewController.swift; sourceTree = "<group>"; };
 		2F9253942F7C58E000361D53 /* PlaceNavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceNavigationViewModel.swift; sourceTree = "<group>"; };
 		2F9253992F7C59CC00361D53 /* PlaceCreationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCreationCoordinator.swift; sourceTree = "<group>"; };
+		2FBCF0C12F88508F005189C1 /* EditingTourViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingTourViewModel.swift; sourceTree = "<group>"; };
+		2FBCF0C42F8867C4005189C1 /* TourCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourCreationViewController.swift; sourceTree = "<group>"; };
+		2FBCF0C62F8867C9005189C1 /* TourCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourCreationView.swift; sourceTree = "<group>"; };
 		2FDE66972F8597AC00B926BE /* EditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextView.swift; sourceTree = "<group>"; };
 		2FDE669A2F85A0DB00B926BE /* CustomFieldCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFieldCreationViewController.swift; sourceTree = "<group>"; };
 		2FDE669C2F85A0FC00B926BE /* CustomFieldCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFieldCreationView.swift; sourceTree = "<group>"; };
@@ -235,6 +241,23 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		2FBCF0C02F88506C005189C1 /* TourSelection */ = {
+			isa = PBXGroup;
+			children = (
+				2FBCF0C12F88508F005189C1 /* EditingTourViewModel.swift */,
+			);
+			path = TourSelection;
+			sourceTree = "<group>";
+		};
+		2FBCF0C32F8867B9005189C1 /* TourCreation */ = {
+			isa = PBXGroup;
+			children = (
+				2FBCF0C62F8867C9005189C1 /* TourCreationView.swift */,
+				2FBCF0C42F8867C4005189C1 /* TourCreationViewController.swift */,
+			);
+			path = TourCreation;
+			sourceTree = "<group>";
+		};
 		2FDE66992F85A0CF00B926BE /* CustomFieldCreation */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,6 +381,7 @@
 		CE6EE1632C456D2F00ED8D38 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2FBCF0C32F8867B9005189C1 /* TourCreation */,
 				2FDE66992F85A0CF00B926BE /* CustomFieldCreation */,
 				2F9253852F7C56ED00361D53 /* PlaceCreation */,
 				2F9253842F7C552A00361D53 /* PlaceEdit */,
@@ -432,6 +456,7 @@
 			isa = PBXGroup;
 			children = (
 				CE1F83572EF469F800C16E29 /* Views */,
+				2FBCF0C02F88506C005189C1 /* TourSelection */,
 				CE77A4CD2EDE24E2003EBCD0 /* SavedTours */,
 				CE77A4C72EDE22F6003EBCD0 /* OnlineTours */,
 				CE77A4BF2EDE206E003EBCD0 /* ToursListingViewController.swift */,
@@ -688,11 +713,13 @@
 				CE77A4C22EDE20B2003EBCD0 /* OnlineToursViewModel.swift in Sources */,
 				CE7737182CE3B6EF00868CEF /* UIView+extension.swift in Sources */,
 				2FDE669B2F85A0DB00B926BE /* CustomFieldCreationViewController.swift in Sources */,
+				2FBCF0C52F8867C4005189C1 /* TourCreationViewController.swift in Sources */,
 				2F9253952F7C58E000361D53 /* PlaceNavigationView.swift in Sources */,
 				2F9253962F7C58E000361D53 /* PlaceNavigationViewController.swift in Sources */,
 				2F9253972F7C58E000361D53 /* PlaceNavigationViewModel.swift in Sources */,
 				CEAEF9562CE525CE00CF227B /* NetworkError.swift in Sources */,
 				CE1F83522EF4631700C16E29 /* PlaceEntity+CoreDataProperties.swift in Sources */,
+				2FBCF0C22F88508F005189C1 /* EditingTourViewModel.swift in Sources */,
 				CE1F83542EF4631700C16E29 /* TourEntity+CoreDataProperties.swift in Sources */,
 				CEAEF9542CE5259F00CF227B /* ErrorResponse.swift in Sources */,
 				CEC38DBF2EE0B1B000A99EAB /* PlaceModel.swift in Sources */,
@@ -702,6 +729,7 @@
 				2FDE66982F8597AD00B926BE /* EditTextView.swift in Sources */,
 				2F92538F2F7C586700361D53 /* PlaceEditViewController.swift in Sources */,
 				2FDE66A02F85ACA300B926BE /* LocationPermissionManager.swift in Sources */,
+				2FBCF0C72F8867C9005189C1 /* TourCreationView.swift in Sources */,
 				CE77A4D12EDE250D003EBCD0 /* SavedToursViewModel.swift in Sources */,
 				CEAE727B2CEBB453009DDE12 /* String+extension.swift in Sources */,
 				CEAEF95A2CE533C400CF227B /* CustomActivityIndicatorView.swift in Sources */,
