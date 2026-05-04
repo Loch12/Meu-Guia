@@ -21,12 +21,12 @@ final class LocationService: NSObject {
     
     switch status {
     case .notDetermined:
-      locationManager.requestWhenInUseAuthorization()
+      locationManager.requestAlwaysAuthorization()
       
-    case .authorizedWhenInUse, .authorizedAlways:
+    case .authorizedAlways:
       locationManager.startUpdatingLocation()
       
-    case .denied, .restricted:
+    case .denied, .restricted, .authorizedWhenInUse:
       break
       
     @unknown default:

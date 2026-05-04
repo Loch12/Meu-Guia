@@ -20,8 +20,27 @@ class TitleValueView: UIView {
     label.numberOfLines = 0
     label.font = .nunito(.regular, textStyle: .callout, size: 16)
     label.textColor = .black
+    label.isUserInteractionEnabled = true
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
+  }()
+  
+  private let deleteButton: UIButton = {
+    let button = UIButton()
+    button.layer.cornerRadius = 7
+    button.titleLabel?.font = .nunito(.bold, textStyle: .title1, size: 18)
+    button.backgroundColor = .invalidRed
+    button.setTitle(.deleteAction, for: .normal)
+    button.isHidden = true
+    button.translatesAutoresizingMaskIntoConstraints = false
+    return button
+  }()
+  
+  private let buttonStackView: UIStackView = {
+    let view = UIStackView()
+    view.alignment = .leading
+    view.translatesAutoresizingMaskIntoConstraints = false
+    return view
   }()
 
   // MARK: - Init
@@ -36,9 +55,11 @@ class TitleValueView: UIView {
   }
 
   func setupView() {
+    deleteButton.addTarget(self, action: #selector(removeInfo), for: .touchUpInside)
     addSubviews(titleLabel,
-                valueLabel)
-
+                valueLabel,
+                buttonStackView)
+    buttonStackView.addArrangedSubview(deleteButton)
     setupConstraints()
   }
 
@@ -51,8 +72,14 @@ class TitleValueView: UIView {
       valueLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
       valueLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
       valueLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+      
+      buttonStackView.topAnchor.constraint(equalTo: valueLabel.bottomAnchor, constant: 4),
+      buttonStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      buttonStackView.trailingAnchor.constraint(equalTo: centerXAnchor, constant: -16),
+      
+      deleteButton.heightAnchor.constraint(equalToConstant: 36),
 
-      bottomAnchor.constraint(equalTo: valueLabel.bottomAnchor)
+      bottomAnchor.constraint(equalTo: buttonStackView.bottomAnchor)
     ])
   }
 
@@ -73,7 +100,7 @@ class TitleValueView: UIView {
 
     if let action = actions[type] {
       setupColor(title: .black, value: .blue)
-      addGestureRecognizer(action)
+      valueLabel.addGestureRecognizer(action)
     }
   }
 
@@ -100,5 +127,17 @@ class TitleValueView: UIView {
   func setupColor(title: UIColor, value: UIColor) {
     titleLabel.textColor = title
     valueLabel.textColor = value
+  }
+  
+  func setupDeleteOption() {
+    deleteButton.isHidden = false
+  }
+  
+  @objc func removeInfo() {
+    if let stackView = superview as? UIStackView {
+      stackView.removeArrangedSubview(self)
+    }
+    
+    removeFromSuperview()
   }
 }

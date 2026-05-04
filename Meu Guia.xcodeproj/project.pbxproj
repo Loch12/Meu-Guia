@@ -20,6 +20,7 @@
 		2FBCF0C22F88508F005189C1 /* EditingTourViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBCF0C12F88508F005189C1 /* EditingTourViewModel.swift */; };
 		2FBCF0C52F8867C4005189C1 /* TourCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBCF0C42F8867C4005189C1 /* TourCreationViewController.swift */; };
 		2FBCF0C72F8867C9005189C1 /* TourCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBCF0C62F8867C9005189C1 /* TourCreationView.swift */; };
+		2FDD237E2F96C5BF00011CBD /* NavigationGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDD237D2F96C5BE00011CBD /* NavigationGuide.swift */; };
 		2FDE66982F8597AD00B926BE /* EditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDE66972F8597AC00B926BE /* EditTextView.swift */; };
 		2FDE669B2F85A0DB00B926BE /* CustomFieldCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDE669A2F85A0DB00B926BE /* CustomFieldCreationViewController.swift */; };
 		2FDE669D2F85A0FC00B926BE /* CustomFieldCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDE669C2F85A0FC00B926BE /* CustomFieldCreationView.swift */; };
@@ -112,6 +113,7 @@
 		2FBCF0C12F88508F005189C1 /* EditingTourViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingTourViewModel.swift; sourceTree = "<group>"; };
 		2FBCF0C42F8867C4005189C1 /* TourCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourCreationViewController.swift; sourceTree = "<group>"; };
 		2FBCF0C62F8867C9005189C1 /* TourCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourCreationView.swift; sourceTree = "<group>"; };
+		2FDD237D2F96C5BE00011CBD /* NavigationGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationGuide.swift; sourceTree = "<group>"; };
 		2FDE66972F8597AC00B926BE /* EditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextView.swift; sourceTree = "<group>"; };
 		2FDE669A2F85A0DB00B926BE /* CustomFieldCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFieldCreationViewController.swift; sourceTree = "<group>"; };
 		2FDE669C2F85A0FC00B926BE /* CustomFieldCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFieldCreationView.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 		2FDE669E2F85AC9E00B926BE /* Location */ = {
 			isa = PBXGroup;
 			children = (
+				2FDD237D2F96C5BE00011CBD /* NavigationGuide.swift */,
 				2FDE66A32F85AFCC00B926BE /* LocationService.swift */,
 				2FDE669F2F85ACA300B926BE /* LocationPermissionManager.swift */,
 			);
@@ -710,6 +713,7 @@
 				CE1F83432EF45F4B00C16E29 /* PlaceEntity+CoreDataClass.swift in Sources */,
 				CE1F83452EF45F4B00C16E29 /* TourEntity+CoreDataClass.swift in Sources */,
 				CE1F834C2EF4618900C16E29 /* CoreDataStack.swift in Sources */,
+				2FDD237E2F96C5BF00011CBD /* NavigationGuide.swift in Sources */,
 				CE77A4C22EDE20B2003EBCD0 /* OnlineToursViewModel.swift in Sources */,
 				CE7737182CE3B6EF00868CEF /* UIView+extension.swift in Sources */,
 				2FDE669B2F85A0DB00B926BE /* CustomFieldCreationViewController.swift in Sources */,
@@ -927,9 +931,11 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Meu Guia/Support/MeuGuia-info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Precisamos da sua localização para exibir melhores resultados";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Precisamos da sua localização para exibir melhores resultados";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -954,9 +960,11 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Meu Guia/Support/MeuGuia-info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Precisamos da sua localização para exibir melhores resultados";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Precisamos da sua localização para exibir melhores resultados";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

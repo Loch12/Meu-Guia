@@ -1,4 +1,5 @@
 import UIKit
+import AVFoundation
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -8,6 +9,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     setupNavBar()
+    setupAudioSession()
+    _ = NavigationGuide.shared
     self.window = UIWindow(frame: UIScreen.main.bounds)
     let navVC = UINavigationController()
     self.window?.rootViewController = navVC
@@ -31,6 +34,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       UINavigationBar.appearance().standardAppearance = appearance
       UINavigationBar.appearance().compactAppearance = appearance
       UINavigationBar.appearance().scrollEdgeAppearance = appearance
+    }
+  }
+  
+  func setupAudioSession() {
+    do {
+      try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+      try AVAudioSession.sharedInstance().setActive(true)
+    } catch {
+      print("Erro ao configurar áudio: \(error)")
     }
   }
 }

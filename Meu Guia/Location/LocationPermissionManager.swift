@@ -13,7 +13,7 @@ class LocationPermissionManager: NSObject, CLLocationManagerDelegate {
     
     switch status {
     case .notDetermined:
-      locationManager.requestWhenInUseAuthorization()
+      locationManager.requestAlwaysAuthorization()
       
     case .restricted, .denied:
       completion(false)
