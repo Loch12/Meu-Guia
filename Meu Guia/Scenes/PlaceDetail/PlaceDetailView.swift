@@ -163,6 +163,10 @@ class PlaceDetailView: BaseView {
 
   func setupInfo() {
     guard let infos = place?.info else { return }
+    infoStackView.arrangedSubviews.forEach { view in
+      infoStackView.removeArrangedSubview(view)
+      view.removeFromSuperview()
+    }
     for info in infos {
       let infoView = TitleValueView()
       infoView.translatesAutoresizingMaskIntoConstraints = false

@@ -34,8 +34,9 @@ class TourDetailViewController: BaseViewController<TourDetailView> {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
-    viewModel.fetchTour()
-    reloadInfo()
+    viewModel.fetchTour {
+      self.reloadInfo()
+    }
   }
 
   func setupActions() {

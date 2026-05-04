@@ -3,6 +3,7 @@ import UIKit
 // MARK: - PlaceNavigationViewController
 class PlaceNavigationViewController: BaseViewController<PlaceNavigationView> {
   // MARK: - Properties
+  var navigation: NavigationGuide?
   let viewModel: PlaceNavigationViewModelProtocol
 
   // MARK: - Init
@@ -21,6 +22,17 @@ class PlaceNavigationViewController: BaseViewController<PlaceNavigationView> {
 
     setupNavBarBackButton()
     baseView.delegate = self
+    startNavigation()
+  }
+  
+  func startNavigation() {
+    guard let coordinates = viewModel.getCoordinates() else {
+      showAlert(message: "Houve um erro ao carregar as coordenadas do local. Tente novamente mais tarde.") {
+        self.dismiss(animated: true)
+      }
+      return
+    }
+    NavigationGuide.shared.start(destination: coordinates)
   }
 }
 

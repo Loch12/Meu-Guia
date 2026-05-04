@@ -44,7 +44,7 @@ class PlaceCreationView: BaseView {
   private lazy var infoStackView: UIStackView = {
     let view = UIStackView()
     view.axis = .vertical
-    view.spacing = 12
+    view.spacing = 18
     view.translatesAutoresizingMaskIntoConstraints = false
     return view
   }()
@@ -131,6 +131,7 @@ class PlaceCreationView: BaseView {
     let infoView = TitleValueView()
     infoView.translatesAutoresizingMaskIntoConstraints = false
     infoView.setupInfo(info: info, delegate: delegate)
+    infoView.setupDeleteOption()
     infoStackView.addArrangedSubview(infoView)
   }
   
