@@ -7,7 +7,7 @@ extension PlaceEntity {
     return NSFetchRequest<PlaceEntity>(entityName: "PlaceEntity")
   }
 
-  @NSManaged public var id: Int64
+  @NSManaged public var id: UUID
   @NSManaged public var name: String?
   @NSManaged public var desc: String?
   @NSManaged public var image: String?

@@ -3,9 +3,9 @@ import CoreData
 
 protocol TourPersistenceProtocol {
   func saveTour(_ tour: TourModel, editing: Bool) -> Bool
-  func fetchTour(by id: Int) -> TourModel?
+  func fetchTour(by id: UUID) -> TourModel?
   func fetchAllTours() -> [TourModel]
-  func deleteTour(by id: Int)
+  func deleteTour(by id: UUID)
 }
 
 final class CoreDataTourPersistence: TourPersistenceProtocol {
@@ -25,7 +25,7 @@ final class CoreDataTourPersistence: TourPersistenceProtocol {
 
     tour.places?.forEach { place in
       let placeEntity = PlaceEntity(context: context)
-      placeEntity.id = Int64(place.id ?? IdGenerator.nextId())
+      placeEntity.id = place.id
       placeEntity.name = place.name
       placeEntity.desc = place.description
       placeEntity.latitude = place.coordinates?.latitude ?? 0
@@ -58,9 +58,8 @@ final class CoreDataTourPersistence: TourPersistenceProtocol {
   }
   
   private func createTourEntity(tour: TourModel, editing: Bool) -> TourEntity? {
-    guard let tourId = tour.id else { return nil }
     let request: NSFetchRequest<TourEntity> = TourEntity.fetchRequest()
-    request.predicate = NSPredicate(format: "id == %d", tourId)
+    request.predicate = NSPredicate(format: "id == %@", tour.id as CVarArg)
     request.fetchLimit = 1
     
     let entity: TourEntity
@@ -70,7 +69,7 @@ final class CoreDataTourPersistence: TourPersistenceProtocol {
       entity = existing
     } else {
       entity = TourEntity(context: context)
-      entity.id = Int64(tourId)
+      entity.id = tour.id
     }
     
     entity.name = tour.name
@@ -79,9 +78,9 @@ final class CoreDataTourPersistence: TourPersistenceProtocol {
     return entity
   }
 
-  func fetchTour(by id: Int) -> TourModel? {
+  func fetchTour(by id: UUID) -> TourModel? {
     let request: NSFetchRequest<TourEntity> = TourEntity.fetchRequest()
-    request.predicate = NSPredicate(format: "id == %d", id)
+    request.predicate = NSPredicate(format: "id == %@", id as CVarArg)
 
     guard let entity = try? context.fetch(request).first else {
       return nil
@@ -90,16 +89,16 @@ final class CoreDataTourPersistence: TourPersistenceProtocol {
     return entity.toDomain()
   }
 
-  private func fetchTourEntity(by id: Int) -> TourEntity? {
+  private func fetchTourEntity(by id: UUID) -> TourEntity? {
     let request: NSFetchRequest<TourEntity> = TourEntity.fetchRequest()
-    request.predicate = NSPredicate(format: "id == %d", id)
+    request.predicate = NSPredicate(format: "id == %@", id as CVarArg)
     request.fetchLimit = 1
     return try? context.fetch(request).first
   }
 
-  func deleteTour(by id: Int) {
+  func deleteTour(by id: UUID) {
     let request: NSFetchRequest<TourEntity> = TourEntity.fetchRequest()
-    request.predicate = NSPredicate(format: "id == %d", id)
+    request.predicate = NSPredicate(format: "id == %@", id as CVarArg)
 
     if let result = try? context.fetch(request) {
       result.forEach { context.delete($0) }

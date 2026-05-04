@@ -13,7 +13,7 @@ protocol TourDetailViewModelProtocol {
   func saveTour() -> Bool
   func deleteTour(completion: @escaping () -> Void)
   func returnToListing()
-  func fetchTour()
+  func fetchTour(completion: @escaping () -> Void)
   func getPlaceholderMessage(isSearching: Bool) -> String?
   func didSelectPlaceholder(isSearching: Bool)
 }
@@ -44,14 +44,15 @@ class TourDetailViewModel: TourDetailViewModelProtocol {
     self.controllerDelegate = delegate
   }
   
-  func fetchTour() {
-    guard let id = tour.id,
-          !isOnline,
-          let updatedTour = coreDataPersistance.fetchTour(by: id) else {
+  func fetchTour(completion: @escaping () -> Void) {
+    guard !isOnline,
+          let updatedTour = coreDataPersistance.fetchTour(by: tour.id) else {
+      completion()
       return
     }
     self.tour = updatedTour
     self.filteredPlaces = tour.places ?? []
+    completion()
   }
 }
 
@@ -95,8 +96,7 @@ extension TourDetailViewModel {
   }
   
   func deleteTour(completion: @escaping () -> Void) {
-    guard let id = tour.id else { return }
-    coreDataPersistance.deleteTour(by: id)
+    coreDataPersistance.deleteTour(by: tour.id)
     completion()
   }
   

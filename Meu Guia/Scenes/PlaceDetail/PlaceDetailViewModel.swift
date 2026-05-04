@@ -30,9 +30,8 @@ class PlaceDetailViewModel: PlaceDetailViewModelProtocol {
   }
   
   func fetchPlace() {
-    guard let id = tour.id,
-          !isOnline,
-          let updatedTour = coreDataPersistance.fetchTour(by: id) else {
+    guard !isOnline,
+          let updatedTour = coreDataPersistance.fetchTour(by: tour.id) else {
       return
     }
     self.tour = updatedTour

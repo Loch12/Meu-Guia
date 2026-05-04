@@ -10,7 +10,7 @@ extension PlaceEntity {
     }
     
     return PlaceModel(
-      id: Int(id),
+      id: id,
       name: name,
       description: desc,
       info: infosArray,

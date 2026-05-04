@@ -77,7 +77,7 @@ extension PlaceCreationViewController: PlaceCreationViewDelegate {
     }
     
     showAlert(message: "Escolha um tour para salvar o local") {
-      self.viewModel.savePlace(place: PlaceModel(id: IdGenerator.nextId(),
+      self.viewModel.savePlace(place: PlaceModel(id: UUID(),
                                                  name: self.baseView.getName(),
                                                  description: self.baseView.getDescription(),
                                                  info: self.baseView.getInfo(),

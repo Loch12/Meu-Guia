@@ -2,7 +2,7 @@ import MapKit
 import CoreData
 
 struct PlaceModel: Codable {
-  let id: Int?
+  let id: UUID
   let name: String?
   let description: String?
   let info: [PlaceDetailInfo]?
@@ -45,7 +45,7 @@ extension PlaceModel {
   func toEntity(context: NSManagedObjectContext) -> PlaceEntity {
     let entity = PlaceEntity(context: context)
     
-    entity.id = Int64(id ?? 0)
+    entity.id = id
     entity.name = name
     entity.desc = description
     entity.latitude = coordinates?.latitude ?? 0
@@ -70,14 +70,5 @@ extension PlaceDetailInfo {
     entity.type = type?.rawValue
     
     return entity
-  }
-}
-
-class IdGenerator {
-  private static var currentId: Int = 0
-  
-  static func nextId() -> Int {
-    currentId += 1
-    return currentId
   }
 }

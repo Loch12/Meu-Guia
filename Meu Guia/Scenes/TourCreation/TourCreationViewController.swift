@@ -25,7 +25,7 @@ extension TourCreationViewController: TourCreationViewDelegate {
       return
     }
     let tour = TourModel(name: baseView.getName(),
-                         id: IdGenerator.nextId(),
+                         id: UUID(),
                          places: [],
                          isEdited: true)
     onComplete?(tour)

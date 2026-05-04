@@ -1,11 +1,11 @@
 [
   {
     "name": "Ufes - Ceunes",
-    "id": 1,
+    "id": "a4f7c2d9-1b6e-4c83-9e5a-2d0f7b8c6e13",
     "places": [
       {
         "name": "Guriri Beach",
-        "id": 0,
+        "id": "659d7c6b-28c0-4042-b26c-3fda7f63aa64",
         "image": "",
         "description": "Uma das praias mais populares de São Mateus (ES), conhecida por suas águas calmas, extensa faixa de areia e infraestrutura turística.",
         "info": [
@@ -35,13 +35,13 @@
           }
         ],
         "coordinates": {
-          "latitude": -18.7294,
-          "longitude": -39.8542
+          "latitude": 37.3317,
+          "longitude": -122.0301
         }
       },
       {
         "name": "Biblioteca Central",
-        "id": 1,
+        "id": "3f9a2c7e-8b4d-4f1c-a2e9-6d5b7c8a1f20",
         "image": "https://www.ufes.br/sites/default/files/2024-03/teatro_ufes.png",
         "description": "Biblioteca universitária com acervo físico e digital para apoio ao ensino e pesquisa.",
         "info": [
@@ -65,7 +65,7 @@
       },
       {
         "name": "Auditório do Campus",
-        "id": 2,
+        "id": "91a4f0d3-6b2e-4e7a-b8c1-5d9f3a7c2e44",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmQEKyaSTGnAYAFPUosY2jfU3CJSoiY3SiQQ&s",
         "description": "Espaço destinado a palestras, eventos acadêmicos, seminários e apresentações culturais.",
         "info": [
@@ -89,7 +89,7 @@
       },
       {
         "name": "Área de Convivência",
-        "id": 3,
+        "id": "c2d8e1f7-5a3b-4c9d-8f21-7e6a0b3d9c55",
         "image": "https://www.ufes.br/sites/default/files/field/image/whatsapp_image_2023-04-11_at_10.32.05.jpeg",
         "description": "Espaço aberto para descanso, alimentação, integração entre estudantes e atividades informais.",
         "info": [
