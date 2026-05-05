@@ -20,6 +20,8 @@ class EditTextView: UIView {
     view.layer.borderWidth = 2
     view.layer.cornerRadius = 7
     view.isScrollEnabled = false
+    view.backgroundColor = .white
+    view.textColor = .black
     view.font = .nunito(.semiBold, textStyle: .body, size: 18)
     view.translatesAutoresizingMaskIntoConstraints = false
     return view

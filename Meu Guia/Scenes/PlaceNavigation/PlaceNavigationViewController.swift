@@ -1,4 +1,5 @@
 import UIKit
+import MapKit
 
 // MARK: - PlaceNavigationViewController
 class PlaceNavigationViewController: BaseViewController<PlaceNavigationView> {
@@ -21,7 +22,7 @@ class PlaceNavigationViewController: BaseViewController<PlaceNavigationView> {
     super.viewDidLoad()
 
     setupNavBarBackButton()
-    baseView.delegate = self
+    baseView.mapView.delegate = self
     startNavigation()
   }
   
@@ -32,9 +33,47 @@ class PlaceNavigationViewController: BaseViewController<PlaceNavigationView> {
       }
       return
     }
+    NavigationGuide.shared.delegate = self
     NavigationGuide.shared.start(destination: coordinates)
   }
 }
 
-// MARK: - PlaceEditViewDelegate
-extension PlaceNavigationViewController: PlaceNavigationViewDelegate {}
+// MARK: - MapView Delegate
+extension PlaceNavigationViewController: MKMapViewDelegate {
+  func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+    
+    if let polyline = overlay as? MKPolyline {
+      let renderer = MKPolylineRenderer(polyline: polyline)
+      renderer.strokeColor = .systemBlue
+      renderer.lineWidth = 6
+      return renderer
+    }
+    
+    if let circle = overlay as? MKCircle {
+      let renderer = MKCircleRenderer(circle: circle)
+      renderer.fillColor = UIColor.systemGreen.withAlphaComponent(0.3)
+      renderer.strokeColor = .systemGreen
+      renderer.lineWidth = 2
+      return renderer
+    }
+    
+    return MKOverlayRenderer(overlay: overlay)
+  }
+}
+
+// MARK: - NavigationGuide
+extension PlaceNavigationViewController: NavigationGuideDelegate {
+  func didUpdateRoute(_ route: MKRoute) {
+    baseView.mapView.removeOverlays(baseView.mapView.overlays)
+    baseView.mapView.addOverlay(route.polyline)
+
+    let rect = route.polyline.boundingMapRect
+    baseView.mapView.setVisibleMapRect(rect,
+                              edgePadding: UIEdgeInsets(top: 80, left: 40, bottom: 80, right: 40),
+                              animated: true)
+  }
+  
+  func didUpdateStepRegions(_ regions: [MKCircle]) {
+    baseView.mapView.addOverlays(regions)
+  }
+}

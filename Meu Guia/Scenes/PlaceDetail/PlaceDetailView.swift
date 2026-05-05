@@ -2,7 +2,7 @@ import UIKit
 
 protocol PlaceDetailViewDelegate: BaseViewControllerProtocol {
   func editPlace()
-  func startNavigation()
+  func checkNavigation()
   func deletePlace()
 }
 
@@ -145,7 +145,7 @@ class PlaceDetailView: BaseView {
   }
   
   @objc func navigationAction() {
-    delegate?.startNavigation()
+    delegate?.checkNavigation()
   }
   
   @objc func deleteAction() {
@@ -173,5 +173,10 @@ class PlaceDetailView: BaseView {
       infoView.setupInfo(info: info, delegate: delegate)
       infoStackView.addArrangedSubview(infoView)
     }
+  }
+  
+  func setupNavigationButton(isCurrentNavigation: Bool) {
+    navigationButton.backgroundColor = isCurrentNavigation ? .invalidRed : .buttonBaseColor
+    navigationButton.setTitle(isCurrentNavigation ? "Pausar navegação" : .navigationAction, for: .normal)
   }
 }

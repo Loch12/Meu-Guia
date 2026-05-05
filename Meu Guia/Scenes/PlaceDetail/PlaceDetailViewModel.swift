@@ -1,4 +1,5 @@
 import Foundation
+import CoreLocation
 
 // MARK: - PlaceDetailViewModelProtocol
 protocol PlaceDetailViewModelProtocol: AnyObject {
@@ -10,6 +11,7 @@ protocol PlaceDetailViewModelProtocol: AnyObject {
   func returnToListing()
   func deletePlace(completion: @escaping (Bool) -> Void)
   func fetchPlace()
+  func getCoordinates() -> CLLocationCoordinate2D?
 }
 
 // MARK: - PlaceDetailViewModel
@@ -64,5 +66,11 @@ extension PlaceDetailViewModel {
                                 places: updatedPlaces,
                                 isEdited: true)
     completion(coreDataPersistance.saveTour(updatedTour, editing: true))
+  }
+  
+  func getCoordinates() -> CLLocationCoordinate2D? {
+    guard let latitude = place.coordinates?.latitude,
+          let longitude = place.coordinates?.longitude else { return nil }
+    return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
   }
 }

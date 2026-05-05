@@ -29,6 +29,7 @@ class PlaceDetailViewController: BaseViewController<PlaceDetailView> {
     
     viewModel.fetchPlace()
     baseView.setupView(place: viewModel.getPlaceInfo(), isOnline: viewModel.isOnline)
+    baseView.setupNavigationButton(isCurrentNavigation: NavigationGuide.shared.isCurrentDestination(destination: viewModel.getCoordinates()))
   }
 }
 
@@ -53,8 +54,30 @@ extension PlaceDetailViewController: PlaceDetailViewDelegate {
     showAlert(message: "Houve um erro ao tentar excluir o local. Tente novamente.")
   }
   
+  func checkNavigation() {
+    if NavigationGuide.shared.isCurrentDestination(destination: viewModel.getCoordinates()) {
+      stopNavigation()
+      return
+    }
+    let action = NavigationGuide.shared.isNavigationActive() ? { self.showAlertToNewNavigation() } : { self.startNavigation() }
+    action()
+  }
+  
   func startNavigation() {
+    NavigationGuide.shared.stop()
     viewModel.startNavigation()
+    baseView.setupNavigationButton(isCurrentNavigation: true)
+  }
+  
+  func stopNavigation() {
+    NavigationGuide.shared.stop()
+    baseView.setupNavigationButton(isCurrentNavigation: false)
+  }
+  
+  func showAlertToNewNavigation() {
+    showAlert(message: "Já existe uma navegação em andamento, deseja continuar?", cancelOption: true) {
+      self.startNavigation()
+    }
   }
   
   func editPlace() {
