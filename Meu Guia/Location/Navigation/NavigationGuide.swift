@@ -22,6 +22,7 @@ final class NavigationGuide: NSObject {
   
   private var hasToCalculateRoute: Bool = true
   private var isOffRoute = false
+  private var hasError = false
   
   private var stepRegions: [StepRegion] = []
   private var userHeading: Double = 0
@@ -54,6 +55,7 @@ final class NavigationGuide: NSObject {
     self.destination = nil
     hasToCalculateRoute = true
     isOffRoute = false
+    synthesizer.stopSpeaking(at: .word)
   }
   
   func isCurrentDestination(destination: CLLocationCoordinate2D?) -> Bool {
@@ -68,7 +70,6 @@ final class NavigationGuide: NSObject {
   private func calculateRoute(from userLocation: CLLocation) {
     guard let destination = destination else { return }
     hasToCalculateRoute = false
-    speak(text: "Calculando rota")
     let request = MKDirections.Request()
     request.source = MKMapItem(placemark: MKPlacemark(coordinate: userLocation.coordinate))
     request.destination = MKMapItem(placemark: MKPlacemark(coordinate: destination))
@@ -78,7 +79,14 @@ final class NavigationGuide: NSObject {
     
     directions.calculate { [weak self] response, error in
       guard let self = self,
-            let route = response?.routes.first else { return }
+            let route = response?.routes.first else {
+        if !(self?.hasError ?? true) {
+          self?.speak(text: "Houve um erro ao carregar a rota")
+        }
+        self?.hasError = true
+        self?.hasToCalculateRoute = true
+        return
+      }
       
       self.route = route
       self.steps = route.steps.filter { !$0.instructions.isEmpty }
@@ -103,18 +111,11 @@ extension NavigationGuide: CLLocationManagerDelegate {
     guard let location = locations.last,
           let destination else { return }
     
-    let distanceToDestination = location.distance(from: CLLocation(latitude: destination.latitude,
-                                                                   longitude: destination.longitude))
-    if distanceToDestination < 5 {
-      didArrive()
-      return
-    }
-    
     if let distance = distanceToRoute(route: route, from: location) {
       if distance > 10 {
         if !isOffRoute {
           isOffRoute = true
-          speak(text: "Você saiu da rota")
+          speak(text: "Você saiu da rota, iremos recalcular a rota")
           hasToCalculateRoute = true
           currentStep = nil
         }
@@ -143,11 +144,6 @@ extension NavigationGuide: CLLocationManagerDelegate {
 
 // MARK: - Voice
 extension NavigationGuide {
-  private func didArrive() {
-    speak(text: "Você chegou ao destino")
-    stop()
-  }
-  
   private func speak(text: String?) {
     guard let text else { return }
     
@@ -169,6 +165,7 @@ extension NavigationGuide {
     let currentStep = stepRegions[index]
     
     if currentStep.step.instructions.contains("destino") {
+      stop()
       return currentStep.step.instructions
     }
     
