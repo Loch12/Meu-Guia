@@ -19,11 +19,13 @@ final class NavigationGuide: NSObject {
   private var route: MKRoute?
   private var steps: [MKRoute.Step] = []
   private var destination: CLLocationCoordinate2D?
+  
   private var hasToCalculateRoute: Bool = true
-  private var currentStepIndex = 0
-  private var hasSpokenCurrentStep = false
+  private var isOffRoute = false
+  
   private var stepRegions: [StepRegion] = []
-  private var triggeredSteps: Set<Int> = []
+  private var userHeading: Double = 0
+  private var currentStep: Int?
   
   // MARK: - Init
   override init() {
@@ -33,8 +35,7 @@ final class NavigationGuide: NSObject {
     locationManager.allowsBackgroundLocationUpdates = true
     locationManager.pausesLocationUpdatesAutomatically = false
     locationManager.distanceFilter = 5
-    locationManager.headingFilter = kCLHeadingFilterNone
-    locationManager.startUpdatingHeading()
+    locationManager.headingFilter = 1
   }
   
   // MARK: - Public API
@@ -43,12 +44,16 @@ final class NavigationGuide: NSObject {
     speak(text: "Iniciando trajeto")
     
     locationManager.requestAlwaysAuthorization()
+    locationManager.startUpdatingHeading()
     locationManager.startUpdatingLocation()
   }
   
   func stop() {
     locationManager.stopUpdatingLocation()
+    locationManager.stopUpdatingHeading()
     self.destination = nil
+    hasToCalculateRoute = true
+    isOffRoute = false
   }
   
   func isCurrentDestination(destination: CLLocationCoordinate2D?) -> Bool {
@@ -63,6 +68,7 @@ final class NavigationGuide: NSObject {
   private func calculateRoute(from userLocation: CLLocation) {
     guard let destination = destination else { return }
     hasToCalculateRoute = false
+    speak(text: "Calculando rota")
     let request = MKDirections.Request()
     request.source = MKMapItem(placemark: MKPlacemark(coordinate: userLocation.coordinate))
     request.destination = MKMapItem(placemark: MKPlacemark(coordinate: destination))
@@ -77,8 +83,9 @@ final class NavigationGuide: NSObject {
       self.route = route
       self.steps = route.steps.filter { !$0.instructions.isEmpty }
       self.stepRegions = self.steps.enumerated().map { index, step in
-        let circle = MKCircle(center: step.polyline.coordinate, radius: 20)
-        return StepRegion(circle: circle, instruction: step.instructions)
+        return StepRegion(circle: MKCircle(center: step.polyline.coordinate, radius: 10),
+                          step: step,
+                          direction: self.cardinalDirection(for: step))
       }
       self.delegate?.didUpdateRoute(route)
       self.delegate?.didUpdateStepRegions(self.stepRegions.map { $0.circle })
@@ -88,36 +95,48 @@ final class NavigationGuide: NSObject {
 
 // MARK: - CLLocationManagerDelegate
 extension NavigationGuide: CLLocationManagerDelegate {
-  func locationManager(_ manager: CLLocationManager,
-                       didUpdateLocations locations: [CLLocation]) {
-    
+  func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+    userHeading = newHeading.trueHeading
+  }
+  
+  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     guard let location = locations.last,
           let destination else { return }
     
     let distanceToDestination = location.distance(from: CLLocation(latitude: destination.latitude,
                                                                    longitude: destination.longitude))
-    
-    if distanceToDestination < 10 {
+    if distanceToDestination < 5 {
       didArrive()
       return
     }
     
-    if hasToCalculateRoute {
-      calculateRoute(from: location)
+    if let distance = distanceToRoute(route: route, from: location) {
+      if distance > 10 {
+        if !isOffRoute {
+          isOffRoute = true
+          speak(text: "Você saiu da rota")
+          hasToCalculateRoute = true
+          currentStep = nil
+        }
+      } else {
+        isOffRoute = false
+      }
     }
     
     for (index, stepRegion) in stepRegions.enumerated() {
-      if triggeredSteps.contains(index) { continue }
-      
       let center = stepRegion.circle.coordinate
       let regionLocation = CLLocation(latitude: center.latitude, longitude: center.longitude)
-      
       let distance = location.distance(from: regionLocation)
       
-      if distance <= stepRegion.circle.radius {
-        speak(text: stepRegion.instruction)
-        triggeredSteps.insert(index)
+      if distance <= stepRegion.circle.radius,
+         currentStep != index {
+        speak(text: simplifiedInstruction(for: index))
+        currentStep = index
       }
+    }
+    
+    if hasToCalculateRoute {
+      calculateRoute(from: location)
     }
   }
 }
@@ -142,12 +161,56 @@ extension NavigationGuide {
 
 // MARK: - Instructions
 extension NavigationGuide {
-  private func simplifiedInstruction(for step: MKRoute.Step) -> String? {
-    return "Siga por \(Int(step.distance)) metros, depois " + step.instructions.lowercased()
+  private func simplifiedInstruction(for index: Int) -> String? {
+    guard stepRegions.indices.contains(index) else {
+      return nil
+    }
+    
+    let currentStep = stepRegions[index]
+    
+    if currentStep.step.instructions.contains("destino") {
+      return currentStep.step.instructions
+    }
+    
+    guard stepRegions.indices.contains(index + 1) else {
+      return stepRegions[index].step.instructions
+    }
+    
+    let nextDistance = Int(stepRegions[index + 1].step.distance)
+    
+    guard let directionText = readableDirection(for: stepRegions[index + 1]) else {
+      return "siga por \(nextDistance) metros"
+    }
+    
+    return "\(directionText) e siga por \(nextDistance) metros"
   }
-}
-
-struct StepRegion {
-  let circle: MKCircle
-  let instruction: String
+  
+  private func readableDirection(for step: StepRegion) -> String? {
+    guard let stepDirection = step.direction else {
+      return nil
+    }
+    
+    let angle = (stepDirection - userHeading + 360).truncatingRemainder(dividingBy: 360)
+    
+    switch angle {
+    case 0..<20, 340...360:
+      return "Siga em frente"
+    case 20..<60:
+      return "Siga levemente à direita"
+    case 60..<120:
+      return "Vire à direita"
+    case 120..<160:
+      return "Vire forte à direita"
+    case 160..<200:
+      return "Retorne"
+    case 200..<240:
+      return "Vire forte à esquerda"
+    case 240..<300:
+      return "Vire à esquerda"
+    case 300..<340:
+      return "Siga levemente à esquerda"
+    default:
+      return nil
+    }
+  }
 }

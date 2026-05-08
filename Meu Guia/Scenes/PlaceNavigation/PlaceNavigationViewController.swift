@@ -69,8 +69,8 @@ extension PlaceNavigationViewController: NavigationGuideDelegate {
 
     let rect = route.polyline.boundingMapRect
     baseView.mapView.setVisibleMapRect(rect,
-                              edgePadding: UIEdgeInsets(top: 80, left: 40, bottom: 80, right: 40),
-                              animated: true)
+                                       edgePadding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                                       animated: true)
   }
   
   func didUpdateStepRegions(_ regions: [MKCircle]) {
