@@ -25,6 +25,7 @@ class PlaceDetailView: BaseView {
     let view = UIView()
     view.addSubviews(placeName,
                      placeDescription,
+                     mapsLink,
                      infoStackView)
     view.translatesAutoresizingMaskIntoConstraints = false
     return view
@@ -54,6 +55,12 @@ class PlaceDetailView: BaseView {
     label.font = .nunito(.regular, textStyle: .title1, size: 20)
     label.textColor = .black
     label.textAlignment = .justified
+    label.translatesAutoresizingMaskIntoConstraints = false
+    return label
+  }()
+  
+  private lazy var mapsLink: TitleValueView = {
+    let label = TitleValueView()
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
@@ -124,8 +131,12 @@ class PlaceDetailView: BaseView {
       placeDescription.topAnchor.constraint(equalTo: placeName.bottomAnchor, constant: 12),
       placeDescription.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
       placeDescription.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+      
+      mapsLink.topAnchor.constraint(equalTo: placeDescription.bottomAnchor, constant: 8),
+      mapsLink.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+      mapsLink.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
 
-      infoStackView.topAnchor.constraint(equalTo: placeDescription.bottomAnchor, constant: 16),
+      infoStackView.topAnchor.constraint(equalTo: mapsLink.bottomAnchor, constant: 16),
       infoStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
       infoStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
       infoStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
@@ -158,7 +169,19 @@ class PlaceDetailView: BaseView {
     self.place = place
     placeName.text = place.name
     placeDescription.text = place.description
+    mapsLink.setupInfo(info: PlaceDetailInfo(title: "Google Maps", value: setupMapsLink(), description: nil, type: .link),
+                       delegate: delegate)
     setupInfo()
+  }
+  
+  func setupMapsLink() -> String? {
+    guard let place = place,
+          let lat = place.coordinates?.latitude,
+          let lon = place.coordinates?.longitude else {
+      return nil
+    }
+    
+    return "https://www.google.com/maps/dir/?api=1&destination=\(lat),\(lon)"
   }
 
   func setupInfo() {

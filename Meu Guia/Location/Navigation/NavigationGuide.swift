@@ -23,6 +23,7 @@ final class NavigationGuide: NSObject {
   private var hasToCalculateRoute: Bool = true
   private var isOffRoute = false
   private var hasError = false
+  private var firstSearch = true
   
   private var stepRegions: [StepRegion] = []
   private var userHeading: Double = 0
@@ -69,6 +70,7 @@ final class NavigationGuide: NSObject {
   // MARK: - Route
   private func calculateRoute(from userLocation: CLLocation) {
     guard let destination = destination else { return }
+    firstSearch = false
     hasToCalculateRoute = false
     let request = MKDirections.Request()
     request.source = MKMapItem(placemark: MKPlacemark(coordinate: userLocation.coordinate))
@@ -81,12 +83,14 @@ final class NavigationGuide: NSObject {
       guard let self = self,
             let route = response?.routes.first else {
         if !(self?.hasError ?? true) {
-          self?.speak(text: "Houve um erro ao carregar a rota")
+          self?.speak(text: "Houve um erro ao carregar a rota, aguarde.")
         }
         self?.hasError = true
         self?.hasToCalculateRoute = true
         return
       }
+      
+      self.speak(text: "Rota definida.")
       
       self.route = route
       self.steps = route.steps.filter { !$0.instructions.isEmpty }
@@ -108,12 +112,12 @@ extension NavigationGuide: CLLocationManagerDelegate {
   }
   
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    guard let location = locations.last,
-          let destination else { return }
+    guard let location = locations.last else { return }
     
     if let distance = distanceToRoute(route: route, from: location) {
       if distance > 10 {
-        if !isOffRoute {
+        if !isOffRoute,
+           !firstSearch {
           isOffRoute = true
           speak(text: "Você saiu da rota, iremos recalcular a rota")
           hasToCalculateRoute = true
