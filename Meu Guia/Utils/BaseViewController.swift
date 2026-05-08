@@ -30,6 +30,22 @@ class BaseViewController<T: BaseView>: UIViewController {
     super.viewDidLoad()
     
     hideKeyboardWhenTappedAround()
+    setupGesture()
+  }
+  
+  func setupGesture() {
+    let gesture = UISwipeGestureRecognizer(target: self,
+      action: #selector(handleGesture)
+    )
+    
+    gesture.direction = .down
+    gesture.numberOfTouchesRequired = 3
+    gesture.cancelsTouchesInView = false
+    view.addGestureRecognizer(gesture)
+  }
+  
+  @objc func handleGesture() {
+    NavigationGuide.shared.stop()
   }
 }
 

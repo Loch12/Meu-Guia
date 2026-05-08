@@ -4,8 +4,8 @@ import CoreLocation
 import AVFoundation
 
 protocol NavigationGuideDelegate: AnyObject {
-  func didUpdateRoute(_ route: MKRoute)
-  func didUpdateStepRegions(_ regions: [MKCircle])
+  func didStartedNavigation()
+  func didFinishedNavigation()
 }
 
 final class NavigationGuide: NSObject {
@@ -43,7 +43,9 @@ final class NavigationGuide: NSObject {
   // MARK: - Public API
   func start(destination: CLLocationCoordinate2D) {
     self.destination = destination
+    delegate?.didStartedNavigation()
     speak(text: "Iniciando trajeto")
+    speak(text: "Se quiser encerrar a navegação, deslize 3 dedos para baixo em qualquer tela do app")
     
     locationManager.requestAlwaysAuthorization()
     locationManager.startUpdatingHeading()
@@ -51,12 +53,16 @@ final class NavigationGuide: NSObject {
   }
   
   func stop() {
+    guard destination != nil else { return }
+    delegate?.didFinishedNavigation()
+    speak(text: "Encerrando navegação")
     locationManager.stopUpdatingLocation()
     locationManager.stopUpdatingHeading()
     self.destination = nil
     hasToCalculateRoute = true
     isOffRoute = false
-    synthesizer.stopSpeaking(at: .word)
+    hasError = false
+    firstSearch = true
   }
   
   func isCurrentDestination(destination: CLLocationCoordinate2D?) -> Bool {
@@ -70,7 +76,6 @@ final class NavigationGuide: NSObject {
   // MARK: - Route
   private func calculateRoute(from userLocation: CLLocation) {
     guard let destination = destination else { return }
-    firstSearch = false
     hasToCalculateRoute = false
     let request = MKDirections.Request()
     request.source = MKMapItem(placemark: MKPlacemark(coordinate: userLocation.coordinate))
@@ -99,8 +104,11 @@ final class NavigationGuide: NSObject {
                           step: step,
                           direction: self.cardinalDirection(for: step))
       }
-      self.delegate?.didUpdateRoute(route)
-      self.delegate?.didUpdateStepRegions(self.stepRegions.map { $0.circle })
+      if self.firstSearch,
+         !self.stepRegions.isEmpty {
+        speak(text: simplifiedInstruction(for: 0))
+      }
+      self.firstSearch = false
     }
   }
 }
@@ -119,7 +127,7 @@ extension NavigationGuide: CLLocationManagerDelegate {
         if !isOffRoute,
            !firstSearch {
           isOffRoute = true
-          speak(text: "Você saiu da rota, iremos recalcular a rota")
+          speak(text: "Você saiu do trajeto")
           hasToCalculateRoute = true
           currentStep = nil
         }

@@ -6,7 +6,6 @@ protocol PlaceDetailViewModelProtocol: AnyObject {
   var isOnline: Bool { get }
   
   func getPlaceInfo() -> PlaceModel
-  func startNavigation()
   func editPlace()
   func returnToListing()
   func deletePlace(completion: @escaping (Bool) -> Void)
@@ -44,10 +43,6 @@ class PlaceDetailViewModel: PlaceDetailViewModelProtocol {
 extension PlaceDetailViewModel {
   func getPlaceInfo() -> PlaceModel {
     place
-  }
-  
-  func startNavigation() {
-    coordinator.redirectToNavigation(with: place)
   }
   
   func editPlace() {

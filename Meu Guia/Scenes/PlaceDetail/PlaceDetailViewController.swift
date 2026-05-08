@@ -20,6 +20,7 @@ class PlaceDetailViewController: BaseViewController<PlaceDetailView> {
     super.viewDidLoad()
 
     setupNavBarBackButton()
+    NavigationGuide.shared.delegate = self
     baseView.delegate = self
     baseView.setupView(place: viewModel.getPlaceInfo(), isOnline: viewModel.isOnline)
   }
@@ -64,14 +65,15 @@ extension PlaceDetailViewController: PlaceDetailViewDelegate {
   }
   
   func startNavigation() {
-    NavigationGuide.shared.stop()
-    viewModel.startNavigation()
-    baseView.setupNavigationButton(isCurrentNavigation: true)
+    guard let coordinates = viewModel.getCoordinates() else {
+      showAlert(message: "Houve um erro ao tentar localizar o local. Tente novamente.")
+      return
+    }
+    NavigationGuide.shared.start(destination: coordinates)
   }
   
   func stopNavigation() {
     NavigationGuide.shared.stop()
-    baseView.setupNavigationButton(isCurrentNavigation: false)
   }
   
   func showAlertToNewNavigation() {
@@ -82,5 +84,17 @@ extension PlaceDetailViewController: PlaceDetailViewDelegate {
   
   func editPlace() {
     viewModel.editPlace()
+  }
+}
+
+extension PlaceDetailViewController: NavigationGuideDelegate {
+  func didStartedNavigation() {
+    if NavigationGuide.shared.isCurrentDestination(destination: viewModel.getCoordinates()) {
+      baseView.setupNavigationButton(isCurrentNavigation: true)
+    }
+  }
+  
+  func didFinishedNavigation() {
+    baseView.setupNavigationButton(isCurrentNavigation: false)
   }
 }

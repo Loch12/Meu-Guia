@@ -60,12 +60,6 @@ extension ToursCoordinator {
     homeCoordinator.redirectToOnlineTours()
   }
   
-  func redirectToNavigation(with place: PlaceModel) {
-    let viewModel = PlaceNavigationViewModel(place: place, coordinator: self)
-    let viewController = PlaceNavigationViewController(viewModel: viewModel)
-    navigationController.pushViewController(viewController, animated: true)
-  }
-  
   func redirectToEditPlace(with place: PlaceModel, of tour: TourModel) {
     let viewModel = PlaceEditViewModel(place: place, tour: tour, coordinator: self)
     let viewController = PlaceEditViewController(viewModel: viewModel)
